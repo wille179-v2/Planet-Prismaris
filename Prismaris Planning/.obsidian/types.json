@@ -1,0 +1,15 @@
+{
+  "types": {
+    "aliases": "aliases",
+    "cssclasses": "multitext",
+    "tags": "tags",
+    "type": "text",
+    "hidden_in_factoriopedia": "checkbox",
+    "hidden": "checkbox",
+    "stack_size": "number",
+    "icon_size": "number",
+    "icons": "multitext",
+    "scripted": "checkbox",
+    "is_implemented": "checkbox"
+  }
+}

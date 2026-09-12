@@ -1,0 +1,16 @@
+{
+  "name": "planet_prismaris",
+  "version": "0.1.0",
+  "title": "Planet Prismaris",
+  "author": "Wille179",
+  "factorio_version": "2.1",
+  "dependencies": [
+    "base >= 2.1",
+    "space-age >= 2.1.14",
+    "recycler",
+    "quality",
+    "PlanetsLib >= 1.25.1",
+    "? any-planet-start >= 1.2.2"
+  ],
+  "description": "Visit the ever-cycling world of Prismaris, a world of infinite but constantly-shifting resources."
+}

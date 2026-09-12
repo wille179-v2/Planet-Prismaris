@@ -1,0 +1,324 @@
+{
+  "main": {
+    "id": "29ba1f69114a9d0c",
+    "type": "split",
+    "children": [
+      {
+        "id": "d4595d9b56ad0aad",
+        "type": "tabs",
+        "dimension": 40.106951871657756,
+        "children": [
+          {
+            "id": "01775990aa23c390",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Planning/Master List of Items, Fluids, Recipes, and Entities.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Master List of Items, Fluids, Recipes, and Entities"
+            }
+          },
+          {
+            "id": "c18da8e72fc3de79",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Planning/Noise Expressions & Planet Generation.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Noise Expressions & Planet Generation"
+            }
+          }
+        ],
+        "currentTab": 1
+      },
+      {
+        "id": "f578fc44f6180910",
+        "type": "split",
+        "dimension": 59.893048128342244,
+        "children": [
+          {
+            "id": "cfa33836b65a357b",
+            "type": "tabs",
+            "dimension": 59.593023255813954,
+            "children": [
+              {
+                "id": "ad161272014b6371",
+                "type": "leaf",
+                "state": {
+                  "type": "canvas",
+                  "state": {
+                    "file": "Planning/Recipe Graph.canvas",
+                    "viewState": {
+                      "x": 1464,
+                      "y": -547,
+                      "zoom": 0
+                    }
+                  },
+                  "icon": "lucide-layout-dashboard",
+                  "title": "Recipe Graph"
+                }
+              },
+              {
+                "id": "94a638e4ac10c8f0",
+                "type": "leaf",
+                "state": {
+                  "type": "canvas",
+                  "state": {
+                    "file": "Planning/Tech Tree (Vanilla).canvas",
+                    "viewState": {
+                      "x": -76.01116248356436,
+                      "y": 1785.7562636658936,
+                      "zoom": -1
+                    }
+                  },
+                  "icon": "lucide-layout-dashboard",
+                  "title": "Tech Tree (Vanilla)"
+                }
+              }
+            ]
+          },
+          {
+            "id": "b44d8b58ca18228e",
+            "type": "tabs",
+            "dimension": 40.406976744186046,
+            "children": [
+              {
+                "id": "e67c6a690fc88ec2",
+                "type": "leaf",
+                "state": {
+                  "type": "markdown",
+                  "state": {
+                    "file": "Planning/Overview.md",
+                    "mode": "source",
+                    "source": false
+                  },
+                  "icon": "lucide-file",
+                  "title": "Overview"
+                }
+              },
+              {
+                "id": "53e4ce21e9e4a7f5",
+                "type": "leaf",
+                "state": {
+                  "type": "markdown",
+                  "state": {
+                    "file": "Mod Compatibility.md",
+                    "mode": "source",
+                    "source": false
+                  },
+                  "icon": "lucide-file",
+                  "title": "Mod Compatibility"
+                }
+              },
+              {
+                "id": "7de92bf974b53e9f",
+                "type": "leaf",
+                "state": {
+                  "type": "markdown",
+                  "state": {
+                    "file": "Planning/TODO List.md",
+                    "mode": "source",
+                    "source": false
+                  },
+                  "icon": "lucide-file",
+                  "title": "TODO List"
+                }
+              }
+            ],
+            "currentTab": 2
+          }
+        ],
+        "direction": "horizontal"
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "4e97af4bbc024ff2",
+    "type": "split",
+    "children": [
+      {
+        "id": "094ec52a399e825b",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "63f60fd3896dc5c5",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "c14060b4e02ed49b",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "8f5bb8d7cee3a8f6",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 200
+  },
+  "right": {
+    "id": "78a057acccc4935a",
+    "type": "split",
+    "children": [
+      {
+        "id": "c5ebe650ba807205",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "1f1f3defae80ac19",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Planning/Master List of Items, Fluids, Recipes, and Entities.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks"
+            }
+          },
+          {
+            "id": "0c8d2366f30c87f9",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "Planning/Master List of Items, Fluids, Recipes, and Entities.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links"
+            }
+          },
+          {
+            "id": "f2136b8eeec164e4",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "94c722ab0a44e072",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "All properties"
+            }
+          },
+          {
+            "id": "a88baf0daadfe20d",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "Planning/Master List of Items, Fluids, Recipes, and Entities.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "templates:Insert template": false,
+      "bases:Create new base": false
+    }
+  },
+  "active": "ad161272014b6371",
+  "lastOpenFiles": [
+    "Planning/TODO List.md",
+    "Planning/Noise Expressions & Planet Generation.md",
+    "Planning/Recipe Graph.canvas",
+    "Planning/Master List of Items, Fluids, Recipes, and Entities.md",
+    "Mod Compatibility.md",
+    "Planning/Overview.md",
+    "Planning/Tech Tree (Vanilla).canvas",
+    "Templates/Item Template.md",
+    "Templates/Prototype Template.md",
+    "Welcome.md",
+    "Templates/Fluid Template.md",
+    "Art Assets",
+    "Planning",
+    "Templates",
+    "Buildings",
+    "Recipes",
+    "Items and Fluids"
+  ]
+}

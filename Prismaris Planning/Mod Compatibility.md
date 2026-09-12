@@ -1,0 +1,5 @@
+- [ ] [Hot Metals](https://mods.factorio.com/mod/hot-metals)
+- [ ] [Age of Production](https://mods.factorio.com/mod/Age-of-Production?from=search)
+- [x] [Science Tab](https://mods.factorio.com/mod/science-tab) (might be automatic but worth checking)
+- [ ] See if [Nonstandard Beacons](https://mods.factorio.com/mod/zzz-nonstandard-beacons) gets updated to 2.1, use to implement void beacon using fluids.
+- [ ] Crude Alien Tech should benefit from Prismaris productivity researches (particularly `ore-melting-productivity`)
