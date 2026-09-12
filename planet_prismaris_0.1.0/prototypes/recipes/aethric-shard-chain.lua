@@ -77,14 +77,15 @@ local destabilizedVariantPairs = {
 
 for _,pair in ipairs(destabilizedVariantPairs) do 
 	data:extend({
+		-- currently set to a 2-to-3 ratio instead of 1-to-1
 		pf.recipeFactory(
 			pre .. "destabilized-aethric-shard-" .. pair[1],
 			pair[3],
 			pf.itemIngredientsFactory({
-				{pre .. "shattered-aethric-shard-" .. pair[1],1}
+				{pre .. "shattered-aethric-shard-" .. pair[1],2}
 			}),
 			pf.itemResultsFactory({
-				{pre .. "destabilized-aethric-shard-" .. pair[1],1,always_fresh = true},
+				{pre .. "destabilized-aethric-shard-" .. pair[1],3,always_fresh = true},
 				{pre .. "shattered-aethric-shard-" .. pair[2],1,ip=.04},
 			}),
 			2,
