@@ -150,7 +150,7 @@ Cultivated Aether Crystal✔️
 ## Flux Capacitor Chain✔️
 - Flux Capacitor✔️
 - Reset Flux Capacitor✔️
-## Catalytic Crystals
+## Catalytic Crystals ✔️
 - Basic Catalytic Crystal✔️
 - Advanced Catalytic Crystal✔️
 - Alien Catalytic Crystal✔️
@@ -161,7 +161,7 @@ Cultivated Aether Crystal✔️
 - Auto-Stasis ✔️
 - Auto-Reversal✔️
 
-## Cogitor Science Processing Recipes
+## Cogitor Science Processing Recipes ✔️
 - Basic✔️
 - Advanced✔️
 - Alien✔️

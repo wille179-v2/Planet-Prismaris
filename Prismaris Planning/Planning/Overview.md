@@ -6,7 +6,7 @@ Prismaris's terrain is based loosely on the generation of aquilo, with small isl
 
 
 Prismaris comes with a few specific resources:
-- Prismatic Shards - Can be split into items with an a fast-shifting RGBW or CMYK cycle. Opposing pairs can be converted into iron ore, copper ore, or stone. White and Black variants are useless and hog belt space, having the longest spoil times.
+- Prismatic Shards - Can be split into items with an a fast-shifting RGBW or CMYK cycle. Opposing pairs can be converted into iron ore, copper ore, or stone. White and Black variants are less useful and hog belt space, having the longest spoil times.
 	- Patches are small and far apart, but are literally infinite.
 - Aethric Shards - Can be "shattered" into a set of (seemingly) identical variants, then further "destabilized" into forms that decay into solid petrochemical resources (coal, carbon, solid fuel, sulfur) and calcite.
 	- Grown like plants using an agricultural tower. Very fast growth time, but relatively low yield per harvest.

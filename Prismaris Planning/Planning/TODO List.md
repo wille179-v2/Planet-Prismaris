@@ -20,10 +20,12 @@
 - [ ] Make sure laser/tesla weapons are affected by the correct damage researches
 - [ ] Make sure all labs have at least 4 trash inventory slots.
 - [ ] Figure out where the entropic sea glow is coming from
+- [ ] Make sure entropic dust can't be recycled at all, or rather returns 100% of its yield instead.
+- [ ] Alternate recipes for biochamber and agricultural tower on prismaris
 
 - [x] Map settings - resource richness should be fixed and unchangable.
 
 # Balance
 - [ ] Aethric soil split into "natural" and "artificial" variants, plus a set of precursor tiles like `jellynut-wetland` where they can be placed
-	- [ ] Alternatively, DON'T do this and instead disable the soil making/placing. Use the natural terrain generation of vulcanus.
-- [ ] Up the yield on aethric shard destabilization?
+	- [ ] Alternatively, DON'T do this and instead disable the soil making/placing. Use the natural terrain generation of vulcanus. (I think I'm going to do this...)
+- [ ] Up the yield on aethric shard destabilization? (Maybe two per craft instead of one...)

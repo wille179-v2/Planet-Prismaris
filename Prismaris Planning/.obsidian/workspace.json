@@ -36,8 +36,7 @@
               "title": "Noise Expressions & Planet Generation"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       },
       {
         "id": "f578fc44f6180910",
@@ -57,9 +56,9 @@
                   "state": {
                     "file": "Planning/Recipe Graph.canvas",
                     "viewState": {
-                      "x": 1464,
-                      "y": -547,
-                      "zoom": 0
+                      "x": 1808,
+                      "y": -804,
+                      "zoom": -1
                     }
                   },
                   "icon": "lucide-layout-dashboard",
@@ -301,14 +300,14 @@
       "bases:Create new base": false
     }
   },
-  "active": "ad161272014b6371",
+  "active": "7de92bf974b53e9f",
   "lastOpenFiles": [
-    "Planning/TODO List.md",
-    "Planning/Noise Expressions & Planet Generation.md",
-    "Planning/Recipe Graph.canvas",
     "Planning/Master List of Items, Fluids, Recipes, and Entities.md",
-    "Mod Compatibility.md",
+    "Planning/TODO List.md",
+    "Planning/Recipe Graph.canvas",
     "Planning/Overview.md",
+    "Planning/Noise Expressions & Planet Generation.md",
+    "Mod Compatibility.md",
     "Planning/Tech Tree (Vanilla).canvas",
     "Templates/Item Template.md",
     "Templates/Prototype Template.md",
