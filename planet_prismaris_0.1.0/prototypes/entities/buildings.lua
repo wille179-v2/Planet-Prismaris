@@ -269,7 +269,7 @@ data:extend({
 		--icon_draw_specification = {shift = {0, -0.25}}, -- Move the alt-mode icon if needed
 		circuit_wire_max_distance = assembling_machine_circuit_wire_max_distance,
 		energy_usage="2.7MW",
-		crafting_speed=4,
+		crafting_speed=5,
 		crafting_categories = {pre .. "cognition"},
 		energy_source = {
 			type = "electric",
@@ -281,7 +281,7 @@ data:extend({
 			},
 			productivity_limits = {low = 0, high = 0}
 		},
-		module_slots = 4,
+		module_slots = 6,
 		quality_affects_module_slots = true,
 		allowed_effects = {"quality"},
 		graphics_set = {
