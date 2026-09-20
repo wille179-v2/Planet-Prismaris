@@ -31,7 +31,7 @@ Prismaris has the "Polyphasic Science Pack," which comes in three forms that cyc
 Prismaris offers several unique rewards.
 
 ### Exclusive Buildings
-- Crystal Separator - Furnace prototype for processing prismatic and Aethric shards. Happily accepts any variant put into it and spits out *something,* though sometimes that something is junk.
+- Crystal Separator - Furnace-like building for processing Prismatic and Aethric shards.
 
 
 ### Alternate Recipes
@@ -39,6 +39,8 @@ Prismaris offers several unique rewards.
 
 
 ### Technology Rewards:
+- Thermal Flux Furnace - An upgraded version of the crystal separator that can also smelt traditional resources. Has an innate 25% productivity bonus and a hefty 6 module slots, but is powered by heat rather than electricity.
+- Electric heater - For when you need heat in a large area and don't want to deal with fuel. It can't get hot enough to boil water in a heat exchanger.
 - Chronocycler - A unique "Multi-phase building," comes in four variants. Uses Void Essence as a liquid fuel. All work similar to Fulgora's recycler, but with a twist:
 	- Unconfigured Chronocycler - The base item. It cannot be placed as a building and instead serves as an intermediate part for all other chronocyclers. All other chronocyclers eventually spoil back into this form after one hour.
 	- Reversal Chronocycler - Works like a normal recycler, but has an innate quality and productivity bonus at the cost of being slightly slower. It is also capable of recycling Prismaris's unique items.
