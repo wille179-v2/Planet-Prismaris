@@ -277,7 +277,7 @@ data:extend({
 		},
 		effect_receiver = {
 			base_effect = {
-				quality = 0.25
+				quality = .5
 			},
 			productivity_limits = {low = 0, high = 0}
 		},

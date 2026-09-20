@@ -711,7 +711,7 @@ data:extend({
 	pf.itemFactory(
 		pre .. "red-polyphasic-science-pack",
 		200,
-		baseIcons .. "automation-science-pack.png", -- TODO: placeholder
+		prisIcons .. "polyphasic-science-pack-r.png",
 		"science-pack",
 		{
 			spoilage = pf.spoilageHelper(
@@ -724,7 +724,7 @@ data:extend({
 	pf.itemFactory(
 		pre .. "blue-polyphasic-science-pack",
 		200,
-		baseIcons .. "chemical-science-pack.png", -- TODO: placeholder
+		prisIcons .. "polyphasic-science-pack-b.png",
 		"science-pack",
 		{
 			spoilage = pf.spoilageHelper(
@@ -737,7 +737,7 @@ data:extend({
 	pf.itemFactory(
 		pre .. "green-polyphasic-science-pack",
 		200,
-		baseIcons .. "logistic-science-pack.png", -- TODO: placeholder
+		prisIcons .. "polyphasic-science-pack-g.png",
 		"science-pack",
 		{
 			spoilage = pf.spoilageHelper(

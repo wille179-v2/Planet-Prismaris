@@ -72,7 +72,7 @@ data:extend({
 	-- Red variant is most expensive in terms of fluid usage.
 	pf.recipeFactory(
 		pre .. "red-polyphasic-science-pack",
-		baseIcons .. "automation-science-pack.png", -- TODO: placeholder
+		prisIcons .. "polyphasic-science-pack-r.png",
 		pf.ingredientsFactory(
 			{
 				{pre .. "activated-prismatic-shard-r",1},
@@ -99,7 +99,7 @@ data:extend({
 	-- Blue Variant is cheapest in terms of fluid usage.
 	pf.recipeFactory(
 		pre .. "blue-polyphasic-science-pack",
-		baseIcons .. "chemical-science-pack.png", -- TODO: placeholder
+		prisIcons .. "polyphasic-science-pack-b.png",
 		pf.ingredientsFactory(
 			{
 				{pre .. "activated-prismatic-shard-b",1},
@@ -126,7 +126,7 @@ data:extend({
 	-- Green Variant has average baseline cost but is significantly faster time-wise.
 	pf.recipeFactory(
 		pre .. "green-polyphasic-science-pack",
-		baseIcons .. "logistic-science-pack.png", -- TODO: placeholder
+		prisIcons .. "polyphasic-science-pack-g.png",
 		pf.ingredientsFactory(
 			{
 				{pre .. "activated-prismatic-shard-g",1},
@@ -226,6 +226,17 @@ data:extend({
 
 -- Cogitor & Cogitor processing recipes
 
+local cogitorScienceCost = 20
+local stepDelta = 5
+local cogitorScienceReturn = cogitorScienceCost - stepDelta
+
+local cogitorScienceCycleBonus = {
+	basic = 3 * stepDelta,
+	advanced = 2 * stepDelta,
+	alien = 2 * stepDelta,
+	promethium = 0
+}
+
 data:extend({
 	pf.recipeFactory(
 		pre .. "cogitor",
@@ -258,11 +269,11 @@ data:extend({
 		pre .. "automation-to-logistic-transmutation",
 		recipeTempIcon, -- TODO
 		pf.itemIngredientsFactory({
-			{"automation-science-pack",20},
+			{"automation-science-pack",cogitorScienceCost},
 			{pre .. "basic-catalytic-crystal-active",1,quality_max="normal",quality_change=-4}
 		}),
 		pf.itemResultsFactory({
-			{"logistic-science-pack",10},
+			{"logistic-science-pack",cogitorScienceReturn},
 			{pre .. "basic-catalytic-crystal-dormant",1,quality_max="normal",affected_by_quality=false}
 		}),
 		10,
@@ -273,11 +284,11 @@ data:extend({
 		pre .. "logistic-to-military-transmutation",
 		recipeTempIcon, -- TODO
 		pf.itemIngredientsFactory({
-			{"logistic-science-pack",20},
+			{"logistic-science-pack",cogitorScienceCost},
 			{pre .. "basic-catalytic-crystal-active",1,quality_max="normal",quality_change=-4}
 		}),
 		pf.itemResultsFactory({
-			{"military-science-pack",10},
+			{"military-science-pack",cogitorScienceReturn},
 			{pre .. "basic-catalytic-crystal-dormant",1,quality_max="normal",affected_by_quality=false}
 		}),
 		10,
@@ -288,11 +299,11 @@ data:extend({
 		pre .. "military-to-chemical-transmutation",
 		recipeTempIcon, -- TODO
 		pf.itemIngredientsFactory({
-			{"military-science-pack",20},
+			{"military-science-pack",cogitorScienceCost},
 			{pre .. "basic-catalytic-crystal-active",1,quality_max="normal",quality_change=-4}
 		}),
 		pf.itemResultsFactory({
-			{"chemical-science-pack",10},
+			{"chemical-science-pack",cogitorScienceReturn},
 			{pre .. "basic-catalytic-crystal-dormant",1,quality_max="normal",affected_by_quality=false}
 		}),
 		10,
@@ -303,11 +314,11 @@ data:extend({
 		pre .. "chemical-to-automation-transmutation",
 		recipeTempIcon, -- TODO
 		pf.itemIngredientsFactory({
-			{"chemical-science-pack",20},
+			{"chemical-science-pack",cogitorScienceCost},
 			{pre .. "basic-catalytic-crystal-active",1,quality_max="normal",quality_change=-4}
 		}),
 		pf.itemResultsFactory({
-			{"automation-science-pack",40},
+			{"automation-science-pack",cogitorScienceReturn},
 			{pre .. "basic-catalytic-crystal-dormant",1,quality_max="normal",affected_by_quality=false}
 		}),
 		10,
@@ -318,11 +329,11 @@ data:extend({
 		pre .. "utility-to-production-transmutation",
 		recipeTempIcon, -- TODO
 		pf.itemIngredientsFactory({
-			{"utility-science-pack",20},
+			{"utility-science-pack",cogitorScienceCost},
 			{pre .. "advanced-catalytic-crystal-active",1,quality_max="normal",quality_change=-4}
 		}),
 		pf.itemResultsFactory({
-			{"production-science-pack",10},
+			{"production-science-pack",cogitorScienceReturn},
 			{pre .. "advanced-catalytic-crystal-dormant",1,quality_max="normal",affected_by_quality=false}
 		}),
 		10,
@@ -333,11 +344,11 @@ data:extend({
 		pre .. "production-to-space-transmutation",
 		recipeTempIcon, -- TODO
 		pf.itemIngredientsFactory({
-			{"production-science-pack",20},
+			{"production-science-pack",cogitorScienceCost},
 			{pre .. "advanced-catalytic-crystal-active",1,quality_max="normal",quality_change=-4}
 		}),
 		pf.itemResultsFactory({
-			{"space-science-pack",10},
+			{"space-science-pack",cogitorScienceReturn},
 			{pre .. "advanced-catalytic-crystal-dormant",1,quality_max="normal",affected_by_quality=false}
 		}),
 		10,
@@ -348,11 +359,11 @@ data:extend({
 		pre .. "space-to-utility-transmutation",
 		recipeTempIcon, -- TODO
 		pf.itemIngredientsFactory({
-			{"space-science-pack",20},
+			{"space-science-pack",cogitorScienceCost},
 			{pre .. "advanced-catalytic-crystal-active",1,quality_max="normal",quality_change=-4}
 		}),
 		pf.itemResultsFactory({
-			{"utility-science-pack",40},
+			{"utility-science-pack",cogitorScienceReturn},
 			{pre .. "advanced-catalytic-crystal-dormant",1,quality_max="normal",affected_by_quality=false}
 		}),
 		10,
@@ -363,11 +374,11 @@ data:extend({
 		pre .. "electromagnetic-to-agricultural-transmutation",
 		recipeTempIcon, -- TODO
 		pf.itemIngredientsFactory({
-			{"electromagnetic-science-pack",20},
+			{"electromagnetic-science-pack",cogitorScienceCost},
 			{pre .. "alien-catalytic-crystal-active",1,quality_max="normal",quality_change=-4}
 		}),
 		pf.itemResultsFactory({
-			{"agricultural-science-pack",10},
+			{"agricultural-science-pack",cogitorScienceReturn},
 			{pre .. "alien-catalytic-crystal-dormant",1,quality_max="normal",affected_by_quality=false}
 		}),
 		10,
@@ -378,11 +389,11 @@ data:extend({
 		pre .. "agricultural-to-metallurgic-transmutation",
 		recipeTempIcon, -- TODO
 		pf.itemIngredientsFactory({
-			{"agricultural-science-pack",20},
+			{"agricultural-science-pack",cogitorScienceCost},
 			{pre .. "alien-catalytic-crystal-active",1,quality_max="normal",quality_change=-4}
 		}),
 		pf.itemResultsFactory({
-			{"metallurgic-science-pack",10},
+			{"metallurgic-science-pack",cogitorScienceReturn},
 			{pre .. "alien-catalytic-crystal-dormant",1,quality_max="normal",affected_by_quality=false}
 		}),
 		10,
@@ -393,11 +404,11 @@ data:extend({
 		pre .. "metallurgic-to-electromagnetic-transmutation",
 		recipeTempIcon, -- TODO
 		pf.itemIngredientsFactory({
-			{"metallurgic-science-pack",20},
+			{"metallurgic-science-pack",cogitorScienceCost},
 			{pre .. "alien-catalytic-crystal-active",1,quality_max="normal",quality_change=-4}
 		}),
 		pf.itemResultsFactory({
-			{"electromagnetic-science-pack",10},
+			{"electromagnetic-science-pack",cogitorScienceReturn},
 			{pre .. "alien-catalytic-crystal-dormant",1,quality_max="normal",affected_by_quality=false}
 		}),
 		10,
@@ -408,11 +419,11 @@ data:extend({
 		pre .. "cryogenic-to-promethium-transmutation",
 		recipeTempIcon, -- TODO
 		pf.itemIngredientsFactory({
-			{"cryogenic-science-pack",20},
+			{"cryogenic-science-pack",cogitorScienceCost},
 			{pre .. "alien-catalytic-crystal-active",1,quality_max="normal",quality_change=-4}
 		}),
 		pf.itemResultsFactory({
-			{"promethium-science-pack",10},
+			{"promethium-science-pack",math.ceil(cogitorScienceReturn/2)},
 			{pre .. "alien-catalytic-crystal-dormant",1,quality_max="normal",affected_by_quality=false}
 		}),
 		10,
@@ -423,11 +434,11 @@ data:extend({
 		pre .. "promethium-to-cryogenic-transmutation",
 		recipeTempIcon, -- TODO
 		pf.itemIngredientsFactory({
-			{"promethium-science-pack",20},
+			{"promethium-science-pack",cogitorScienceCost},
 			{pre .. "alien-catalytic-crystal-active",1,quality_max="normal",quality_change=-4}
 		}),
 		pf.itemResultsFactory({
-			{"cryogenic-science-pack",5},
+			{"cryogenic-science-pack",cogitorScienceReturn},
 			{pre .. "alien-catalytic-crystal-dormant",1,quality_max="normal",affected_by_quality=false}
 		}),
 		10,
