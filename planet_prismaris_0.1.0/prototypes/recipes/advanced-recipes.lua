@@ -1,6 +1,7 @@
-local saIcons = "__space-age__/graphics/icons/" -- for temporary use
-local baseIcons = "__base__/graphics/icons/" -- for temporary use
+local saIcons = "__space-age__/graphics/icons/"
+local baseIcons = "__base__/graphics/icons/"
 local recipeTempIcon = prismarisConstants.iconsPath .. "recipe-temp.png"
+local prisIcons = prismarisConstants.iconsPath -- The REAL icons. Anything using this is semi-final art.
 
 local distort = function(fluidAmount)
 	return fluidAmount * prismarisConstants.voidFluidRatio
@@ -11,7 +12,7 @@ end
 data:extend({
 	pf.recipeFactory(
 		pre .. "flux-capacitor",
-		saIcons .. "supercapacitor.png", -- TODO: Placeholder icon
+		prisIcons .. "active-flux-capacitor.png",
 		pf.ingredientsFactory(
 			{
 				{pre .. "shattered-aethric-shard-f",1},
@@ -38,7 +39,10 @@ data:extend({
 	),
 	pf.recipeFactory(
 		pre .. "reset-flux-capacitor",
-		saIcons .. "supercapacitor.png", -- TODO: Placeholder icon
+		{
+			{icon = prisIcons .. "discharged-flux-capacitor.png"},
+			{icon = baseIcons .. "arrows/signal-clockwise-circle-arrow.png",shift = {8,8}, scale = 0.25}
+		},
 		pf.ingredientsFactory(
 			{
 				{pre .. "discharged-flux-capacitor",1},
@@ -50,16 +54,16 @@ data:extend({
 		),
 		pf.resultsFactory(
 			{
-				{pre .. "charging-flux-capacitor",1, always_fresh = true,ip = .75},
-				{pre .. "raw-entropic-dust-negative",1,ip=.1}
+				{pre .. "charging-flux-capacitor",1, always_fresh = true,ip = .75,ignored_by_productivity = 1},
+				{pre .. "raw-entropic-dust-negative",1,ip=.1,ignored_by_productivity =1 }
 			},
 			{
-				{pre .. "distorted-void-essence",distort(100)}
+				{pre .. "distorted-void-essence",distort(100),ignored_by_productivity = distort(100)}
 			}
 		),
 		10,
-		{"chemistry","cryogenics"},
-		keyMerge(nil,{keys.standard,keys.prismarisOnly,keys.technical,keys.productivity})
+		{"crafting-with-fluid","electromagnetics"},
+		keyMerge(nil,{keys.standard,keys.prismarisOnly,keys.technical})
 	)
 })
 
@@ -248,7 +252,7 @@ data:extend({
 		),
 		30,
 		{"crafting-with-fluid","electromagnetics"},
-		keyMerge("y[cogitor]",{{enabled=false},keys.prismarisOnly,keys.subgroup("prismaris-cogitor")})
+		keyMerge("y[cogitor]",{{enabled=false},keys.prismarisOnly,keys.subgroup("prismaris-cogitor"),{main_product = pre .. "cogitor"}})
 	),
 	pf.recipeFactory(
 		pre .. "automation-to-logistic-transmutation",
