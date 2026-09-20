@@ -135,21 +135,6 @@ require("prototypes.tile.tiles")
 PlanetsLib.relax_surface_conditions(data.raw.recipe["lightning-collector"], {property = "magnetic-field", min = 93})
 PlanetsLib.relax_surface_conditions(data.raw.recipe["lightning-rod"], {property = "magnetic-field", min = 93})
 
--- Insert science packs
-for _,lab in pairs(data.raw["lab"]) do -- examine labs
-	i = -1
-	for index,pack in ipairs(lab.inputs) do
-		if pack == "agricultural-science-pack" then -- check if the lab contains the agricultural science pack and (and thus probably isn't some modded lab with narrow functions); if so, get the pack index
-			i = index
-		end
-	end
-	if i > -1 then -- Insert the packs at the next three available indexes.
-		table.insert(lab.inputs,i+1,pre .. "red-polyphasic-science-pack")
-		table.insert(lab.inputs,i+2,pre .. "blue-polyphasic-science-pack")
-		table.insert(lab.inputs,i+3,pre .. "green-polyphasic-science-pack")
-	end
-end
-
 
 -- Inserts "Acceleration/Reverse/Stasis Chronocycling" categories into factoriopedia as recycling alternatives
 table.insert(data.raw["utility-constants"].default.factoriopedia_recycling_recipe_categories, pre .. "acceleration-chronocycling")
