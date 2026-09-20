@@ -101,7 +101,8 @@ data:extend({
 			"aethric-cultivation"
 		},
 		{
-			pre .. "aethric-soil",
+			-- Cutting out aethric soil since it's now a part of Prismaris's natural terrain generation.
+			-- pre .. "aethric-soil",
 			pre .. "destabilized-aethric-shard-a",
 			pre .. "destabilized-aethric-shard-b",
 			pre .. "destabilized-aethric-shard-c",
@@ -323,6 +324,31 @@ data:extend({
 		},
 		{
 			pre .. "lunar-panel"
+		}
+	),
+	pf.technologyFactory(
+		"thermal-flux",
+		techPlaceholder,
+		false,
+		pf.unlockUnitHelper(
+			1000,
+			{
+				"automation-science-pack",
+				"logistic-science-pack",
+				"chemical-science-pack",
+				"production-science-pack",
+				"utility-science-pack",
+				"space-science-pack",
+				pre .. "green-polyphasic-science-pack",
+			},
+			60
+		),
+		{
+			"green-polyphasic-science-pack"
+		},
+		{
+			pre .. "thermal-flux-furnace",
+			pre .. "electric-heater"
 		}
 	),
 	pf.technologyFactory( -- chronocycler-core

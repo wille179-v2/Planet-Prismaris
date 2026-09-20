@@ -22,6 +22,13 @@ data:extend({
 	},
 	{
 		type = "bool-setting",
+		name = "prismaris-easy-labs-ignore-spoil-percent",
+		setting_type = "startup",
+		default_value = true,
+		order = "a[science]-d[spoil]"
+	},
+	{
+		type = "bool-setting",
 		name = "prismaris-lightning-targets-robots",
 		setting_type = "startup",
 		default_value = true,

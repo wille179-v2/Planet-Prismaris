@@ -300,15 +300,15 @@ tiles = {
 		landing_steps_sound = tile_sounds.landing.semi_wet,
 		build_sound = base_tile_sounds.building.landfill,
 		map_color={185, 5, 166},
-		scorch_mark_color = {r = 0.329, g = 0.242*2, b = 0.177, a = 1.000},
-		minable = {
-			mining_time = 0.5,
-			result = pre .. "aethric-soil"
-		},
-		placeable_by = {
-			item = pre .. "aethric-soil",
-			count = 1
-		}
+		scorch_mark_color = {rq = 0.329, g = 0.242*2, b = 0.177, a = 1.000},
+		-- minable = {
+			-- mining_time = 0.5,
+			-- result = pre .. "aethric-soil"
+		-- },
+		-- placeable_by = {
+			-- item = pre .. "aethric-soil",
+			-- count = 1
+		-- }
 
 	}
 }

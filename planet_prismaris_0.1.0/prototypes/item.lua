@@ -4,6 +4,7 @@ local pre = prismarisConstants.prototypePrefix
 local saIcons = "__space-age__/graphics/icons/" -- for temporary use
 local baseIcons = "__base__/graphics/icons/" -- for temporary use
 local recyclerIcons = "__recycler__/graphics/icons/"
+local prisIcons = prismarisConstants.iconsPath -- The REAL icons. Anything using this is semi-final art.
 local slow = prismarisConstants.slowSpoilTime
 local medium = prismarisConstants.mediumSpoilTime
 local fast = prismarisConstants.fastSpoilTime
@@ -23,7 +24,7 @@ data:extend({
 	pf.itemFactory(
 		pre .. "prismatic-shard",
 		100,
-		saIcons .. "calcite.png", -- TODO: Placeholder
+		prisIcons .. "prismatic-shard.png",
 		"prismaris-processes-prismatic",
 		{},
 		{order = "a[prismatic-shard]"}
@@ -32,7 +33,7 @@ data:extend({
 	pf.itemFactory(
 		pre .. "activated-prismatic-shard-r",
 		100,
-		saIcons .. "big-promethium-asteroid.png",-- TODO: Placeholder
+		prisIcons .. "activated-shard-r-1.png",
 		"prismaris-processes-prismatic",
 		{
 			spoilage = pf.spoilageHelper(
@@ -40,12 +41,20 @@ data:extend({
 				medium
 			)
 		},
-		keyMerge("b[activated-shard]-a[rgbw]",{keys.factoriopediaLocale(pre .. "activated-prismatic-shard-r")})
+		keyMerge("b[activated-shard]-a[rgbw]",{
+			keys.factoriopediaLocale(pre .. "activated-prismatic-shard-r"),
+			keys.altItemGraphics({
+				prisIcons .. "activated-shard-r-1.png",
+				prisIcons .. "activated-shard-r-2.png",
+				prisIcons .. "activated-shard-r-3.png",
+				prisIcons .. "activated-shard-r-4.png",
+			})
+		})
 	),
 	pf.itemFactory(
 		pre .. "activated-prismatic-shard-g",
 		100,
-		saIcons .. "big-carbonic-asteroid.png",-- TODO: Placeholder
+		prisIcons .. "activated-shard-g-1.png",
 		"prismaris-processes-prismatic",
 		{
 			spoilage = pf.spoilageHelper(
@@ -53,12 +62,20 @@ data:extend({
 				medium
 			)
 		},
-		keyMerge("b[activated-shard]-a[rgbw]",{keys.factoriopediaLocale(pre .. "activated-prismatic-shard-g")})
+		keyMerge("b[activated-shard]-a[rgbw]",{
+			keys.factoriopediaLocale(pre .. "activated-prismatic-shard-g"),
+			keys.altItemGraphics({
+				prisIcons .. "activated-shard-g-1.png",
+				prisIcons .. "activated-shard-g-2.png",
+				prisIcons .. "activated-shard-g-3.png",
+				prisIcons .. "activated-shard-g-4.png",
+			})
+		})
 	),
 	pf.itemFactory(
 		pre .. "activated-prismatic-shard-b",
 		100,
-		saIcons .. "big-oxide-asteroid.png",-- TODO: Placeholder
+		prisIcons .. "activated-shard-b-1.png",
 		"prismaris-processes-prismatic",
 		{
 			spoilage = pf.spoilageHelper(
@@ -66,12 +83,20 @@ data:extend({
 				medium
 			)
 		},
-		keyMerge("b[activated-shard]-a[rgbw]",{keys.factoriopediaLocale(pre .. "activated-prismatic-shard-b")})
+		keyMerge("b[activated-shard]-a[rgbw]",{
+			keys.factoriopediaLocale(pre .. "activated-prismatic-shard-b"),
+			keys.altItemGraphics({
+				prisIcons .. "activated-shard-b-1.png",
+				prisIcons .. "activated-shard-b-2.png",
+				prisIcons .. "activated-shard-b-3.png",
+				prisIcons .. "activated-shard-b-4.png",
+			})
+		})
 	),
 	pf.itemFactory(
 		pre .. "activated-prismatic-shard-w",
 		100,
-		saIcons .. "ice.png",-- TODO: Placeholder
+		prisIcons .. "activated-shard-w-1.png",
 		"prismaris-processes-prismatic",
 		{
 			spoilage = pf.spoilageHelper(
@@ -79,12 +104,20 @@ data:extend({
 				slow
 			)
 		},
-		keyMerge("b[activated-shard]-a[rgbw]",{keys.factoriopediaLocale(pre .. "activated-prismatic-shard-w")})
+		keyMerge("b[activated-shard]-a[rgbw]",{
+			keys.factoriopediaLocale(pre .. "activated-prismatic-shard-w"),
+			keys.altItemGraphics({
+				prisIcons .. "activated-shard-w-1.png",
+				prisIcons .. "activated-shard-w-2.png",
+				prisIcons .. "activated-shard-w-3.png",
+				prisIcons .. "activated-shard-w-4.png",
+			})
+		})
 	),
 	pf.itemFactory(
 		pre .. "activated-prismatic-shard-c",
 		100,
-		saIcons .. "cryogenic-science-pack.png",-- TODO: Placeholder
+		prisIcons .. "activated-shard-c-1.png",
 		"prismaris-processes-prismatic",
 		{
 			spoilage = pf.spoilageHelper(
@@ -92,12 +125,20 @@ data:extend({
 				medium
 			)
 		},
-		keyMerge("b[activated-shard]-b[cmyk]",{keys.factoriopediaLocale(pre .. "activated-prismatic-shard-c")})
+		keyMerge("b[activated-shard]-b[cmyk]",{
+			keys.factoriopediaLocale(pre .. "activated-prismatic-shard-c"),
+			keys.altItemGraphics({
+				prisIcons .. "activated-shard-c-1.png",
+				prisIcons .. "activated-shard-c-2.png",
+				prisIcons .. "activated-shard-c-3.png",
+				prisIcons .. "activated-shard-c-4.png",
+			})
+		})
 	),
 	pf.itemFactory(
 		pre .. "activated-prismatic-shard-m",
 		100,
-		saIcons .. "electromagnetic-science-pack.png",-- TODO: Placeholder
+		prisIcons .. "activated-shard-m-1.png",
 		"prismaris-processes-prismatic",
 		{
 			spoilage = pf.spoilageHelper(
@@ -105,12 +146,20 @@ data:extend({
 				medium
 			)
 		},
-		keyMerge("b[activated-shard]-b[cmyk]",{keys.factoriopediaLocale(pre .. "activated-prismatic-shard-m")})
+		keyMerge("b[activated-shard]-b[cmyk]",{
+			keys.factoriopediaLocale(pre .. "activated-prismatic-shard-m"),
+			keys.altItemGraphics({
+				prisIcons .. "activated-shard-m-1.png",
+				prisIcons .. "activated-shard-m-2.png",
+				prisIcons .. "activated-shard-m-3.png",
+				prisIcons .. "activated-shard-m-4.png",
+			})
+		})
 	),
 	pf.itemFactory(
 		pre .. "activated-prismatic-shard-y",
 		100,
-		saIcons .. "biosulfur.png",-- TODO: Placeholder
+		prisIcons .. "activated-shard-y-1.png",
 		"prismaris-processes-prismatic",
 		{
 			spoilage = pf.spoilageHelper(
@@ -118,12 +167,20 @@ data:extend({
 				medium
 			)
 		},
-		keyMerge("b[activated-shard]-b[cmyk]",{keys.factoriopediaLocale(pre .. "activated-prismatic-shard-y")})
+		keyMerge("b[activated-shard]-b[cmyk]",{
+			keys.factoriopediaLocale(pre .. "activated-prismatic-shard-y"),
+			keys.altItemGraphics({
+				prisIcons .. "activated-shard-y-1.png",
+				prisIcons .. "activated-shard-y-2.png",
+				prisIcons .. "activated-shard-y-3.png",
+				prisIcons .. "activated-shard-y-4.png",
+			})
+		})
 	),
 	pf.itemFactory(
 		pre .. "activated-prismatic-shard-k",
 		100,
-		saIcons .. "carbon.png",-- TODO: Placeholder
+		prisIcons .. "activated-shard-k-1.png",
 		"prismaris-processes-prismatic",
 		{
 			spoilage = pf.spoilageHelper(
@@ -131,7 +188,15 @@ data:extend({
 				slow
 			)
 		},
-		keyMerge("b[activated-shard]-b[cmyk]",{keys.factoriopediaLocale(pre .. "activated-prismatic-shard-k")})
+		keyMerge("b[activated-shard]-b[cmyk]",{
+			keys.factoriopediaLocale(pre .. "activated-prismatic-shard-k"),
+			keys.altItemGraphics({
+				prisIcons .. "activated-shard-k-1.png",
+				prisIcons .. "activated-shard-k-2.png",
+				prisIcons .. "activated-shard-k-3.png",
+				prisIcons .. "activated-shard-k-4.png",
+			})
+		})
 	),
 	pf.itemFactory(
 		pre .. "ferric-shard",
@@ -165,7 +230,7 @@ data:extend({
 	pf.itemFactory(
 		pre .. "aethric-shard",
 		100,
-		baseIcons .. "uranium-238.png", --TODO: Placeholder
+		prisIcons .. "aethric-shard.png",
 		"prismaris-processes-aethric",
 		{},
 		{order = "a[raw-resource]"}
@@ -173,7 +238,7 @@ data:extend({
 	pf.itemFactory(
 		pre .. "shattered-aethric-shard-a",
 		100,
-		baseIcons .. "depleted-uranium-fuel-cell.png", --TODO: Placeholder
+		prisIcons .. "shattered-aethric-shard-a-e.png",
 		"prismaris-processes-aethric",
 		{
 			spoilage = pf.spoilageHelper(
@@ -189,7 +254,7 @@ data:extend({
 	pf.itemFactory(
 		pre .. "shattered-aethric-shard-b",
 		100,
-		baseIcons .. "depleted-uranium-fuel-cell.png", --TODO: Placeholder
+		prisIcons .. "shattered-aethric-shard-a-e.png",
 		"prismaris-processes-aethric",
 		{
 			spoilage = pf.spoilageHelper(
@@ -205,7 +270,7 @@ data:extend({
 	pf.itemFactory(
 		pre .. "shattered-aethric-shard-c",
 		100,
-		baseIcons .. "depleted-uranium-fuel-cell.png", --TODO: Placeholder
+		prisIcons .. "shattered-aethric-shard-a-e.png",
 		"prismaris-processes-aethric",
 		{
 			spoilage = pf.spoilageHelper(
@@ -221,7 +286,7 @@ data:extend({
 	pf.itemFactory(
 		pre .. "shattered-aethric-shard-d",
 		100,
-		baseIcons .. "depleted-uranium-fuel-cell.png", --TODO: Placeholder
+		prisIcons .. "shattered-aethric-shard-a-e.png",
 		"prismaris-processes-aethric",
 		{
 			spoilage = pf.spoilageHelper(
@@ -237,7 +302,7 @@ data:extend({
 	pf.itemFactory(
 		pre .. "shattered-aethric-shard-e",
 		100,
-		baseIcons .. "depleted-uranium-fuel-cell.png", --TODO: Placeholder
+		prisIcons .. "shattered-aethric-shard-a-e.png",
 		"prismaris-processes-aethric",
 		{
 			spoilage = pf.spoilageHelper(
@@ -250,7 +315,7 @@ data:extend({
 	pf.itemFactory(
 		pre .. "shattered-aethric-shard-f",
 		100,
-		baseIcons .. "uranium-fuel-cell.png", --TODO: Placeholder
+		{{icon = prisIcons .. "shattered-aethric-shard-a-e.png", tint = {.8,1,1}}},
 		"prismaris-processes-aethric",
 		{
 			spoilage = pf.spoilageHelper(
@@ -267,8 +332,8 @@ data:extend({
 
 	pf.itemFactory(
 		pre .. "destabilized-aethric-shard-a",
-		100,
-		saIcons .. "coal-synthesis.png", --TODO: Placeholder
+		50,
+		prisIcons .. "destabilized-aethric-shard.png",
 		"prismaris-processes-aethric",
 		{
 			spoilage = pf.spoilageHelper(
@@ -280,8 +345,8 @@ data:extend({
 	),
 	pf.itemFactory(
 		pre .. "destabilized-aethric-shard-b",
-		100,
-		saIcons .. "coal-synthesis.png", --TODO: Placeholder
+		50,
+		prisIcons .. "destabilized-aethric-shard.png",
 		"prismaris-processes-aethric",
 		{
 			spoilage = pf.spoilageHelper(
@@ -293,8 +358,8 @@ data:extend({
 	),
 	pf.itemFactory(
 		pre .. "destabilized-aethric-shard-c",
-		100,
-		saIcons .. "coal-synthesis.png", --TODO: Placeholder
+		50,
+		prisIcons .. "destabilized-aethric-shard.png",
 		"prismaris-processes-aethric",
 		{
 			spoilage = pf.spoilageHelper(
@@ -306,8 +371,8 @@ data:extend({
 	),
 	pf.itemFactory(
 		pre .. "destabilized-aethric-shard-d",
-		100,
-		saIcons .. "coal-synthesis.png", --TODO: Placeholder
+		50,
+		prisIcons .. "destabilized-aethric-shard.png",
 		"prismaris-processes-aethric",
 		{
 			spoilage = pf.spoilageHelper(
@@ -319,26 +384,26 @@ data:extend({
 	),
 	pf.itemFactory(
 		pre .. "destabilized-aethric-shard-e",
-		100,
-		saIcons .. "coal-synthesis.png", --TODO: Placeholder
+		50,
+		prisIcons .. "destabilized-aethric-shard.png",
 		"prismaris-processes-aethric",
 		{
 			spoilage = pf.spoilageHelper(
 				"jelly",
-				slow
+				medium
 			)
 		},
 		{order = "c[destabilized-shard]"}
 	),
 	pf.itemFactory(
 		pre .. "destabilized-aethric-shard-f",
-		100,
-		saIcons .. "coal-synthesis.png", --TODO: Placeholder
+		50,
+		prisIcons .. "destabilized-aethric-shard.png",
 		"prismaris-processes-aethric",
 		{
 			spoilage = pf.spoilageHelper(
 				"yumako-mash",
-				slow
+				medium
 			)
 		},
 		{order = "c[destabilized-shard]"}
@@ -369,14 +434,15 @@ aethricSoil.place_as_tile = {
 	invert = false, -- Inverts collision layers into "required" layers instead of excluded... probably don't bother with this
 	tile_condition = tileList -- list of tiles that are allowed to place on
 }
-data:extend({aethricSoil})
+
+-- data:extend({aethricSoil})
 
 -- Entropic Dust Cycles
 data:extend({
 	pf.itemFactory(
 		pre .. "raw-entropic-dust-positive",
 		200,
-		saIcons .. "iron-stromatolite.png", -- TODO: Placeholder
+		prisIcons .. "raw-entropic-dust-pos-1.png",
 		"prismaris-processes-entropic",
 		{
 			spoilage = pf.spoilageHelper(
@@ -384,12 +450,18 @@ data:extend({
 				fast
 			),
 		},
-		{order = "a[raw]-a[positive]"}
+		keyMerge("a[raw]-a[positive]",{
+			keys.altItemGraphics({
+				prisIcons .. "raw-entropic-dust-pos-1.png",
+				prisIcons .. "raw-entropic-dust-pos-2.png",
+				prisIcons .. "raw-entropic-dust-pos-3.png"
+			})
+		})
 	),
 	pf.itemFactory(
 		pre .. "raw-entropic-dust-negative",
 		200,
-		saIcons .. "medium-demolisher-remains.png", -- TODO: Placeholder
+		prisIcons .. "raw-entropic-dust-neg-1.png",
 		"prismaris-processes-entropic",
 		{
 			spoilage = pf.spoilageHelper(
@@ -397,12 +469,18 @@ data:extend({
 				fast
 			)
 		},
-		{order = "a[raw]-b[negative]"}
+		keyMerge("a[raw]-b[negative]",{
+			keys.altItemGraphics({
+				prisIcons .. "raw-entropic-dust-neg-1.png",
+				prisIcons .. "raw-entropic-dust-neg-2.png",
+				prisIcons .. "raw-entropic-dust-neg-3.png"
+			})
+		})
 	),
 	pf.itemFactory(
 		pre .. "refined-entropic-dust-positive",
 		200,
-		saIcons .. "iron-stromatolite.png", -- TODO: Placeholder
+		prisIcons .. "refined-entropic-dust-pos-1.png",
 		"prismaris-processes-entropic",
 		{
 			spoilage = pf.spoilageHelper(
@@ -418,12 +496,18 @@ data:extend({
 				}
 			)
 		},
-		{order = "b[refined]-a[positive]"}
+		keyMerge("b[refined]-a[positive]",{
+			keys.altItemGraphics({
+				prisIcons .. "refined-entropic-dust-pos-1.png",
+				prisIcons .. "refined-entropic-dust-pos-2.png",
+				prisIcons .. "refined-entropic-dust-pos-3.png"
+			})
+		})
 	),
 	pf.itemFactory(
 		pre .. "refined-entropic-dust-negative",
 		200,
-		saIcons .. "medium-demolisher-remains.png", -- TODO: Placeholder
+		prisIcons .. "refined-entropic-dust-neg-1.png",
 		"prismaris-processes-entropic",
 		{
 			spoilage = pf.spoilageHelper(
@@ -431,12 +515,18 @@ data:extend({
 				slow
 			)
 		},
-		{order = "b[refined]-b[negative]"}
+		keyMerge("b[refined]-b[negative]",{
+			keys.altItemGraphics({
+				prisIcons .. "refined-entropic-dust-neg-1.png",
+				prisIcons .. "refined-entropic-dust-neg-2.png",
+				prisIcons .. "refined-entropic-dust-neg-3.png"
+			})
+		})
 	),
 	pf.itemFactory(
 		pre .. "entropic-nutrients",
 		100,
-		saIcons .. "nutrients.png", -- TODO: Placeholder
+		prisIcons .. "entropic-nutrients.png",
 		"prismaris-processes-entropic",
 		{
 			spoilage = pf.spoilageHelper(
@@ -461,7 +551,7 @@ data:extend({
 	pf.itemFactory(
 		pre .. "charging-flux-capacitor",
 		50,
-		saIcons .. "supercapacitor.png", -- TODO: Placeholder
+		prisIcons .. "charging-flux-capacitor.png",
 		"prismaris-processes-technical",
 		{
 			spoilage = pf.spoilageHelper(
@@ -474,7 +564,7 @@ data:extend({
 	pf.itemFactory(
 		pre .. "active-flux-capacitor",
 		50,
-		saIcons .. "supercapacitor.png", -- TODO: Placeholder
+		prisIcons .. "active-flux-capacitor.png",
 		"prismaris-processes-technical",
 		{
 			spoilage = pf.spoilageHelper(
@@ -487,7 +577,7 @@ data:extend({
 	pf.itemFactory(
 		pre .. "discharged-flux-capacitor",
 		50,
-		saIcons .. "supercapacitor.png", -- TODO: Placeholder
+		prisIcons .. "discharged-flux-capacitor.png",
 		"prismaris-processes-technical",
 		{},
 		keyMerge("a[flux-capacitor]-c[discharged]",{keys.accelerationLossExempt})
@@ -629,7 +719,7 @@ data:extend({
 				60 * 60
 			)
 		},
-		keyMerge("i-a",{keys.accelerationLossExempt})
+		keyMerge("i-a",{keys.accelerationLossExempt,keys.science})
 	),
 	pf.itemFactory(
 		pre .. "blue-polyphasic-science-pack",
@@ -642,7 +732,7 @@ data:extend({
 				60 * 60
 			)
 		},
-		keyMerge("i-b",{keys.accelerationLossExempt})
+		keyMerge("i-b",{keys.accelerationLossExempt,keys.science})
 	),
 	pf.itemFactory(
 		pre .. "green-polyphasic-science-pack",
@@ -655,7 +745,7 @@ data:extend({
 				60 * 60
 			)
 		},
-		keyMerge("i-c",{keys.accelerationLossExempt})
+		keyMerge("i-c",{keys.accelerationLossExempt,keys.science})
 	),
 })
 
@@ -672,8 +762,35 @@ data:extend({
 				pre .. "crystal-separator"
 			)
 		},
-		{order = "e[crystal-separator]"}
+		{order = "e[crystal-separator]-a[basic]"}
+	),
+	pf.itemFactory(
+		pre .. "thermal-flux-furnace",
+		50,
+		baseIcons .. "electric-furnace.png", -- TODO: placeholder
+		"smelting-machine",
+		{
+			placement = pf.placementHelper(
+				"building",
+				pre .. "thermal-flux-furnace"
+			)
+		},
+		{order = "e[crystal-separator]-b[flux]"}
+	),
+	pf.itemFactory(
+		pre .. "electric-heater",
+		20,
+		saIcons .. "heating-tower.png", -- TODO: placeholder
+		"energy",
+		{
+			placement = pf.placementHelper(
+				"building",
+				pre .. "electric-heater"
+			)
+		},
+		{order = "f[nuclear-energy]-e[electric-heater]"}
 	)
+
 })
 
 -- Chronocycler Variants

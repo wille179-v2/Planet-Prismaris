@@ -62,6 +62,7 @@ keys = {
 	end,
 	science = {
 		subgroup = "science-pack",
+		lab_ignores_spoil_percent = settings.startup["prismaris-easy-labs-ignore-spoil-percent"].value
 		--allow_productivity = true
 	},
 	cogitorProcessing = {
@@ -82,7 +83,21 @@ keys = {
 	end,
 	mainProduct = function(name)
 		return {main_product = name}
-	end
+	end,
+	altItemGraphics = function(filenameList, mips)
+		local pics = {}
+		for _,path in ipairs(filenameList or {}) do
+			table.insert(pics, {
+				size = 64,
+				filename = path,
+				scale = 0.5,
+				mipmap_count = mips or 0
+			})
+		end
+		return {
+			pictures = pics
+		}
+	end,
 }
 
 pre = prismarisConstants.prototypePrefix

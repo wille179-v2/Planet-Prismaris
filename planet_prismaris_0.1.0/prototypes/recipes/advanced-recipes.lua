@@ -158,10 +158,11 @@ data:extend({
 			{"logistic-science-pack",100},
 			{"military-science-pack",100},
 			{"chemical-science-pack",100},
-			{pre .. "active-flux-capacitor",1}
+			{pre .. "active-flux-capacitor",1, ignored_by_stats = 1}
 		}),
 		pf.itemResultsFactory({
-			{pre .. "basic-catalytic-crystal-dormant",1,always_fresh = true}
+			{pre .. "basic-catalytic-crystal-dormant",1,always_fresh = true},
+			{pre .. "discharged-flux-capacitor",1, ip = 0.95, ignored_by_stats = 1}
 		}),
 		30,
 		{"advanced-crafting"},
@@ -174,10 +175,11 @@ data:extend({
 			{"production-science-pack",100},
 			{"utility-science-pack",100},
 			{"space-science-pack",100},
-			{pre .. "active-flux-capacitor",1}
+			{pre .. "active-flux-capacitor",1, ignored_by_stats = 1}
 		}),
 		pf.itemResultsFactory({
-			{pre .. "advanced-catalytic-crystal-dormant",1,always_fresh = true}
+			{pre .. "advanced-catalytic-crystal-dormant",1,always_fresh = true},
+			{pre .. "discharged-flux-capacitor",1, ip = 0.90, ignored_by_stats = 1}
 		}),
 		30,
 		{"advanced-crafting"},
@@ -190,10 +192,11 @@ data:extend({
 			{"metallurgic-science-pack",100},
 			{"electromagnetic-science-pack",100},
 			{"agricultural-science-pack",100},
-			{pre .. "active-flux-capacitor",1}
+			{pre .. "active-flux-capacitor",1, ignored_by_stats = 1}
 		}),
 		pf.itemResultsFactory({
-			{pre .. "alien-catalytic-crystal-dormant",1,always_fresh = true}
+			{pre .. "alien-catalytic-crystal-dormant",1,always_fresh = true},
+			{pre .. "discharged-flux-capacitor",1, ip = 0.85, ignored_by_stats = 1}
 		}),
 		30,
 		{"advanced-crafting"},
@@ -205,10 +208,11 @@ data:extend({
 		pf.itemIngredientsFactory({
 			{"cryogenic-science-pack",100},
 			{"promethium-science-pack",100},
-			{pre .. "active-flux-capacitor",1}
+			{pre .. "active-flux-capacitor",1, ignored_by_stats = 1}
 		}),
 		pf.itemResultsFactory({
-			{pre .. "promethium-catalytic-crystal-dormant",1,always_fresh = true}
+			{pre .. "promethium-catalytic-crystal-dormant",1,always_fresh = true},
+			{pre .. "discharged-flux-capacitor",1, ip = 0.80, ignored_by_stats = 1}
 		}),
 		30,
 		{"advanced-crafting"},
@@ -445,7 +449,39 @@ data:extend({
 		}),
 		0.5,
 		{"crafting"},
-		keyMerge("e[crystal-separator]",{keys.standard,keys.smelting})
+		keyMerge("e[crystal-separator]-a[basic]",{keys.standard,keys.smelting})
+	),
+	pf.recipeFactory(
+		pre .. "thermal-flux-furnace",
+		recipeTempIcon,  --TODO: placeholder icon
+		pf.itemIngredientsFactory({
+			{"electric-furnace",1},
+			{pre .. "active-flux-capacitor",1},
+			{"heat-pipe",4}
+		}),
+		pf.itemResultsFactory({
+			{pre .. "thermal-flux-furnace",1},
+			{"advanced-circuit",1,ip = 0.5}
+		}),
+		8,
+		{"advanced-crafting"},
+		keyMerge("e[crystal-separator]-b[flux]",{keys.standard,keys.smelting})
+	),
+	pf.recipeFactory(
+		pre .. "electric-heater",
+		recipeTempIcon,  --TODO: placeholder icon
+		pf.itemIngredientsFactory({
+			{"heating-tower"},
+			{pre .. "active-flux-capacitor",1},
+			{"advanced-circuit",1}
+		}),
+		pf.itemResultsFactory({
+			{pre .. "electric-heater",1},
+			{"heat-pipe",1,ip = 0.5}
+		}),
+		8,
+		{"advanced-crafting"},
+		keyMerge("f[nuclear-energy]-e[electric-heater]",{keys.standard,keys.subgroup("energy")})
 	)
 })
 

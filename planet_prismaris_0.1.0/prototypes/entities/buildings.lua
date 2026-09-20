@@ -49,11 +49,15 @@ fluidboxes =  {
 	},
 }
 
+
+
+local separatorInventorySize = 8
+
 --Crystal Separator
 -- Temporarily using a copy of the stone furnace
 local crystalSeparator = table.deepcopy(data.raw['furnace']['stone-furnace'])
 crystalSeparator.name = pre .. "crystal-separator"
-crystalSeparator.result_inventory_size = 8
+crystalSeparator.result_inventory_size = separatorInventorySize
 crystalSeparator.crafting_categories = {pre .. "crystal-separation"}
 crystalSeparator.energy_usage = "180kW"
 crystalSeparator.energy_source = {
@@ -70,15 +74,80 @@ crystalSeparator.allowed_module_categories = nil
 crystalSeparator.allowed_effects = {"speed","productivity","consumption","pollution","quality"}
 crystalSeparator.effect_receiver.uses_module_effects = true
 crystalSeparator.effect_receiver.uses_beacon_effects = true
+crystalSeparator.heating_energy = "100kW"
+
+local thermalSeparator = table.deepcopy(data.raw['furnace']['electric-furnace'])
+thermalSeparator.name = pre .. "thermal-flux-furnace"
+thermalSeparator.result_inventory_size = separatorInventorySize
+thermalSeparator.crafting_categories = {pre .. "crystal-separation", pre .. "thermal-cracking","smelting"}
+thermalSeparator.effect_receiver = {
+	base_effect = {
+		productivity = 0.25
+	}
+}
+thermalSeparator.energy_usage = "220kW"
+thermalSeparator.energy_source = {
+	type = "heat",
+	emissions_per_minute = { pollution = 1 },
+	max_temperature = 1000,
+	max_transfer = "2GW",
+	min_working_temperature = 350,
+	minimum_glow_temperature = 350,
+	specific_heat = "500kJ",
+	connections = {
+		{
+			position = {0,-1},
+			direction = defines.direction.north
+		},
+		{
+			position = {1,0},
+			direction = defines.direction.east
+		},
+		{
+			position = {0,1},
+			direction = defines.direction.south
+		},
+		{
+			position = {-1,0},
+			direction = defines.direction.west
+		},
+	},
+	heat_pipe_covers = table.deepcopy(data.raw["heat-pipe"]["heat-pipe"].heat_buffer.heat_pipe_covers),
+	heat_picture = table.deepcopy(data.raw["heat-pipe"]["heat-pipe"].heat_buffer.heat_picture)
+}
+thermalSeparator.minable.results = nil
+thermalSeparator.minable.result = pre .. "thermal-flux-furnace"
+thermalSeparator.minable.mining_time = 1
+thermalSeparator.crafting_speed = 3
+thermalSeparator.module_slots = 6
+thermalSeparator.allowed_module_categories = nil
+thermalSeparator.allowed_effects = {"speed","productivity","consumption","pollution","quality"}
+thermalSeparator.heating_energy = nil
 
 
+local electricHeater = table.deepcopy(data.raw['reactor']['heating-tower'])
+electricHeater.name = pre .. "electric-heater"
+electricHeater.heating_radius = 5
+electricHeater.energy_source = {
+	type = "electric",
+	usage_priority = "primary-input", -- for use on Aquillo, so power fluctuations don't also cause freezes
+	
+}
+electricHeater.consumption = "10MW"
+electricHeater.scale_energy_usage = true
+electricHeater.heat_buffer.max_temperature = 500
+electricHeater.heat_buffer.specific_heat = "1MJ"
 
 local crystalSeparationCategory = {
 	type = "recipe-category",
 	name = pre .. "crystal-separation"
 }
 
-data:extend({crystalSeparator,crystalSeparationCategory})
+local thermalCrackingCategory = {
+	type = "recipe-category",
+	name = pre .. "thermal-cracking"
+}
+data:extend({crystalSeparator,thermalSeparator,electricHeater,crystalSeparationCategory,thermalCrackingCategory})
 
 
 --Reverse Chronocycler, temporarily using a copy of the recycler

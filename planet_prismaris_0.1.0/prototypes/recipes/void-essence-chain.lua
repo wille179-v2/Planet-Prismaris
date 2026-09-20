@@ -2,7 +2,7 @@ local saIcons = "__space-age__/graphics/icons/" -- for temporary use
 local baseIcons = "__base__/graphics/icons/" -- for temporary use
 local recipeTempIcon = prismarisConstants.iconsPath .. "recipe-temp.png"
 
-local stabilizeConcentrateRatio = 4/3
+local stabilizeConcentrateRatio = 5/4
 local bulkVolume = 200
 local recipeTime = 10
 
@@ -34,7 +34,7 @@ data:extend({
 			},
 			{
 				{pre .. "distorted-void-essence",stabilizeConcentrateRatio * bulkVolume},
-				{"water",15}
+				{"water",25}
 			}
 		),
 		pf.resultsFactory(

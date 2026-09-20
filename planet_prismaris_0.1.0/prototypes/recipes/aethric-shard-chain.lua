@@ -45,6 +45,7 @@ data:extend({
 		{pre .. "crystal-separation","hand-crafting"},
 		keyMerge("a[aethric-shard]-b[separation]",{keys.standard,keys.productivity,keys.aethric,keys.prismarisOnly})
 	),
+	--[[
 	pf.recipeFactory(
 		pre .. "aethric-soil",
 		recipeTempIcon, --TODO: Placeholder icons
@@ -64,6 +65,7 @@ data:extend({
 		{"crafting-with-fluid"},
 		keyMerge("d[aethric-soil]",{{subgroup = "terrain"},keys.prismarisOnly,keys.standard})
 	)
+	]]
 })
 
 local destabilizedVariantPairs = {
