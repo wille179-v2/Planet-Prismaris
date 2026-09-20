@@ -69,7 +69,7 @@ data:extend({
 
 -- Science Pack Chain
 data:extend({
-	-- Red variant is most expensive in terms of fluid usage.
+	-- Red variant is most expensive in terms of fluid usage but has chance of bonus product.
 	pf.recipeFactory(
 		pre .. "red-polyphasic-science-pack",
 		prisIcons .. "polyphasic-science-pack-r.png",
@@ -86,7 +86,7 @@ data:extend({
 		),
 		pf.resultsFactory(
 			{
-				{pre .. "red-polyphasic-science-pack",1,always_fresh = true}
+				{pre .. "red-polyphasic-science-pack",amount_min = 1, amount_max = 2,always_fresh = true}
 			},
 			{
 				{pre .. "distorted-void-essence",distort(200)}
@@ -94,7 +94,7 @@ data:extend({
 		),
 		10,
 		{"chemistry","metallurgy"},
-		keyMerge("i-a",{keys.standard,keys.science,keys.prismarisOnly,keys.productivity})
+		keyMerge("i-a",{keys.standard,keys.science,keys.prismarisOnly,keys.productivity,{main_product = pre .. "red-polyphasic-science-pack"}})
 	),
 	-- Blue Variant is cheapest in terms of fluid usage.
 	pf.recipeFactory(
@@ -119,9 +119,9 @@ data:extend({
 				{pre .. "distorted-void-essence",distort(50)}
 			}
 		),
-		10,
+		8,
 		{"chemistry","electromagnetics"},
-		keyMerge("i-b",{keys.standard,keys.science,keys.prismarisOnly,keys.productivity})
+		keyMerge("i-b",{keys.standard,keys.science,keys.prismarisOnly,keys.productivity,{main_product = pre .. "blue-polyphasic-science-pack"}})
 	),
 	-- Green Variant has average baseline cost but is significantly faster time-wise.
 	pf.recipeFactory(
@@ -146,9 +146,9 @@ data:extend({
 				{pre .. "distorted-void-essence",distort(100)}
 			}
 		),
-		2.5,
+		2,
 		{"chemistry","organic"},
-		keyMerge("i-c",{keys.standard,keys.science,keys.prismarisOnly,keys.productivity})
+		keyMerge("i-c",{keys.standard,keys.science,keys.prismarisOnly,keys.productivity,{main_product = pre .. "green-polyphasic-science-pack"}})
 	),
 })
 
