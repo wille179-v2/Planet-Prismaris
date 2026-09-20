@@ -531,10 +531,10 @@ data:extend({
 		{
 			spoilage = pf.spoilageHelper(
 				pre .. "refined-entropic-dust-negative",
-				360
+				600
 			),
 			fuel = pf.fuelHelper(
-				"3MJ",
+				"4MJ",
 				"nutrients",
 				{
 					burnt_result = pre .. "raw-entropic-dust-negative",

@@ -34,7 +34,7 @@ data:extend({
 			},
 			{
 				{pre .. "distorted-void-essence",stabilizeConcentrateRatio * bulkVolume},
-				{"water",25}
+				{"water",50}
 			}
 		),
 		pf.resultsFactory(
