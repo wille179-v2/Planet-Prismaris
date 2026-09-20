@@ -35,7 +35,8 @@
 		{"id":"d6e0d388b7b48879","type":"text","text":"Bonus Lab Speed✔️","x":-458,"y":2240,"width":250,"height":60,"color":"#ffffff"},
 		{"id":"58ff030298cfc793","type":"text","text":"Bonus Lab Productivity✔️","x":-458,"y":2340,"width":250,"height":60,"color":"#ffffff"},
 		{"id":"91bc99c48f3e7434","type":"text","text":"Cogitor Alien Science✔️","x":-52,"y":2240,"width":250,"height":60,"color":"#ffffff"},
-		{"id":"de1eadd82702833a","type":"text","text":"Cogitor Promethium Science✔️","x":-52,"y":2370,"width":250,"height":60,"color":"#ffffff"}
+		{"id":"de1eadd82702833a","type":"text","text":"Cogitor Promethium Science✔️","x":-52,"y":2370,"width":250,"height":60,"color":"#ffffff"},
+		{"id":"e75739d8f8fa7b36","type":"text","text":"Thermal Flux Furnace & Electric Heater","x":-1480,"y":1531,"width":250,"height":60,"color":"4"}
 	],
 	"edges":[
 		{"id":"b4cf4778567d2eb8","fromNode":"3be75663cf293a16","fromSide":"bottom","toNode":"9df806ad41c0adfc","toSide":"top"},

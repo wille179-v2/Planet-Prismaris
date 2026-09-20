@@ -56,8 +56,8 @@
                   "state": {
                     "file": "Planning/Recipe Graph.canvas",
                     "viewState": {
-                      "x": 1808,
-                      "y": -804,
+                      "x": 2570,
+                      "y": -852,
                       "zoom": -1
                     }
                   },
@@ -73,8 +73,8 @@
                   "state": {
                     "file": "Planning/Tech Tree (Vanilla).canvas",
                     "viewState": {
-                      "x": -76.01116248356436,
-                      "y": 1785.7562636658936,
+                      "x": 689.9888375164356,
+                      "y": 597.7562636658936,
                       "zoom": -1
                     }
                   },
@@ -82,7 +82,8 @@
                   "title": "Tech Tree (Vanilla)"
                 }
               }
-            ]
+            ],
+            "currentTab": 1
           },
           {
             "id": "b44d8b58ca18228e",
@@ -300,15 +301,16 @@
       "bases:Create new base": false
     }
   },
-  "active": "7de92bf974b53e9f",
+  "active": "01775990aa23c390",
   "lastOpenFiles": [
+    "Art Assets/Graphics Planning.md",
     "Planning/Master List of Items, Fluids, Recipes, and Entities.md",
+    "Planning/Noise Expressions & Planet Generation.md",
     "Planning/TODO List.md",
+    "Planning/Tech Tree (Vanilla).canvas",
     "Planning/Recipe Graph.canvas",
     "Planning/Overview.md",
-    "Planning/Noise Expressions & Planet Generation.md",
     "Mod Compatibility.md",
-    "Planning/Tech Tree (Vanilla).canvas",
     "Templates/Item Template.md",
     "Templates/Prototype Template.md",
     "Welcome.md",

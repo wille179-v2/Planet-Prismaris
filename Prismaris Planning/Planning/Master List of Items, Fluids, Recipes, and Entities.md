@@ -1,7 +1,12 @@
 This list excludes world-generation-specific items like generic tiles, plants, and decorative stickers.
 
+✔️ = Implemented in Code
+🎨 = Unique placeholder art created (not good or final art but still distinct art)
+🖼️ = Final-ish art created.
 # Buildings
 - Crystal Separator ✔️
+- Thermal Flux Furnace ✔️
+- Electric Heater ✔️
 - Reversal Chronocycler✔️
 - Stasis Chronocycler✔️
 - Acceleration Chronocycler✔️
@@ -24,34 +29,34 @@ Cultivated Aether Crystal✔️
 
 # Items
 ## Resources & Intermediates
-- Prismatic Shard ✔️
-- Activated Prismatic Shard Variants ✔️
-	- Activated Prismatic Shard (R) ✔️
-	- Activated Prismatic Shard (G) ✔️
-	- Activated Prismatic Shard (B) ✔️
-	- Activated Prismatic Shard (W) ✔️
-	- Activated Prismatic Shard (C) ✔️
-	- Activated Prismatic Shard (M) ✔️
-	- Activated Prismatic Shard (Y) ✔️
-	- Activated Prismatic Shard (K) ✔️
+- Prismatic Shard ✔️🎨
+- Activated Prismatic Shard Variants ✔️🎨
+	- Activated Prismatic Shard (R) ✔️🎨
+	- Activated Prismatic Shard (G) ✔️🎨
+	- Activated Prismatic Shard (B) ✔️🎨
+	- Activated Prismatic Shard (W) ✔️🎨
+	- Activated Prismatic Shard (C) ✔️🎨
+	- Activated Prismatic Shard (M) ✔️🎨
+	- Activated Prismatic Shard (Y) ✔️🎨
+	- Activated Prismatic Shard (K) ✔️🎨
 - Ferric Shard ✔️
 - Cupric Shard ✔️
 - Lithic Shard ✔️
-- Aethric Shard ✔️
-- Shattered Aethric Shard Variants ✔️
-	- Shattered Aethric Shard (A) ✔️
-	- Shattered Aethric Shard (B) ✔️
-	- Shattered Aethric Shard (C) ✔️
-	- Shattered Aethric Shard (D) ✔️
-	- Shattered Aethric Shard (E) ✔️
-	- Shattered Aethric Shard (F) ✔️
-- Destabilized Aethric Shard Variants ✔️
-	- Destabilized Aethric Shard (A) ✔️
-	- Destabilized Aethric Shard (B) ✔️
-	- Destabilized Aethric Shard (C) ✔️
-	- Destabilized Aethric Shard (D) ✔️
-	- Destabilized Aethric Shard (E) ✔️
-	- Destabilized Aethric Shard (F) ✔️
+- Aethric Shard ✔️🎨
+- Shattered Aethric Shard Variants ✔️🎨
+	- Shattered Aethric Shard (A) ✔️🎨
+	- Shattered Aethric Shard (B) ✔️🎨
+	- Shattered Aethric Shard (C) ✔️🎨
+	- Shattered Aethric Shard (D) ✔️🎨
+	- Shattered Aethric Shard (E) ✔️🎨
+	- Shattered Aethric Shard (F) ✔️🎨
+- Destabilized Aethric Shard Variants ✔️🎨
+	- Destabilized Aethric Shard (A) ✔️🎨
+	- Destabilized Aethric Shard (B) ✔️🎨
+	- Destabilized Aethric Shard (C) ✔️🎨
+	- Destabilized Aethric Shard (D) ✔️🎨
+	- Destabilized Aethric Shard (E) ✔️🎨
+	- Destabilized Aethric Shard (F) ✔️🎨
 - Entropic Dust Variants ✔️
 	- Raw Entropic Dust (Positive) ✔️
 	- Raw Entropic Dust (Negative) ✔️
@@ -79,6 +84,8 @@ Cultivated Aether Crystal✔️
 
 ## Building Items
 - Crystal Separator ✔️
+- Thermal Flux Furnace ✔️
+- Electric Heater ✔️
 - Chronocycler Building Variants✔️
 	- Unconfigured Chronocycler✔️
 	- Reversal Chronocycler✔️
@@ -168,6 +175,8 @@ Cultivated Aether Crystal✔️
 - Promethium✔️
 ## Building Recipes
 - Crystal Separator ✔️
+- Thermal Flux Furnace ✔️
+- Electric Heater ✔️
 - Chronocycler Building Variants✔️
 	- Unconfigured Chronocycler✔️
 	- Reversal Chronocycler✔️

@@ -8,6 +8,9 @@
 		- [ ] Include alternate art for visible planets in space mod
 	- [x] Space routes
 	- [ ] Alternate rocks with proper starting resources
+	- [x] Test with Fulgora-style planet generation and no special soil for plant growth. (No.)
+	- [ ] Make Aethric soil *green.* Like Precious colored.
+	- [ ] Change the color tinting to be more cyan/green.
 - [x] Disable quality in `shard-obscuring` and `shard-illuminating` recipes to prevent casino loop
 - [ ] Edit landfill/foundation to be able to go onto the entropic sea tiles
 - [ ] Entropic Dust Bigger Rocket Capacity
@@ -26,6 +29,7 @@
 - [x] Map settings - resource richness should be fixed and unchangable.
 
 # Balance
-- [ ] Aethric soil split into "natural" and "artificial" variants, plus a set of precursor tiles like `jellynut-wetland` where they can be placed
-	- [ ] Alternatively, DON'T do this and instead disable the soil making/placing. Use the natural terrain generation of vulcanus. (I think I'm going to do this...)
-- [ ] Up the yield on aethric shard destabilization? (Maybe two per craft instead of one...)
+- [x] Aethric soil split into "natural" and "artificial" variants, plus a set of precursor tiles like `jellynut-wetland` where they can be placed
+	- [x] Alternatively, DON'T do this and instead disable the soil making/placing. Use the natural terrain generation of vulcanus. (I think I'm going to do this...)
+- [x] Up the yield on aethric shard destabilization? (Maybe two per craft instead of one...)
+- [x] Experiment with innate quality bonus on crystal separator? (No, but I did make a smelter with a bunch of module slots so there is that...)
