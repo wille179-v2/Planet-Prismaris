@@ -1,5 +1,7 @@
 # Planet-Prismaris
-A Factorio mod where you visit the ever-cycling world of Prismaris, a world of infinite but constantly-shifting resources. This mod is currently very early in its development process.
+*"You just have to deal with it." - A little hellion.*
+
+Planet Prismaris is a Factorio mod where you visit the ever-cycling world of Prismaris, a world of infinite but constantly-shifting resources. This mod is currently very early in its development process.
 
 ## Overview
 *Prismaris* is a planet of ever-shifting resources. Everything is constantly becoming something else all the time through the spoilage mechanic, but nothing is ever lost for good. Almost every recipe has multiple possible outputs and many items spoil after a short duration into another item in a cycle. Recycling is also borked on this planet; the only way to stem the tide is to embrace the sushi and pray nothing clogs.
