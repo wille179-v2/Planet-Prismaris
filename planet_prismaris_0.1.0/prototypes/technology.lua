@@ -64,9 +64,9 @@ data:extend({
 		{
 			pre .."shard-illumination",
 			pre .."shard-obscuring",
-			pre .. "ferric-shard-synthesis",
-			pre .. "cupric-shard-synthesis",
-			pre .. "lithic-shard-synthesis",
+			pre .. "ferric-shard",
+			pre .. "cupric-shard",
+			pre .. "lithic-shard",
 			pre .. "ferric-shard-cracking",
 			pre .. "cupric-shard-cracking",
 			pre .. "lithic-shard-cracking"

@@ -1,9 +1,10 @@
 --pf.recipeFactory(name, icons, ingredients, results, energy_required, categories, otherKeys)
 
 local pre = prismarisConstants.prototypePrefix
-local saIcons = "__space-age__/graphics/icons/" -- for temporary use
-local baseIcons = "__base__/graphics/icons/" -- for temporary use
-local recipeTempIcon = prismarisConstants.iconsPath .. "recipe-temp.png"
+local saIcons = "__space-age__/graphics/icons/"
+local baseIcons = "__base__/graphics/icons/"
+local prisIcons = prismarisConstants.iconsPath
+local recipeTempIcon = prisIcons .. "recipe-temp.png"
 
 -- A recipe for debugging only
 --[[
@@ -75,8 +76,8 @@ data:extend({
 		keyMerge("c[shard-cycling]",{keys.standard,keys.prismatic,keys.prismarisOnly,{allow_quality = false}})
 	),
 	pf.recipeFactory(
-		pre .. "ferric-shard-synthesis",
-		recipeTempIcon, --TODO: Placeholder icons
+		pre .. "ferric-shard",
+		prisIcons .. "ferric-shard.png",
 		pf.itemIngredientsFactory({
 			{pre .. "activated-prismatic-shard-r",2}, -- Overuse of iron biases the system white
 			{pre .. "activated-prismatic-shard-c",1}
@@ -89,8 +90,8 @@ data:extend({
 		keyMerge("d[resource-shard]-a[ferric]",{keys.standard,keys.productivity,keys.prismatic,keys.prismarisOnly})
 	),
 	pf.recipeFactory(
-		pre .. "cupric-shard-synthesis",
-		recipeTempIcon, --TODO: Placeholder icons
+		pre .. "cupric-shard",
+		prisIcons .. "cupric-shard.png",
 		pf.itemIngredientsFactory({
 			{pre .. "activated-prismatic-shard-g",1},
 			{pre .. "activated-prismatic-shard-m",2} -- Overuse of copper biases the system black
@@ -103,8 +104,8 @@ data:extend({
 		keyMerge("d[resource-shard]-b[cupric]",{keys.standard,keys.productivity,keys.prismatic,keys.prismarisOnly})
 	),
 	pf.recipeFactory(
-		pre .. "lithic-shard-synthesis",
-		recipeTempIcon, --TODO: Placeholder icons
+		pre .. "lithic-shard",
+		prisIcons .. "lithic-shard.png",
 		pf.itemIngredientsFactory({
 			{pre .. "activated-prismatic-shard-b",2}, -- stone is just expensive, but is color neutral
 			{pre .. "activated-prismatic-shard-y",2}
@@ -118,7 +119,7 @@ data:extend({
 	),
 	pf.recipeFactory(
 		pre .. "ferric-shard-cracking",
-		recipeTempIcon, --TODO: Placeholder icons
+		prisIcons .. "ferric-shard-cracking.png",
 		pf.itemIngredientsFactory({
 			{pre .. "ferric-shard",1}
 		}),
@@ -137,7 +138,7 @@ data:extend({
 	),
 	pf.recipeFactory(
 		pre .. "cupric-shard-cracking",
-		recipeTempIcon, --TODO: Placeholder icons
+		prisIcons .. "cupric-shard-cracking.png",
 		pf.itemIngredientsFactory({
 			{pre .. "cupric-shard",1}
 		}),
@@ -156,7 +157,7 @@ data:extend({
 	),
 	pf.recipeFactory(
 		pre .. "lithic-shard-cracking",
-		recipeTempIcon, --TODO: Placeholder icons
+		prisIcons .. "lithic-shard-cracking.png",
 		pf.itemIngredientsFactory({
 			{pre .. "lithic-shard",1}
 		}),

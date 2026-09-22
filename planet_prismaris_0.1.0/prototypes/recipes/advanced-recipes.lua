@@ -54,7 +54,7 @@ data:extend({
 		),
 		pf.resultsFactory(
 			{
-				{pre .. "charging-flux-capacitor",1, always_fresh = true,ip = .75,ignored_by_productivity = 1},
+				{pre .. "charging-flux-capacitor",1, always_fresh = true,ip = .95,ignored_by_productivity = 1},
 				{pre .. "raw-entropic-dust-negative",1,ip=.1,ignored_by_productivity =1 }
 			},
 			{
@@ -480,7 +480,7 @@ data:extend({
 		}),
 		8,
 		{"advanced-crafting"},
-		keyMerge("e[crystal-separator]-b[flux]",{keys.standard,keys.smelting})
+		keyMerge("e[crystal-separator]-b[flux]",{keys.standard,keys.smelting, {main_product = pre .. "thermal-flux-furnace"}})
 	),
 	pf.recipeFactory(
 		pre .. "electric-heater",
@@ -496,7 +496,7 @@ data:extend({
 		}),
 		8,
 		{"advanced-crafting"},
-		keyMerge("f[nuclear-energy]-e[electric-heater]",{keys.standard,keys.subgroup("energy")})
+		keyMerge("f[nuclear-energy]-e[electric-heater]",{keys.standard,keys.subgroup("energy"), {main_product = pre .. "electric-heater"}})
 	)
 })
 
