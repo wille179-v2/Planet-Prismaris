@@ -18,7 +18,7 @@ prismarisConstants = {
 	slowSpoilTime = 90,
 	mediumSpoilTime = 60,
 	fastSpoilTime = 30,
-	voidFluidRatio = 0.8
+	voidFluidRatio = 0.8,
 	shardCrackingSpeed = 3.2,
 	shardCrackingYield = 4,
 }
