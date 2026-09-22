@@ -21,7 +21,7 @@ prismarisConstants = {
 	voidFluidRatio = 0.8
 }
 
--- Keys for use in various recipes; use keyMerge and a list of keys in the otherKeys variable of recipeFactory.
+-- Keys for use in various recipes and items; use keyMerge and a list of keys in the otherKeys variable of recipeFactory and itemFactory.
 keys = {
 	standard = {
 		enabled = false,
@@ -128,6 +128,7 @@ require("prototypes.recipes.advanced-recipes")
 
 require("prototypes.entities.buildings")
 require("prototypes.entities.plants")
+require("prototypes.entities.explosions")
 require("prototypes.resource")
 require("prototypes.tile.tiles")
 
