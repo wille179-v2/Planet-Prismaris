@@ -489,7 +489,7 @@ data:extend({
 			),
 			fuel = pf.fuelHelper(
 				"2MJ",
-				"chemical",
+				{"chemical"},
 				{
 					burnt_result = pre .. "raw-entropic-dust-negative",
 					fuel_emissions_multiplier = 2
@@ -535,7 +535,7 @@ data:extend({
 			),
 			fuel = pf.fuelHelper(
 				"4MJ",
-				"nutrients",
+				{"nutrients"},
 				{
 					burnt_result = pre .. "raw-entropic-dust-negative",
 					fuel_emissions_multiplier = 2

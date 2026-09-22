@@ -6,11 +6,11 @@
   "factorio_version": "2.1",
   "dependencies": [
     "base >= 2.1",
-    "space-age >= 2.1.14",
+    "space-age >= 2.1.20",
     "recycler",
     "quality",
-    "PlanetsLib >= 1.25.1",
-    "? any-planet-start >= 1.2.2"
+    "PlanetsLib >= 1.26.7",
+    "? any-planet-start >= 1.2.4"
   ],
   "description": "Visit the ever-cycling world of Prismaris, a world of infinite but constantly-shifting resources."
 }

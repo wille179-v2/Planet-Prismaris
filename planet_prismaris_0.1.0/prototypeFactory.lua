@@ -315,10 +315,10 @@ end
 		fuel_top_speed_multiplier_quality_bonus
 		fuel_glow_color
 ]]
-function pf.fuelHelper(value, category, otherKeys)
+function pf.fuelHelper(value, categories, otherKeys)
 	fuel = {}
 	fuel.fuel_value = value
-	fuel.fuel_category = category or "chemical"
+	fuel.fuel_categories = categories or {"chemical"}
 	otherKeys = otherKeys or {}
 	for key,value in pairs(otherKeys) do
 		fuel[key] = value
