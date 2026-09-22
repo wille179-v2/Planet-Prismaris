@@ -11,6 +11,9 @@ if settings.startup["prismaris-lightning-targets-robots"].value == true then
 	botPriority = 1000
 end
 
+local lightningExemption = table.deepcopy(data.raw["planet"]["fulgora"].lightning_properties.exemption_rules)
+lightningExemption = table.insert(lightningExemption,{type = "prototype", string = pre .. "cultivated-aether-crystal"})
+
 local prismaris = {
 	name = "prismaris",
 	type = "planet",
@@ -175,7 +178,7 @@ local prismaris = {
 				priority_bonus = 1,
 			},
 		},
-		exemption_rules = table.deepcopy(data.raw["planet"]["fulgora"].lightning_properties.exemption_rules)
+		exemption_rules = lightningExemption,
 	},
 	gravity_pull = 10,
 	orbit = {
