@@ -15,10 +15,12 @@ prismarisConstants = {
 	technologyIconsPath = modName .. "/graphics/technology/",
 	soundPath = modName .. "/sound",
 	-- Control variables for mod balance; used in many places across the mod
-	slowSpoilTime = 60,
-	mediumSpoilTime = 30,
-	fastSpoilTime = 15,
+	slowSpoilTime = 90,
+	mediumSpoilTime = 60,
+	fastSpoilTime = 30,
 	voidFluidRatio = 0.8
+	shardCrackingSpeed = 3.2,
+	shardCrackingYield = 4,
 }
 
 -- Keys for use in various recipes and items; use keyMerge and a list of keys in the otherKeys variable of recipeFactory and itemFactory.

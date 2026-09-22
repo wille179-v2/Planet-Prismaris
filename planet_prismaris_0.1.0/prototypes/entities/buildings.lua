@@ -130,7 +130,7 @@ electricHeater.name = pre .. "electric-heater"
 electricHeater.heating_radius = 5
 electricHeater.energy_source = {
 	type = "electric",
-	usage_priority = "primary-input", -- for use on Aquillo, so power fluctuations don't also cause freezes
+	usage_priority = "secondary-input",
 	
 }
 electricHeater.consumption = "10MW"

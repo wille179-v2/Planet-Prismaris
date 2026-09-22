@@ -9,7 +9,7 @@ local slow = prismarisConstants.slowSpoilTime
 local medium = prismarisConstants.mediumSpoilTime
 local fast = prismarisConstants.fastSpoilTime
 
-local hideAethricShardVariants = false -- master control variable.
+local hideAethricShardVariants = true -- master dev control variable.
 
 --[[
 	For reference:
@@ -27,7 +27,7 @@ data:extend({
 		prisIcons .. "prismatic-shard.png",
 		"prismaris-processes-prismatic",
 		{},
-		{order = "a[prismatic-shard]"}
+		{order = "a[prismatic-shard]", weight = 1000}
 	),
 	-- Activated Prismatic Shard RGBW/CMYK
 	pf.itemFactory(
@@ -48,7 +48,8 @@ data:extend({
 				prisIcons .. "activated-shard-r-2.png",
 				prisIcons .. "activated-shard-r-3.png",
 				prisIcons .. "activated-shard-r-4.png",
-			})
+			}),
+			{weight = 1000}
 		})
 	),
 	pf.itemFactory(
@@ -69,7 +70,8 @@ data:extend({
 				prisIcons .. "activated-shard-g-2.png",
 				prisIcons .. "activated-shard-g-3.png",
 				prisIcons .. "activated-shard-g-4.png",
-			})
+			}),
+			{weight = 1000}
 		})
 	),
 	pf.itemFactory(
@@ -90,7 +92,8 @@ data:extend({
 				prisIcons .. "activated-shard-b-2.png",
 				prisIcons .. "activated-shard-b-3.png",
 				prisIcons .. "activated-shard-b-4.png",
-			})
+			}),
+			{weight = 1000}
 		})
 	),
 	pf.itemFactory(
@@ -111,7 +114,8 @@ data:extend({
 				prisIcons .. "activated-shard-w-2.png",
 				prisIcons .. "activated-shard-w-3.png",
 				prisIcons .. "activated-shard-w-4.png",
-			})
+			}),
+			{weight = 1000}
 		})
 	),
 	pf.itemFactory(
@@ -132,7 +136,8 @@ data:extend({
 				prisIcons .. "activated-shard-c-2.png",
 				prisIcons .. "activated-shard-c-3.png",
 				prisIcons .. "activated-shard-c-4.png",
-			})
+			}),
+			{weight = 1000}
 		})
 	),
 	pf.itemFactory(
@@ -153,7 +158,8 @@ data:extend({
 				prisIcons .. "activated-shard-m-2.png",
 				prisIcons .. "activated-shard-m-3.png",
 				prisIcons .. "activated-shard-m-4.png",
-			})
+			}),
+			{weight = 1000}
 		})
 	),
 	pf.itemFactory(
@@ -174,7 +180,8 @@ data:extend({
 				prisIcons .. "activated-shard-y-2.png",
 				prisIcons .. "activated-shard-y-3.png",
 				prisIcons .. "activated-shard-y-4.png",
-			})
+			}),
+			{weight = 1000}
 		})
 	),
 	pf.itemFactory(
@@ -195,32 +202,33 @@ data:extend({
 				prisIcons .. "activated-shard-k-2.png",
 				prisIcons .. "activated-shard-k-3.png",
 				prisIcons .. "activated-shard-k-4.png",
-			})
+			}),
+			{weight = 1000}
 		})
 	),
 	pf.itemFactory(
 		pre .. "ferric-shard",
 		100,
-		saIcons .. "iron-bacteria-2.png", --TODO: Placeholder
+		prisIcons .. "ferric-shard.png",
 		"prismaris-processes-prismatic",
 		{},
-		{order = "c[resource-shard]"}
+		{order = "c[resource-shard]", weight = 2000}
 	),
 	pf.itemFactory(
 		pre .. "cupric-shard",
 		100,
-		saIcons .. "copper-bacteria-2.png", --TODO: Placeholder
+		prisIcons .. "cupric-shard.png",
 		"prismaris-processes-prismatic",
 		{},
-		{order = "c[resource-shard]"}
+		{order = "c[resource-shard]", weight = 2000}
 	),
 	pf.itemFactory(
 		pre .. "lithic-shard",
 		100,
-		saIcons .. "biter-egg-2.png", --TODO: Placeholder
+		prisIcons .. "lithic-shard.png",
 		"prismaris-processes-prismatic",
 		{},
-		{order = "c[resource-shard]"}
+		{order = "c[resource-shard]", weight = 2000}
 	),
 })
 
@@ -233,7 +241,7 @@ data:extend({
 		prisIcons .. "aethric-shard.png",
 		"prismaris-processes-aethric",
 		{},
-		{order = "a[raw-resource]"}
+		{order = "a[raw-resource]", weight = 1000}
 	),
 	pf.itemFactory(
 		pre .. "shattered-aethric-shard-a",
@@ -248,7 +256,8 @@ data:extend({
 		},
 		{
 			order = "b[shattered-shard]",
-			hidden = hideAethricShardVariants
+			hidden = hideAethricShardVariants,
+			weight = 1000
 		}
 	),
 	pf.itemFactory(
@@ -264,7 +273,8 @@ data:extend({
 		},
 		{
 			order = "b[shattered-shard]",
-			hidden = hideAethricShardVariants
+			hidden = hideAethricShardVariants,
+			weight = 1000
 		}
 	),
 	pf.itemFactory(
@@ -280,7 +290,8 @@ data:extend({
 		},
 		{
 			order = "b[shattered-shard]",
-			hidden = hideAethricShardVariants
+			hidden = hideAethricShardVariants,
+			weight = 1000
 		}
 	),
 	pf.itemFactory(
@@ -296,7 +307,8 @@ data:extend({
 		},
 		{
 			order = "b[shattered-shard]",
-			hidden = hideAethricShardVariants
+			hidden = hideAethricShardVariants,
+			weight = 1000
 		}
 	),
 	pf.itemFactory(
@@ -310,7 +322,7 @@ data:extend({
 				fast
 			)
 		},
-		{order = "b[shattered-shard]"}
+		{order = "b[shattered-shard]", weight = 1000}
 	),
 	pf.itemFactory(
 		pre .. "shattered-aethric-shard-f",
@@ -327,7 +339,7 @@ data:extend({
 				pre .. "cultivated-aether-crystal"
 			)
 		},
-		merge{{order = "b[shattered-shard]",localised_name = {"item-name.prismaris-shattered-aethric-shard-f"}},keys.factoriopediaLocale(pre .. "shattered-aethric-shard-f")}
+		merge{{order = "b[shattered-shard]",localised_name = {"item-name.prismaris-shattered-aethric-shard-f"}, weight = 1000},keys.factoriopediaLocale(pre .. "shattered-aethric-shard-f")}
 	),
 
 	pf.itemFactory(
@@ -341,7 +353,7 @@ data:extend({
 				slow
 			)
 		},
-		{order = "c[destabilized-shard]"}
+		{order = "c[destabilized-shard]", weight = 1000}
 	),
 	pf.itemFactory(
 		pre .. "destabilized-aethric-shard-b",
@@ -354,7 +366,7 @@ data:extend({
 				slow
 			)
 		},
-		{order = "c[destabilized-shard]"}
+		{order = "c[destabilized-shard]", weight = 1000}
 	),
 	pf.itemFactory(
 		pre .. "destabilized-aethric-shard-c",
@@ -367,7 +379,7 @@ data:extend({
 				slow
 			)
 		},
-		{order = "c[destabilized-shard]"}
+		{order = "c[destabilized-shard]", weight = 1000}
 	),
 	pf.itemFactory(
 		pre .. "destabilized-aethric-shard-d",
@@ -380,7 +392,7 @@ data:extend({
 				slow
 			)
 		},
-		{order = "c[destabilized-shard]"}
+		{order = "c[destabilized-shard]", weight = 1000}
 	),
 	pf.itemFactory(
 		pre .. "destabilized-aethric-shard-e",
@@ -393,7 +405,7 @@ data:extend({
 				medium
 			)
 		},
-		{order = "c[destabilized-shard]"}
+		{order = "c[destabilized-shard]", weight = 1000}
 	),
 	pf.itemFactory(
 		pre .. "destabilized-aethric-shard-f",
@@ -406,10 +418,11 @@ data:extend({
 				medium
 			)
 		},
-		{order = "c[destabilized-shard]"}
+		{order = "c[destabilized-shard]", weight = 1000}
 	),
 })
 
+--[[
 -- Aethric Soil
 local aethricSoil = table.deepcopy(data.raw["item"]["overgrowth-jellynut-soil"])
 aethricSoil.name = pre .. "aethric-soil"
@@ -435,7 +448,9 @@ aethricSoil.place_as_tile = {
 	tile_condition = tileList -- list of tiles that are allowed to place on
 }
 
--- data:extend({aethricSoil})
+data:extend({aethricSoil})
+
+]]
 
 -- Entropic Dust Cycles
 data:extend({
@@ -455,7 +470,8 @@ data:extend({
 				prisIcons .. "raw-entropic-dust-pos-1.png",
 				prisIcons .. "raw-entropic-dust-pos-2.png",
 				prisIcons .. "raw-entropic-dust-pos-3.png"
-			})
+			}),
+			{weight = 500}
 		})
 	),
 	pf.itemFactory(
@@ -474,7 +490,8 @@ data:extend({
 				prisIcons .. "raw-entropic-dust-neg-1.png",
 				prisIcons .. "raw-entropic-dust-neg-2.png",
 				prisIcons .. "raw-entropic-dust-neg-3.png"
-			})
+			}),
+			{weight = 500}
 		})
 	),
 	pf.itemFactory(
@@ -501,7 +518,8 @@ data:extend({
 				prisIcons .. "refined-entropic-dust-pos-1.png",
 				prisIcons .. "refined-entropic-dust-pos-2.png",
 				prisIcons .. "refined-entropic-dust-pos-3.png"
-			})
+			}),
+			{weight = 500}
 		})
 	),
 	pf.itemFactory(
@@ -520,7 +538,8 @@ data:extend({
 				prisIcons .. "refined-entropic-dust-neg-1.png",
 				prisIcons .. "refined-entropic-dust-neg-2.png",
 				prisIcons .. "refined-entropic-dust-neg-3.png"
-			})
+			}),
+			{weight = 500}
 		})
 	),
 	pf.itemFactory(
@@ -542,7 +561,7 @@ data:extend({
 				}
 			)
 		},
-		{order = "c[entropic-nutrients]"}
+		{order = "c[entropic-nutrients]", weight = 500}
 	)
 })
 

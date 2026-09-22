@@ -123,7 +123,7 @@ data:extend({
 			{pre .. "ferric-shard",1}
 		}),
 		pf.itemResultsFactory({
-			{"iron-ore",2},
+			{"iron-ore",prismarisConstants.shardCrackingYield},
 			--{pre .. "activated-prismatic-shard-r",1,ip=.04},
 			{pre .. "activated-prismatic-shard-g",1,ip=.04},
 			{pre .. "activated-prismatic-shard-b",1,ip=.04},
@@ -131,7 +131,7 @@ data:extend({
 			{pre .. "activated-prismatic-shard-m",1,ip=.04},
 			{pre .. "activated-prismatic-shard-y",1,ip=.04},
 		}),
-		1,
+		prismarisConstants.shardCrackingSpeed,
 		{"advanced-crafting",pre .. "thermal-cracking"},
 		keyMerge("d[resource-shard]-a[ferric]-b",{keys.standard,keys.productivity,keys.prismatic,keys.prismarisOnly,keys.mainProduct("iron-ore")})
 	),
@@ -142,7 +142,7 @@ data:extend({
 			{pre .. "cupric-shard",1}
 		}),
 		pf.itemResultsFactory({
-			{"copper-ore",2},
+			{"copper-ore",prismarisConstants.shardCrackingYield},
 			{pre .. "activated-prismatic-shard-r",1,ip=.04},
 			--{pre .. "activated-prismatic-shard-g",1,ip=.04},
 			{pre .. "activated-prismatic-shard-b",1,ip=.04},
@@ -150,7 +150,7 @@ data:extend({
 			--{pre .. "activated-prismatic-shard-m",1,ip=.04},
 			{pre .. "activated-prismatic-shard-y",1,ip=.04},
 		}),
-		1,
+		prismarisConstants.shardCrackingSpeed,
 		{"advanced-crafting",pre .. "thermal-cracking"},
 		keyMerge("d[resource-shard]-b[cupric]-b",{keys.standard,keys.productivity,keys.prismatic,keys.prismarisOnly,keys.mainProduct("copper-ore")})
 	),
@@ -161,7 +161,7 @@ data:extend({
 			{pre .. "lithic-shard",1}
 		}),
 		pf.itemResultsFactory({
-			{"stone",2},
+			{"stone",prismarisConstants.shardCrackingYield},
 			{pre .. "activated-prismatic-shard-r",1,ip=.04},
 			{pre .. "activated-prismatic-shard-g",1,ip=.04},
 			--{pre .. "activated-prismatic-shard-b",1,ip=.04},
@@ -169,7 +169,7 @@ data:extend({
 			{pre .. "activated-prismatic-shard-m",1,ip=.04},
 			--{pre .. "activated-prismatic-shard-y",1,ip=.04},
 		}),
-		1,
+		prismarisConstants.shardCrackingSpeed,
 		{"advanced-crafting",pre .. "thermal-cracking"},
 		keyMerge("d[resource-shard]-c[lithic]-b",{keys.standard,keys.productivity,keys.prismatic,keys.prismarisOnly,keys.mainProduct("stone")})
 	),
