@@ -609,7 +609,7 @@ data:extend({
 		pre .. "cogitor",
 		10,
 		prismarisConstants.iconsPath .. "cogitor.png",
-		"prismaris-cogitor",
+		mods["science-tab"] and "lab" or "production-machine",
 		{
 			placement = pf.placementHelper(
 				"building",
@@ -622,7 +622,7 @@ data:extend({
 		pre .. "basic-catalytic-crystal-active",
 		5,
 		saIcons .. "calcite.png", -- TODO: Placeholder
-		"prismaris-processes-technical",
+		"prismaris-cogitor-catalyst",
 		{
 			spoilage = pf.spoilageHelper(
 				pre .. "basic-catalytic-crystal-dormant",
@@ -635,7 +635,7 @@ data:extend({
 		pre .. "basic-catalytic-crystal-dormant",
 		5,
 		saIcons .. "calcite.png", -- TODO: Placeholder
-		"prismaris-processes-technical",
+		"prismaris-cogitor-catalyst",
 		{
 			spoilage = pf.spoilageHelper(
 				pre .. "basic-catalytic-crystal-active",
@@ -648,7 +648,7 @@ data:extend({
 		pre .. "advanced-catalytic-crystal-active",
 		5,
 		saIcons .. "calcite.png", -- TODO: Placeholder
-		"prismaris-processes-technical",
+		"prismaris-cogitor-catalyst",
 		{
 			spoilage = pf.spoilageHelper(
 				pre .. "advanced-catalytic-crystal-dormant",
@@ -661,7 +661,7 @@ data:extend({
 		pre .. "advanced-catalytic-crystal-dormant",
 		5,
 		saIcons .. "calcite.png", -- TODO: Placeholder
-		"prismaris-processes-technical",
+		"prismaris-cogitor-catalyst",
 		{
 			spoilage = pf.spoilageHelper(
 				pre .. "advanced-catalytic-crystal-active",
@@ -674,7 +674,7 @@ data:extend({
 		pre .. "alien-catalytic-crystal-active",
 		5,
 		saIcons .. "calcite.png", -- TODO: Placeholder
-		"prismaris-processes-technical",
+		"prismaris-cogitor-catalyst",
 		{
 			spoilage = pf.spoilageHelper(
 				pre .. "alien-catalytic-crystal-dormant",
@@ -687,7 +687,7 @@ data:extend({
 		pre .. "alien-catalytic-crystal-dormant",
 		5,
 		saIcons .. "calcite.png", -- TODO: Placeholder
-		"prismaris-processes-technical",
+		"prismaris-cogitor-catalyst",
 		{
 			spoilage = pf.spoilageHelper(
 				pre .. "alien-catalytic-crystal-active",
@@ -700,7 +700,7 @@ data:extend({
 		pre .. "promethium-catalytic-crystal-active",
 		5,
 		saIcons .. "calcite.png", -- TODO: Placeholder
-		"prismaris-processes-technical",
+		"prismaris-cogitor-catalyst",
 		{
 			spoilage = pf.spoilageHelper(
 				pre .. "promethium-catalytic-crystal-dormant",
@@ -713,7 +713,7 @@ data:extend({
 		pre .. "promethium-catalytic-crystal-dormant",
 		5,
 		saIcons .. "calcite.png", -- TODO: Placeholder
-		"prismaris-processes-technical",
+		"prismaris-cogitor-catalyst",
 		{
 			spoilage = pf.spoilageHelper(
 				pre .. "promethium-catalytic-crystal-active",

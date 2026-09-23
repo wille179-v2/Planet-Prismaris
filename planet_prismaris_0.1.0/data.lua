@@ -59,6 +59,9 @@ keys = {
 	aethric = {
 		subgroup = "prismaris-processes-aethric"
 	},
+	catalyst = {
+		subgroup = "prismaris-cogitor-catalyst"
+	},
 	entropic = {
 		subgroup = "prismaris-processes-entropic"
 	},
@@ -75,7 +78,7 @@ keys = {
 		subgroup = "smelting-machine"
 	},
 	science = {
-		subgroup = "science-pack",
+		subgroup = "prismaris-science-pack",
 		lab_ignores_spoil_percent = settings.startup["prismaris-easy-labs-ignore-spoil-percent"].value
 		--allow_productivity = true
 	},

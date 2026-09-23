@@ -170,7 +170,7 @@ data:extend({
 		}),
 		30,
 		{"advanced-crafting"},
-		keyMerge("b[catalytic-crystal]-a[basic]-b[dormant]",{keys.standard,keys.prismarisOnly,keys.technical})
+		keyMerge("b[catalytic-crystal]-a[basic]-b[dormant]",{keys.standard,keys.prismarisOnly,keys.catalyst})
 	),
 	pf.recipeFactory(
 		pre .. "advanced-catalytic-crystal",
@@ -187,7 +187,7 @@ data:extend({
 		}),
 		30,
 		{"advanced-crafting"},
-		keyMerge("b[catalytic-crystal]-b[advanced]-b[dormant]",{keys.standard,keys.prismarisOnly,keys.technical})
+		keyMerge("b[catalytic-crystal]-b[advanced]-b[dormant]",{keys.standard,keys.prismarisOnly,keys.catalyst})
 	),
 	pf.recipeFactory(
 		pre .. "alien-catalytic-crystal",
@@ -204,7 +204,7 @@ data:extend({
 		}),
 		30,
 		{"advanced-crafting"},
-		keyMerge("b[catalytic-crystal]-c[alien]-b[dormant]",{keys.standard,keys.prismarisOnly,keys.technical})
+		keyMerge("b[catalytic-crystal]-c[alien]-b[dormant]",{keys.standard,keys.prismarisOnly,keys.catalyst})
 	),
 	pf.recipeFactory(
 		pre .. "promethium-catalytic-crystal",
@@ -220,7 +220,7 @@ data:extend({
 		}),
 		30,
 		{"advanced-crafting"},
-		keyMerge("b[catalytic-crystal]-d[promethium]-b[dormant]",{keys.standard,keys.prismarisOnly,keys.technical})
+		keyMerge("b[catalytic-crystal]-d[promethium]-b[dormant]",{keys.standard,keys.prismarisOnly,keys.catalyst})
 	),
 })
 
@@ -263,7 +263,7 @@ data:extend({
 		),
 		30,
 		{"crafting-with-fluid","electromagnetics"},
-		keyMerge("y[cogitor]",{{enabled=false},keys.prismarisOnly,keys.subgroup("prismaris-cogitor"),{main_product = pre .. "cogitor"}})
+		keyMerge("y[cogitor]",{{enabled=false},keys.prismarisOnly,keys.subgroup(mods['science-tab'] and "lab" or "production-machine"),{main_product = pre .. "cogitor"}})
 	),
 	pf.recipeFactory(
 		pre .. "automation-to-logistic-transmutation",

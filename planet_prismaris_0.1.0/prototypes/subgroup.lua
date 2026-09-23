@@ -1,3 +1,8 @@
+local scienceGroup = "intermediate-products"
+if mods["science-tab"] then
+	scienceGroup = "science"
+end
+
 data:extend{
 	{
 		type = "item-subgroup",
@@ -31,15 +36,21 @@ data:extend{
 	},
 	{
 		type = "item-subgroup",
-		name = "prismaris-cogitor",
-		group = "production",
-		order = "h[cogitor]"
+		name = "prismaris-science-pack",
+		group = scienceGroup,
+		order = "y-b"
+	},
+	{
+		type = "item-subgroup",
+		name = "prismaris-cogitor-catalyst",
+		group = scienceGroup,
+		order = "zz-a"
 	},
 	{
 		type = "item-subgroup",
 		name = "prismaris-cogitor-transmute",
-		group = "intermediate-products",
-		order = "y-b"
+		group = scienceGroup,
+		order = "zz-b"
 	},
 	{
 		type = "item-subgroup",
@@ -53,18 +64,6 @@ data:extend{
 	--	group = "production",
 	--	order = "e[chronocycler]-a[acceleration]"
 	--},
-	{
-		type = "item-subgroup",
-		name = "prismaris-laser-turret",
-		group = "combat",
-		order = "i-l[laser]"
-	},
-	{
-		type = "item-subgroup",
-		name = "prismaris-tesla-turret",
-		group = "combat",
-		order = "i-t[tesla]"
-	},
 	{
 		type = "item-subgroup",
 		name = "prismaris-tiles",
