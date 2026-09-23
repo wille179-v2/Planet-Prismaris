@@ -24,7 +24,7 @@ data:extend({
 		type = "bool-setting",
 		name = "prismaris-easy-labs-ignore-spoil-percent",
 		setting_type = "startup",
-		default_value = true,
+		default_value = false,
 		order = "a[science]-d[spoil]"
 	},
 	{

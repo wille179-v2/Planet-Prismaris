@@ -70,5 +70,17 @@ data:extend{
 		name = "prismaris-tiles",
 		group = "tiles",
 		order = "e-a"
-	}
+	},
+	{
+		type = "item-subgroup",
+		name = "prismaris-laser-turrets",
+		group = "combat",
+		order = "i-a[laser]"
+	},
+	{
+		type = "item-subgroup",
+		name = "prismaris-tesla-turrets",
+		group = "combat",
+		order = "i-b[tesla]"
+	},
 }

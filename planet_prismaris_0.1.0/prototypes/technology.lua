@@ -566,7 +566,13 @@ data:extend({
 			"laser-turret"
 		},
 		{
-			--TODO: Laser recipes
+			pre .. "unconfigured-laser-turret",
+			pre .. prismarisConstants.laserTintsAndTypes[1][2] .. "-laser-turret",
+			pre .. prismarisConstants.laserTintsAndTypes[2][2] .. "-laser-turret",
+			pre .. prismarisConstants.laserTintsAndTypes[3][2] .. "-laser-turret",
+			pre .. prismarisConstants.laserTintsAndTypes[4][2] .. "-laser-turret",
+			pre .. prismarisConstants.laserTintsAndTypes[5][2] .. "-laser-turret",
+			pre .. prismarisConstants.laserTintsAndTypes[6][2] .. "-laser-turret",
 		}
 	),
 	pf.technologyFactory( --cogitor

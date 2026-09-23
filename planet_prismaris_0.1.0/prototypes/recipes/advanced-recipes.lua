@@ -94,7 +94,7 @@ data:extend({
 		),
 		10,
 		{"chemistry","metallurgy"},
-		keyMerge("i-a",{keys.standard,keys.science,keys.prismarisOnly,keys.productivity,{main_product = pre .. "red-polyphasic-science-pack"}})
+		keyMerge("i-a",{keys.standard,keys.science,keys.prismarisOnly,keys.productivity,keys.mainProduct(pre.."red-polyphasic-science-pack")})
 	),
 	-- Blue Variant is cheapest in terms of fluid usage.
 	pf.recipeFactory(
@@ -121,7 +121,7 @@ data:extend({
 		),
 		8,
 		{"chemistry","electromagnetics"},
-		keyMerge("i-b",{keys.standard,keys.science,keys.prismarisOnly,keys.productivity,{main_product = pre .. "blue-polyphasic-science-pack"}})
+		keyMerge("i-b",{keys.standard,keys.science,keys.prismarisOnly,keys.productivity,keys.mainProduct(pre .. "blue-polyphasic-science-pack")})
 	),
 	-- Green Variant has average baseline cost but is significantly faster time-wise.
 	pf.recipeFactory(
@@ -148,7 +148,7 @@ data:extend({
 		),
 		2,
 		{"chemistry","organic"},
-		keyMerge("i-c",{keys.standard,keys.science,keys.prismarisOnly,keys.productivity,{main_product = pre .. "green-polyphasic-science-pack"}})
+		keyMerge("i-c",{keys.standard,keys.science,keys.prismarisOnly,keys.productivity,keys.mainProduct(pre .. "green-polyphasic-science-pack")})
 	),
 })
 
@@ -447,8 +447,7 @@ data:extend({
 	),
 })
 
--- Crystal Separator Recipe
-
+-- Crystal Processing Building Recipes
 data:extend({
 	pf.recipeFactory(
 		pre .. "crystal-separator",
@@ -507,8 +506,10 @@ data:extend({
 		recipeTempIcon, --TODO
 		pf.ingredientsFactory(
 			{
-				{"processing-unit",2},
-				{"low-density-structure",2},
+				{"processing-unit",6},
+				{"steel-plate",20},
+				{"concrete",20},
+				{"pipe",4},
 				{pre .. "active-flux-capacitor",1}
 			},
 			{
@@ -523,7 +524,7 @@ data:extend({
 				{pre .. "distorted-void-essence",distort(50)}
 			}
 		),
-		5,
+		4,
 		{"crafting-with-fluid","electromagnetics"},
 		keyMerge("f[chronocycler]-a[unconfigured]",{{enabled=false},keys.subgroup("prismaris-chronocycler"),keys.prismarisOnly})
 	),
@@ -634,4 +635,68 @@ data:extend({
 
 -- Tesla Variants
 
+
+
 -- Laser Variants
+
+data:extend{
+	pf.recipeFactory(
+		pre .. "unconfigured-laser-turret",
+		{{icon = baseIcons .. "laser-turret.png", tint = {.6,.6,.6}}}, -- TODO: proper icons
+		pf.ingredientsFactory(
+			{
+				{"laser-turret",1},
+				{"advanced-circuit",5},
+				{pre .. "active-flux-capacitor",1}
+			},
+			{
+				{pre .. "concentrated-void-essence",20}
+			}
+		),
+		pf.resultsFactory(
+			{
+				{pre .. "unconfigured-laser-turret",1},
+				{"electronic-circuit",amount_min = 4, amount_max = 6}
+			},
+			{
+				{pre .. "distorted-void-essence", distort(20)}
+			}
+		),
+		10,
+		{"advanced-crafting","electromagnetics"},
+		keyMerge("b[turret]-b[laser]-a[unconfigured]",{
+			keys.standard,
+			keys.prismarisOnly,
+			keys.subgroup("prismaris-laser-turrets"),
+			keys.mainProduct(pre .. "unconfigured-laser-turret")
+		})
+	)
+}
+
+for i,pair in ipairs(prismarisConstants.laserTintsAndTypes) do
+	local turretName = pre .. pair[2] .. "-laser-turret"
+	data:extend{
+		pf.recipeFactory(
+			turretName,
+			{{icon = baseIcons .. "laser-turret.png", tint = pair[1]}}, -- TODO: proper icons
+			pf.itemIngredientsFactory(
+				{
+					{pre.."unconfigured-laser-turret"},
+					{pre .. "activated-prismatic-shard-" .. pair[4],1} --Lookup correct shard color
+				}
+			),
+			pf.itemResultsFactory(
+				{
+					{turretName,1}
+				}
+			),
+			1,
+			{"crafting"},
+			keyMerge("b[turret]-b[laser]-" .. pair[3] .. "[" .. pair[2] .. "]",{
+				keys.standard,
+				keys.subgroup("prismaris-laser-turrets"),
+				keys.mainProduct(turretName)
+			})
+		)
+	}
+end

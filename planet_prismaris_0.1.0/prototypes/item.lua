@@ -738,7 +738,7 @@ data:extend({
 				60 * 60
 			)
 		},
-		keyMerge("i-a",{keys.accelerationLossExempt,keys.science})
+		keyMerge("i-a",{keys.accelerationLossExempt,keys.science,keys.rocketCapacity(200,5)})
 	),
 	pf.itemFactory(
 		pre .. "blue-polyphasic-science-pack",
@@ -751,7 +751,7 @@ data:extend({
 				60 * 60
 			)
 		},
-		keyMerge("i-b",{keys.accelerationLossExempt,keys.science})
+		keyMerge("i-b",{keys.accelerationLossExempt,keys.science,keys.rocketCapacity(200,5)})
 	),
 	pf.itemFactory(
 		pre .. "green-polyphasic-science-pack",
@@ -764,7 +764,7 @@ data:extend({
 				60 * 60
 			)
 		},
-		keyMerge("i-c",{keys.accelerationLossExempt,keys.science})
+		keyMerge("i-c",{keys.accelerationLossExempt,keys.science,keys.rocketCapacity(200,5)})
 	),
 })
 
@@ -800,14 +800,14 @@ data:extend({
 		pre .. "electric-heater",
 		20,
 		saIcons .. "heating-tower.png", -- TODO: placeholder
-		"energy",
+		"environmental-protection",
 		{
 			placement = pf.placementHelper(
 				"building",
 				pre .. "electric-heater"
 			)
 		},
-		{order = "f[nuclear-energy]-e[electric-heater]"}
+		keyMerge("c[heating-tower]-b[electric-heater]",{keys.rocketCapacity(20,0.5)})
 	)
 
 })
@@ -816,62 +816,62 @@ data:extend({
 data:extend({
 	pf.itemFactory(
 		pre .. "unconfigured-chronocycler",
-		50,
+		20,
 		recyclerIcons .. "recycler.png", -- TODO: placeholder
 		"smelting-machine",
 		{},
-		{order = "f[chronocycler]-a[unconfigured]"}
+		keyMerge("f[chronocycler]-a[unconfigured]",{keys.rocketCapacity(20,.5)})
 	),
 	pf.itemFactory(
 		pre .. "reversal-chronocycler",
-		50,
+		20,
 		recyclerIcons .. "recycler.png", -- TODO: placeholder
 		"smelting-machine",
 		{
 			spoilage = pf.spoilageHelper(
 				pre .. "unconfigured-chronocycler",
-				60*60
+				3600
 			),
 			placement = pf.placementHelper(
 				"building",
 				pre .. "reversal-chronocycler"
 			)
 		},
-		{order = "f[chronocycler]-b[reversal]"}
+		keyMerge("f[chronocycler]-b[reversal]",{keys.rocketCapacity(20,.5)})
 	),
 	pf.itemFactory(
 		pre .. "stasis-chronocycler",
-		50,
+		20,
 		recyclerIcons .. "recycler.png", -- TODO: placeholder
 		"smelting-machine",
 		{
 			spoilage = pf.spoilageHelper(
 				pre .. "unconfigured-chronocycler",
-				60*60
+				3600
 			),
 			placement = pf.placementHelper(
 				"building",
 				pre .. "stasis-chronocycler"
 			)
 		},
-		{order = "f[chronocycler]-c[stasis]"}
+		keyMerge("f[chronocycler]-c[stasis]",{keys.rocketCapacity(20,.5)})
 	),
 	pf.itemFactory(
 		pre .. "acceleration-chronocycler",
-		50,
+		20,
 		recyclerIcons .. "recycler.png", -- TODO: placeholder
 		"smelting-machine",
 		{
 			spoilage = pf.spoilageHelper(
 				pre .. "unconfigured-chronocycler",
-				60*60
+				3600
 			),
 			placement = pf.placementHelper(
 				"building",
 				pre .. "acceleration-chronocycler"
 			)
 		},
-		{order = "f[chronocycler]-d[acceleration]"}
+		keyMerge("f[chronocycler]-d[acceleration]",{keys.rocketCapacity(20,.5)})
 	),
 })
 
@@ -901,6 +901,43 @@ data:extend({
 				pre .. "void-beacon"
 			)
 		},
-		{order = "a[beacon]-v[void-beacon]"}
+		keyMerge("a[beacon]-v[void-beacon]",{keys.rocketCapacity(20,1)})
 	)
 })
+
+-- Laser Turret Variants
+
+for i,pair in ipairs(prismarisConstants.laserTintsAndTypes) do
+	data:extend{
+		pf.itemFactory(
+			pre .. pair[2] .. "-laser-turret",
+			50,
+			{{icon = baseIcons .. "laser-turret.png", tint = pair[1]}}, -- TODO: proper icons
+			"prismaris-laser-turrets",
+			{
+				placement = pf.placementHelper(
+					"building",
+					pre .. pair[2] .. "-laser-turret"
+				),
+				spoilage = pf.spoilageHelper(
+					pre .. "unconfigured-laser-turret",
+					3600
+				)
+			},
+			keyMerge("b[turret]-b[laser]-"..pair[3].."["..pair[2].."]",{keys.rocketCapacity(50,.5)})
+		)
+	}
+end
+
+data:extend{
+	pf.itemFactory(
+		pre .. "unconfigured-laser-turret",
+		50,
+		{{icon = baseIcons .. "laser-turret.png", tint = {.6,.6,.6}}}, -- TODO: proper icons
+		"prismaris-laser-turrets",
+		{},
+		keyMerge("b[turret]-b[laser]-a[unconfigured]",{keys.rocketCapacity(50,.5)})
+	)
+}
+
+-- Tesla Turret Variants

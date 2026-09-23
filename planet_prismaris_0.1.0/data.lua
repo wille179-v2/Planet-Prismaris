@@ -1,8 +1,11 @@
 utils = require("utils")
 merge = utils.merge
 pf = require("prototypeFactory")
-
 local modName = "__planet_prismaris__"
+
+----------------------------------------------------
+-- Bookkeeping & Utilities --
+----------------------------------------------------
 
 -- constants for use anywhere in the mod. Editing here should update everything everywhere.
 prismarisConstants = {
@@ -21,6 +24,18 @@ prismarisConstants = {
 	voidFluidRatio = 0.8,
 	shardCrackingSpeed = 3.2,
 	shardCrackingYield = 4,
+	laserTintsAndTypes = {
+		-- First value is tint
+		-- Second value is damage type
+		-- Third value is an order string for sorting
+		-- Fourth value is the cmy or rgb letter for the crafting recipe
+		{{0.8,0.05,0.05},"fire","b","r"}, --R
+		{{0.75,0.75,0.05},"explosion","c","y"}, --Y
+		{{0.05,0.8,0.05},"acid","d","g"}, --G
+		{{0.05,0.75,0.75},"poison","e","c"}, --C
+		{{0.05,0.05,0.8},"electric","f","b"}, --B
+		{{0.75,0.05,0.75},"physical","g","m"}, --M
+	}
 }
 
 -- Keys for use in various recipes and items; use keyMerge and a list of keys in the otherKeys variable of recipeFactory and itemFactory.
@@ -59,13 +74,13 @@ keys = {
 	smelting = {
 		subgroup = "smelting-machine"
 	},
-	subgroup = function(sub)
-		return {subgroup = sub}
-	end,
 	science = {
 		subgroup = "science-pack",
 		lab_ignores_spoil_percent = settings.startup["prismaris-easy-labs-ignore-spoil-percent"].value
 		--allow_productivity = true
+	},
+	accelerationLossExempt = {
+		is_acceleration_loss_exempt = true --Custom flag for use later in auto-generated acceleration recipes
 	},
 	cogitorProcessing = {
 		enabled = false,
@@ -77,15 +92,22 @@ keys = {
 		unlock_results = false,
 		preserve_products_in_machine_output = true,
 	},
-	accelerationLossExempt = {
-		is_acceleration_loss_exempt = true
-	},
+	---- Parameterized Keys ----
+	subgroup = function(sub)
+		return {subgroup = sub}
+	end,
 	factoriopediaLocale = function(name)
 		return {factoriopedia_description = {"factoriopedia-description."..name}}
 	end,
 	mainProduct = function(name)
 		return {main_product = name}
 	end,
+	rocketCapacity = function(stackSize, numStacks)
+		return {
+			weight = math.floor(1000000 / (stackSize * numStacks))
+		}
+	end,
+	-- Alternate graphics for items on belts
 	altItemGraphics = function(filenameList, mips)
 		local pics = {}
 		for _,path in ipairs(filenameList or {}) do
@@ -99,6 +121,26 @@ keys = {
 		return {
 			pictures = pics
 		}
+	end,
+	-- Crafting machine tints
+	tint = function(colors) -- call as either tint{r,g,b} or tint({{r1,g1,b1}, {r2,g2,b2}, ...})
+		if type(colors[1]) == type(1) then -- if given one set of rgb or rgba values
+			return {
+				crafting_machine_tint = {
+					primary = colors
+				}
+			}
+		else -- if given an ordered table of multiple colors
+			colors = colors or {}
+			return {
+				crafting_machine_tint = {
+					primary = colors[1],
+					secondary = colors[2],
+					tertiary = colors[3],
+					quaternary = colors[4]
+				}
+			}
+		end
 	end,
 }
 
@@ -114,25 +156,40 @@ function keyMerge(orderString,tables)
 	return result
 end
 
-require("prototypes.autoplace-controls")
+----------------------------------------------------
+-- Project Imports --
+----------------------------------------------------
 
+--World generation
+require("prototypes.autoplace-controls")
 require("prototypes.space.planet")
 require("prototypes.space.planet-prismaris-map-gen")
+require("prototypes.resource")
+require("prototypes.tile.tiles")
+
+--Basic items
 require("prototypes.item")
 require("prototypes.fluid")
 require("prototypes.technology")
 
+--Recipes
 require("prototypes.recipes.prismatic-shard-chain")
 require("prototypes.recipes.aethric-shard-chain")
 require("prototypes.recipes.entropic-sea-chain")
 require("prototypes.recipes.void-essence-chain")
 require("prototypes.recipes.advanced-recipes")
 
+--Buildings
 require("prototypes.entities.buildings")
+require("prototypes.entities.laser-turrets")
+require("prototypes.entities.tesla-turrets")
 require("prototypes.entities.plants")
 require("prototypes.entities.explosions")
-require("prototypes.resource")
-require("prototypes.tile.tiles")
+
+
+----------------------------------------------------
+-- General data-stage game tweaks --
+----------------------------------------------------
 
 --Uses planetsLib to enable crafting the lightning rod on prismaris. May be removed if a custom variant is added later.
 PlanetsLib.relax_surface_conditions(data.raw.recipe["lightning-collector"], {property = "magnetic-field", min = 93})
