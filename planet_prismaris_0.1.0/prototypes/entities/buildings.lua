@@ -222,23 +222,12 @@ lunarPanel.performance_at_night = 1
 lunarPanel.production = "120kW"
 lunarPanel.minable.result = pre .. "lunar-panel"
 
-local voidBeacon = table.deepcopy(data.raw["beacon"]["beacon"])
-voidBeacon.name = pre .. "void-beacon"
-voidBeacon.energy_usage = "1.44MW"
-voidBeacon.module_slots = 3
-voidBeacon.allowed_effects = {"consumption","speed","pollution","productivity","quality"}
-voidBeacon.supply_area_distance = 4
-voidBeacon.distribution_effectivity = 1.75
-voidBeacon.distribution_effectivity_bonus_per_quality_level = 0.25
--- TODO: When Nonstandard Beacons mod gets updated to 2.1, convert to fluid burning beacon
-voidBeacon.minable.result = pre .. "void-beacon"
 
 data:extend({
 	reversalChronocycler,
 	stasisChronocycler,
 	accelerationChronocycler,
 	lunarPanel,
-	voidBeacon,
 	{
 		type = "recipe-category",
 		name = pre .. "reverse-chronocycling"

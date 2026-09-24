@@ -158,8 +158,8 @@ data:extend({
 			"void-essence-refining"
 		},
 		{
-			pre .. "void-essence-stabilization",
-			pre .. "void-essence-concentration"
+			pre .. "stabilized-void-essence",
+			pre .. "concentrated-void-essence"
 		}
 	),
 	pf.technologyFactory( -- flux-capacitor
@@ -298,7 +298,7 @@ data:extend({
 			"green-polyphasic-science-pack"
 		},
 		{
-			pre .. "entropic-nurturing"
+			pre .. "entropic-nutrients"
 		}
 	),
 	pf.technologyFactory( -- lunar-panels

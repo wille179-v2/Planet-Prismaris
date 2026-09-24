@@ -4,7 +4,7 @@ local laserGraphicsPath = prismarisConstants.entityGraphicsPath .. "laser-turret
 function modify_beam(beamTint, damageType)
 	local newBeam = table.deepcopy(data.raw['beam']['laser-beam'])
 	newBeam.name = damageType .. "-laser-beam"
-	log(serpent.block(newBeam.action.action_delivery.target_effects)) -- Just a debugging sanity check
+	--log(serpent.block(newBeam.action.action_delivery.target_effects)) -- Just a debugging sanity check
 	newBeam.action.action_delivery.target_effects[1].damage.type = damageType -- Talk about nesting hell...
 	-- Beam color
 	newBeam.graphics_set.beam.head.layers[1].filename = laserGraphicsPath .. "laser-body-grayscale.png"

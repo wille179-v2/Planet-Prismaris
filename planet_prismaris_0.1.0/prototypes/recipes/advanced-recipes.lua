@@ -604,12 +604,13 @@ data:extend({
 data:extend({
 	pf.recipeFactory(
 		pre.."void-beacon",
-		recipeTempIcon, -- TODO
+		{
+			{icon = baseIcons .. "beacon.png"},
+			{icon = baseIcons .. "shapes/shape-cross.png", scale = 0.2, shift = {8,8}}
+		},
 		pf.ingredientsFactory(
 			{
-				{"steel-plate",15},
-				{"copper-cable",15},
-				{"advanced-circuit",20},
+				{"beacon",1},
 				{"processing-unit",20},
 				{pre .. "active-flux-capacitor",2}
 			},
@@ -619,7 +620,8 @@ data:extend({
 		),
 		pf.resultsFactory(
 			{
-				{pre.."void-beacon",1}
+				{pre.."void-beacon",1},
+				{"electronic-circuit", min=5,max=10}
 			},
 			{
 				{pre .. "distorted-void-essence",distort(100)}
@@ -627,7 +629,7 @@ data:extend({
 		),
 		15,
 		{"crafting-with-fluid","electromagnetics"},
-		keyMerge("a[beacon]-v[void-beacon]",{keys.standard,keys.prismarisOnly,keys.subgroup("module")})
+		keyMerge("a[beacon]-v[void-beacon]",{keys.standard,keys.prismarisOnly,keys.subgroup("module"),keys.mainProduct(pre.."void-beacon")})
 	)
 })
 

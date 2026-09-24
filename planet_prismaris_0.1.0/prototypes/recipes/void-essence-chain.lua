@@ -1,6 +1,7 @@
 local saIcons = "__space-age__/graphics/icons/" -- for temporary use
 local baseIcons = "__base__/graphics/icons/" -- for temporary use
 local recipeTempIcon = prismarisConstants.iconsPath .. "recipe-temp.png"
+local iconsPath = prismarisConstants.iconsPath
 local color = color
 
 local stabilizeConcentrateRatio = 5/4
@@ -32,8 +33,8 @@ data:extend({
 			keys.tint(color.rawVoid)})
 	),
 	pf.recipeFactory(
-		pre .. "void-essence-stabilization",
-		recipeTempIcon, -- TODO: Placeholder icons
+		pre .. "stabilized-void-essence",
+		iconsPath .. "fluid/stabilized-void-essence.png",
 		pf.ingredientsFactory(
 			{
 				{pre .. "refined-entropic-dust-positive",1}
@@ -62,8 +63,8 @@ data:extend({
 		})
 	),
 	pf.recipeFactory(
-		pre .. "void-essence-concentration",
-		recipeTempIcon,
+		pre .. "concentrated-void-essence",
+		iconsPath .. "fluid/concentrated-void-essence.png",
 		pf.ingredientsFactory(
 			{
 				{pre .. "refined-entropic-dust-positive",1}

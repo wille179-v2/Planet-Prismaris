@@ -249,6 +249,7 @@ require("prototypes.recipes.advanced-recipes")
 require("prototypes.entities.buildings")
 require("prototypes.entities.laser-turrets")
 require("prototypes.entities.tesla-turrets")
+require("prototypes.entities.void-beacon")
 require("prototypes.entities.plants")
 require("prototypes.entities.explosions")
 

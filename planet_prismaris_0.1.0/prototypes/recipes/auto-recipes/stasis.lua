@@ -138,7 +138,7 @@ else
 	end
 end				
 
-log(serpent.block(chronocyclingList))
+-- log(serpent.block(chronocyclingList))
 
 for i,r in ipairs(chronocyclingList) do
 	table.insert(data.raw["technology"]["chronocycler-stasis"].effects, {type = "unlock-recipe", recipe = r})
