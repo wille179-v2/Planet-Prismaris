@@ -13,15 +13,15 @@ data:extend({
 			{icon = icons .. "raw-entropic-dust-pos-1.png", scale = 0.2, shift = {-8,8}}
 		},
 		pf.fluidIngredientsFactory({
-			{pre .. "liquid-entropy",30}
+			{pre .. "liquid-entropy",40}
 		}),
 		pf.resultsFactory(
 			{
-				{pre .. "raw-entropic-dust-positive",1,sp={min = 0, max = 0.5}},
-				{pre .. "raw-entropic-dust-negative",1, sp = {min = 0.5, max = 1}}
+				{pre .. "raw-entropic-dust-positive",2,sp={min = 0, max = 0.5}},
+				{pre .. "raw-entropic-dust-negative",2, sp = {min = 0.5, max = 1}}
 			},
 			{
-				{"water",30}
+				{"water",40}
 			}
 		),
 		0.5,
