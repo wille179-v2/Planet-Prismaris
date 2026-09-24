@@ -41,6 +41,7 @@ for type_name in pairs(defines.prototypes.item) do -- get all subtypes of "item"
 							item.order,
 							{
 								keys.standard,
+								keys.tint(color.concentratedVoid),
 								{
 									subgroup = item.subgroup,
 									hidden=true,
@@ -73,6 +74,7 @@ data:extend{
 			"c[eggs]-b[pentapod-egg]",
 			{
 				keys.standard,
+				keys.tint(color.concentratedVoid),
 				{
 					subgroup = "agriculture-products",
 					hidden=true,
@@ -97,6 +99,7 @@ data:extend{
 			"c[eggs]-a[biter-egg]",
 			{
 				keys.standard,
+				keys.tint(color.concentratedVoid),
 				{
 					subgroup = "agriculture-products",
 					hidden=true,
@@ -121,6 +124,7 @@ data:extend{
 			data.raw["item"]["captive-biter-spawner"].order,
 			{
 				keys.standard,
+				keys.tint(color.concentratedVoid),
 				{
 					subgroup = "agriculture-products",
 					hidden=true,

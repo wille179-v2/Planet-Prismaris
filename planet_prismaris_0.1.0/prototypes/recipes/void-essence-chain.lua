@@ -1,6 +1,7 @@
 local saIcons = "__space-age__/graphics/icons/" -- for temporary use
 local baseIcons = "__base__/graphics/icons/" -- for temporary use
 local recipeTempIcon = prismarisConstants.iconsPath .. "recipe-temp.png"
+local color = color
 
 local stabilizeConcentrateRatio = 5/4
 local bulkVolume = 200
@@ -23,7 +24,12 @@ data:extend({
 		}),
 		4,
 		{"oil-processing"},
-		keyMerge("a[void]-a[refine]",{keys.standard,keys.void,keys.prismarisOnly,keys.productivity})
+		keyMerge("a[void]-a[refine]",{
+			keys.standard,
+			keys.void,
+			keys.prismarisOnly,
+			keys.productivity,
+			keys.tint(color.rawVoid)})
 	),
 	pf.recipeFactory(
 		pre .. "void-essence-stabilization",
@@ -47,7 +53,13 @@ data:extend({
 		),
 		recipeTime,
 		{"chemistry","cryogenics"},
-		keyMerge("a[void]-b[stabilize]",{keys.standard,keys.void,keys.productivity,keys.mainProduct(pre .. "stabilized-void-essence")})
+		keyMerge("a[void]-b[stabilize]",{
+				keys.standard,
+				keys.void,
+				keys.productivity,
+				keys.mainProduct(pre .. "stabilized-void-essence"),
+				keys.tint(color.distortedVoid)
+		})
 	),
 	pf.recipeFactory(
 		pre .. "void-essence-concentration",
@@ -71,6 +83,12 @@ data:extend({
 		),
 		recipeTime,
 		{"chemistry","cryogenics"},
-		keyMerge("a[void]-c[concentrate]",{keys.standard,keys.void,keys.productivity,keys.mainProduct(pre .. "concentrated-void-essence")})
+		keyMerge("a[void]-c[concentrate]",{
+			keys.standard,
+			keys.void,
+			keys.productivity,
+			keys.mainProduct(pre .. "concentrated-void-essence"),
+			keys.tint(color.stabilizedVoid)
+		})
 	)
 })

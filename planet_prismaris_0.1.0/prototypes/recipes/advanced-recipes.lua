@@ -35,7 +35,7 @@ data:extend({
 		),
 		10,
 		{"crafting-with-fluid","electromagnetics"},
-		keyMerge(nil,{keys.standard,keys.prismarisOnly,keys.technical,keys.productivity})
+		keyMerge(nil,{keys.standard,keys.prismarisOnly,keys.technical,keys.productivity,keys.tint(color.concentratedVoid)})
 	),
 	pf.recipeFactory(
 		pre .. "reset-flux-capacitor",
@@ -55,7 +55,7 @@ data:extend({
 		pf.resultsFactory(
 			{
 				{pre .. "charging-flux-capacitor",1, always_fresh = true,ip = .95,ignored_by_productivity = 1},
-				{pre .. "raw-entropic-dust-negative",1,ip=.1,ignored_by_productivity =1 }
+				{pre .. "raw-entropic-dust-negative",1,ip=.1}
 			},
 			{
 				{pre .. "distorted-void-essence",distort(100),ignored_by_productivity = distort(100)}
@@ -63,7 +63,7 @@ data:extend({
 		),
 		10,
 		{"crafting-with-fluid","electromagnetics"},
-		keyMerge(nil,{keys.standard,keys.prismarisOnly,keys.technical})
+		keyMerge(nil,{keys.standard,keys.prismarisOnly,keys.technical,keys.tint(color.concentratedVoid)})
 	)
 })
 
@@ -94,7 +94,7 @@ data:extend({
 		),
 		10,
 		{"chemistry","metallurgy"},
-		keyMerge("i-a",{keys.standard,keys.science,keys.prismarisOnly,keys.productivity,keys.mainProduct(pre.."red-polyphasic-science-pack")})
+		keyMerge("i-a",{keys.standard,keys.science,keys.prismarisOnly,keys.productivity,keys.mainProduct(pre.."red-polyphasic-science-pack"),keys.tint(color.polyRed)})
 	),
 	-- Blue Variant is cheapest in terms of fluid usage.
 	pf.recipeFactory(
@@ -121,7 +121,7 @@ data:extend({
 		),
 		8,
 		{"chemistry","electromagnetics"},
-		keyMerge("i-b",{keys.standard,keys.science,keys.prismarisOnly,keys.productivity,keys.mainProduct(pre .. "blue-polyphasic-science-pack")})
+		keyMerge("i-b",{keys.standard,keys.science,keys.prismarisOnly,keys.productivity,keys.mainProduct(pre .. "blue-polyphasic-science-pack"),keys.tint(color.polyBlue)})
 	),
 	-- Green Variant has average baseline cost but is significantly faster time-wise.
 	pf.recipeFactory(
@@ -148,7 +148,7 @@ data:extend({
 		),
 		2,
 		{"chemistry","organic"},
-		keyMerge("i-c",{keys.standard,keys.science,keys.prismarisOnly,keys.productivity,keys.mainProduct(pre .. "green-polyphasic-science-pack")})
+		keyMerge("i-c",{keys.standard,keys.science,keys.prismarisOnly,keys.productivity,keys.mainProduct(pre .. "green-polyphasic-science-pack"),keys.tint(color.polyGreen)})
 	),
 })
 

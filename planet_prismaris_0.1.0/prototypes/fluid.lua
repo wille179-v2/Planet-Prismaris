@@ -10,8 +10,8 @@ data:extend({
 		pre .. "liquid-entropy",
 		prisFluid .. "liquid-entropy.png",
 		15,
-		{.95,.95,.95},
-		{.05,.05,.05},
+		color.entropy[1],
+		color.entropy[2],
 		{
 			draw_as_glow = true,
 			auto_barrel = false,
@@ -21,8 +21,8 @@ data:extend({
 		pre .. "raw-void-essence",
 		prisFluid .. "raw-void-essence.png",
 		15,
-		{236,159,5},
-		{84,13,110},
+		color.rawVoid[1],
+		color.rawVoid[2],
 		{
 			draw_as_glow = true,
 			auto_barrel = false,
@@ -32,8 +32,8 @@ data:extend({
 		pre .. "concentrated-void-essence",
 		prisFluid .. "concentrated-void-essence.png",
 		15,
-		{236,159,5}, -- TODO: Pick new colors (slightly brigher yellow, more pink for secondary)
-		{84,13,110},
+		color.concentratedVoid[1],
+		color.concentratedVoid[2],
 		{
 			draw_as_glow = true,
 			fuel_value = "250kJ",
@@ -47,8 +47,8 @@ data:extend({
 		pre .. "distorted-void-essence",
 		prisFluid .. "distorted-void-essence.png",
 		15,
-		{236,159,5}, -- TODO: Pick new colors (more brown-orange)
-		{84,13,110},
+		color.distortedVoid[1],
+		color.distortedVoid[2],
 		{
 			draw_as_glow = true,
 			auto_barrel = false,
@@ -58,8 +58,8 @@ data:extend({
 		pre .. "stabilized-void-essence",
 		prisFluid .. "stabilized-void-essence.png",
 		15,
-		{236,159,5}, -- TODO: Pick new colors (more pale primary color)
-		{84,13,110},
+		color.stabilizedVoid[1],
+		color.stabilizedVoid[2],
 		{
 			draw_as_glow = true,
 			auto_barrel = false

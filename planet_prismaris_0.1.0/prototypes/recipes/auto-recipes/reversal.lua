@@ -10,6 +10,7 @@ if settings.startup["test-reversal-mode"].value == "simple" then
 			recipe.categories = {pre.."reverse-chronocycling"} -- change the category.
 			local mainItem = recipe.ingredients[1].name
 			recipe.localised_name = {"recipe-name.reversal",pf.getLocalisedName(mainItem)}
+			recipe.crafting_machine_tint = keys.tint(color.concentratedVoid).crafting_machine_tint
 		end
 	end
 end
@@ -143,6 +144,7 @@ if settings.startup["test-reversal-mode"].value == "complex" then
 					recipe.order,
 					{
 						keys.standard,
+						keys.tint(color.concentratedVoid),
 						{
 							hidden=true,
 							unlock_results=false,

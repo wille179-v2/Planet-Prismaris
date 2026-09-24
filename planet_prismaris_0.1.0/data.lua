@@ -17,7 +17,7 @@ prismarisConstants = {
 	terrainPath = modName .. "/graphics/terrain/",
 	technologyIconsPath = modName .. "/graphics/technology/",
 	soundPath = modName .. "/sound",
-	-- Control variables for mod balance; used in many places across the mod
+	-- Control & cosmetic variables for mod balance; used in many places across the mod
 	slowSpoilTime = 90,
 	mediumSpoilTime = 60,
 	fastSpoilTime = 30,
@@ -35,6 +35,69 @@ prismarisConstants = {
 		{{0.05,0.75,0.75},"poison","e","c"}, --C
 		{{0.05,0.05,0.8},"electric","f","b"}, --B
 		{{0.75,0.05,0.75},"physical","g","m"}, --M
+	},
+	teslaTintsAndTypes = {
+		-- First value is tint
+		-- Second value is damage type
+		-- Third value is an order string for sorting
+		-- Fourth value is the cmy or rgb letter for the crafting recipe
+		{{0.8,0.05,0.05},"fire","b","r"}, --R
+		{{0.75,0.75,0.05},"explosion","c","y"}, --Y
+		{{0.05,0.8,0.05},"acid","d","g"}, --G
+		{{0.05,0.75,0.75},"poison","e","c"}, --C
+		{{0.05,0.05,0.8},"laser","f","b"}, --B
+		{{0.75,0.05,0.75},"physical","g","m"}, --M
+	}
+}
+
+color = {
+	entropy = {
+		{.95,.95,.95},
+		{.05,.05,.05},
+		{.95,.95,.95},
+		{.05,.05,.05},
+	},
+	rawVoid = {
+		{255,235,109},
+		{217,109,203},
+		{255,235,109},
+		{217,109,203},
+	},
+	concentratedVoid = {
+		{234,184,32},
+		{206,164,255},
+		{234,184,32},
+		{206,164,255},
+	},
+	distortedVoid = {
+		{191,119,0},
+		{236,69,237},
+		{191,119,0},
+		{236,69,237},
+	},
+	stabilizedVoid = {
+		{255,244,165},
+		{255,167,255},
+		{255,244,165},
+		{255,167,255},
+	},
+	polyRed = {
+		{255,10,10},
+		{128,10,10},
+		{10,255,10},
+		{10,10,255},
+	},
+	polyGreen = {
+		{10,255,10},
+		{10,128,10},
+		{10,10,255},
+		{255,10,10},
+	},
+	polyBlue = {
+		{10,10,255},
+		{10,10,128},
+		{255,10,10},
+		{10,255,10},
 	}
 }
 

@@ -41,6 +41,7 @@ if refresh then
 								item.order,
 								{
 									keys.standard,
+									keys.tint(color.concentratedVoid),
 									{
 										subgroup = item.subgroup,
 										hidden=true,
@@ -98,6 +99,7 @@ else
 					(item[2].order or "").."-f",
 					{
 						keys.standard,
+						keys.tint(color.concentratedVoid),
 						{
 							subgroup = item.subgroup,
 							hidden=true,
@@ -122,6 +124,7 @@ else
 					(item[2].order or "").."-f",
 					{
 						keys.standard,
+						keys.tint(color.concentratedVoid),
 						{
 							subgroup = item.subgroup,
 							hidden=true,
