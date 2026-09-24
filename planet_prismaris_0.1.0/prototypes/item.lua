@@ -893,7 +893,7 @@ data:extend({
 	pf.itemFactory(
 		pre .. "void-beacon",
 		20,
-		baseIcons .. "beacon.png", -- TODO: Placeholder
+		prisIcons .. "void-beacon.png",
 		"module",
 		{
 			placement = pf.placementHelper(

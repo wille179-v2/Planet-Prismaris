@@ -604,10 +604,7 @@ data:extend({
 data:extend({
 	pf.recipeFactory(
 		pre.."void-beacon",
-		{
-			{icon = baseIcons .. "beacon.png"},
-			{icon = baseIcons .. "shapes/shape-cross.png", scale = 0.2, shift = {8,8}}
-		},
+		prisIcons .. "void-beacon.png",
 		pf.ingredientsFactory(
 			{
 				{"beacon",1},
