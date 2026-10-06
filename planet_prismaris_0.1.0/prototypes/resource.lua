@@ -6,6 +6,7 @@ prismaticShardPatch.minimum = 60000
 prismaticShardPatch.normal = 60000
 prismaticShardPatch.infinite_depletion_amount = 0
 prismaticShardPatch.minable.result = pre .. "prismatic-shard"
+prismaticShardPatch.stages.sheet.filename = prismarisConstants.entityGraphicsPath .. "prismatic-shard/prismatic-shard.png"
 
 local voidEssenceWell = table.deepcopy(data.raw["resource"]["sulfuric-acid-geyser"])
 voidEssenceWell.name = pre .. "void-essence-well"
