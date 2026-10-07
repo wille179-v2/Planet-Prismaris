@@ -31,7 +31,7 @@ data:extend({
 data:extend({
 	pf.recipeFactory(
 		pre .. "prismatic-shard-separation",
-		recipeTempIcon, --TODO: Placeholder icons
+		prisIcons .. "prismatic-shard-separation.png",
 		pf.itemIngredientsFactory({
 			{pre .. "prismatic-shard",1}
 		}),
@@ -51,7 +51,7 @@ data:extend({
 	),
 	pf.recipeFactory(
 		pre .."shard-illumination",
-		recipeTempIcon, --TODO: Placeholder icons
+		prisIcons .. "shard-illumination.png",
 		pf.itemIngredientsFactory({
 			{pre .. "activated-prismatic-shard-k",1}
 		}),
@@ -64,7 +64,7 @@ data:extend({
 	),
 	pf.recipeFactory(
 		pre .."shard-obscuring",
-		recipeTempIcon, --TODO: Placeholder icons
+		prisIcons .. "shard-obscuring.png",
 		pf.itemIngredientsFactory({
 			{pre .. "activated-prismatic-shard-w",1}
 		}),

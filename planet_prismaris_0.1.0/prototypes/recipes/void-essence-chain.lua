@@ -1,6 +1,7 @@
 local saIcons = "__space-age__/graphics/icons/" -- for temporary use
 local baseIcons = "__base__/graphics/icons/" -- for temporary use
 local recipeTempIcon = prismarisConstants.iconsPath .. "recipe-temp.png"
+local prisIcons = prismarisConstants.iconsPath
 local iconsPath = prismarisConstants.iconsPath
 local color = color
 
@@ -11,7 +12,7 @@ local recipeTime = 10
 data:extend({
 	pf.recipeFactory(
 		pre .. "void-essence-refinement",
-		recipeTempIcon, -- TODO: Placeholder icons
+		{{icon = prisIcons .. "fluid/concentrated-void-essence.png", shift = {1,0}, scale = 0.45},{icon = prisIcons .. "fluid/raw-void-essence.png", shift = {-5,-4}, scale = 0.25}},
 		pf.ingredientsFactory(
 			{
 				{pre .. "refined-entropic-dust-positive",1}

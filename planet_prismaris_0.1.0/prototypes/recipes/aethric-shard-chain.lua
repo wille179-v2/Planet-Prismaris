@@ -3,6 +3,7 @@
 local saIcons = "__space-age__/graphics/icons/" -- for temporary use
 local baseIcons = "__base__/graphics/icons/" -- for temporary use
 local recipeTempIcon = prismarisConstants.iconsPath .. "recipe-temp.png"
+local prisIcons = prismarisConstants.iconsPath
 
 -- A recipe for debugging only
 --[[
@@ -29,7 +30,7 @@ data:extend({
 data:extend({
 	pf.recipeFactory(
 		pre .. "aethric-shard-separation",
-		recipeTempIcon, --TODO: Placeholder icons
+		prisIcons .. "aethric-shard-separation.png",
 		pf.itemIngredientsFactory({
 			{pre .. "aethric-shard",1}
 		}),
@@ -43,7 +44,7 @@ data:extend({
 		}),
 		4,
 		{pre .. "crystal-separation","hand-crafting"},
-		keyMerge("a[aethric-shard]-b[separation]",{keys.standard,keys.productivity,keys.aethric,keys.prismarisOnly})
+		keyMerge("b[aethric-shard]-b[separation]",{keys.standard,keys.productivity,keys.aethric,keys.prismarisOnly})
 	),
 	--[[
 	pf.recipeFactory(
@@ -68,13 +69,17 @@ data:extend({
 	]]
 })
 
+function destabilizedIcon(littleIcon)
+	return {{icon = prisIcons .. "destabilized-aethric-shard.png", shift = {-1,-1}, scale = 0.45},{icon = littleIcon, shift = {8,8}, scale = 0.25}}
+end
+
 local destabilizedVariantPairs = {
-	{"a","d",recipeTempIcon},
-	{"b","a",recipeTempIcon},
-	{"c","e",recipeTempIcon},
-	{"d","c",recipeTempIcon},
-	{"e","f",recipeTempIcon},
-	{"f","b",recipeTempIcon}
+	{"a","d",destabilizedIcon(saIcons .. "calcite.png")},
+	{"b","a",destabilizedIcon(baseIcons .. "coal.png")},
+	{"c","e",destabilizedIcon(saIcons .. "carbon.png")},
+	{"d","c",destabilizedIcon(baseIcons .. "solid-fuel.png")},
+	{"e","f",destabilizedIcon(saIcons .. "jelly.png")},
+	{"f","b",destabilizedIcon(saIcons .. "yumako-mash.png")}
 }
 
 for _,pair in ipairs(destabilizedVariantPairs) do 
@@ -92,7 +97,7 @@ for _,pair in ipairs(destabilizedVariantPairs) do
 			}),
 			2,
 			{"crafting","organic"},
-			keyMerge("b[destabilized]-" .. pair[1],{keys.standard,keys.productivity,keys.aethric,keys.prismarisOnly,{localised_name = {"recipe-name.prismaris-destabilized-aethric-shard"}}})
+			keyMerge("d[destabilized]-" .. pair[1],{keys.standard,keys.productivity,keys.aethric,keys.prismarisOnly,{localised_name = {"recipe-name.prismaris-destabilized-aethric-shard"}}})
 		)
 	})
 end
