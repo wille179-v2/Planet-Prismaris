@@ -1,3 +1,4 @@
+autoIcon = require("prototypes.recipes.auto-recipes.icon-generator")
 require("prototypes.recipes.auto-recipes.acceleration")
 require("prototypes.recipes.auto-recipes.reversal")
 require("prototypes.recipes.auto-recipes.stasis")

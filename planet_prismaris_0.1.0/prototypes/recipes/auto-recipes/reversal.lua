@@ -9,6 +9,7 @@ if settings.startup["test-reversal-mode"].value == "simple" then
 		if string.find(name,pre) and string.find(name,"-recycling") then -- if the recipe has the prismaris prefix and the recycling suffix
 			recipe.categories = {pre.."reverse-chronocycling"} -- change the category.
 			local mainItem = recipe.ingredients[1].name
+			recipe.icons = autoIcon(data.raw["item"][mainItem],"reversal") -- Overwrite the icon
 			recipe.localised_name = {"recipe-name.reversal",pf.getLocalisedName(mainItem)}
 			recipe.crafting_machine_tint = keys.tint(color.concentratedVoid).crafting_machine_tint
 		end
@@ -61,30 +62,35 @@ end
 
 ]]
 
+data:extend{
+	{
+		type="recipe-category",
+		name=pre.."uncraftable"
+	}
+}
+
 if settings.startup["test-reversal-mode"].value == "complex" then
 	data.raw["furnace"][pre .. "reversal-chronocycler"].crafting_categories = {pre.."reverse-chronocycling"} -- Reduce chronocycler to just chronocycling recipes.
 
+	-- Take prismaris items out of regular recycler, and add reverse chronocycling to non-prismaris recycling
 	for name,recipe in pairs(data.raw.recipe) do
 		if string.find(name,"-recycling") then
-			if string.find(name,pre) then
+			if string.find(name,pre) then -- if recipe contains prismaris prefix
 				recipe.categories = {pre.."reverse-chronocycling"} -- make prismaris recipes ONLY chronocycling by removing default recycling category (mostly intended for non-spoiling prismaris items)
 				local mainItem = recipe.ingredients[1].name
+				--log("add reversal to " .. mainItem)
+				--log(serpent.block(data.raw["item"][mainItem]))
+				recipe.icons = autoIcon(data.raw["item"][mainItem],"reversal") -- Overwrite the icon
 				recipe.localised_name = {"recipe-name.reversal",pf.getLocalisedName(mainItem)}
 			else
-				table.insert(recipe.categories,pre.."reverse-chronocycling") -- Make all other recycling also chronocycling by adding chronocycling category
+				table.insert(recipe.categories,pre.."reverse-chronocycling") -- Make all other recycling also work in chronocyler by adding chronocycling category
 			end
 		end
 	end
 
 	local spoilMap = {}
 
-	data:extend{
-		{
-			type="recipe-category",
-			name=pre.."uncraftable"
-		}
-	}
-
+	-- Generate spoilage reversal mapping and remove the basic reversal recipes to make way for custom recipes
 	for type_name in pairs(defines.prototypes.item) do
 		if data.raw[type_name] then
 			for name,item in pairs(data.raw[type_name]) do -- Look through all possible items
@@ -94,7 +100,7 @@ if settings.startup["test-reversal-mode"].value == "complex" then
 					spoilMap[item.spoil_result].total_spoil_ticks = spoilMap[item.spoil_result].total_spoil_ticks + item.spoil_ticks -- sum total_spoil_ticks
 					
 					
-					local recipe = data.raw.recipe[item.spoil_result .. "-recycling"] or {}
+					local recipe = data.raw.recipe[item.spoil_result .. "-recycling"] or {} -- Get the recycling recipe for the post-spoilage item
 					for key,value in pairs(recipe.categories or {}) do
 						if value == pre .. "reverse-chronocycling" then
 							data.raw.recipe[item.spoil_result .. "-recycling"].categories[key] = nil -- remove reverse chronocycling category from all post-spoil items to make way for custom recipes.
@@ -103,7 +109,7 @@ if settings.startup["test-reversal-mode"].value == "complex" then
 								categoriesEmpty = false -- check if there are any crafting categories left on the recipe
 							end
 							if categoriesEmpty then
-								recipe.categories = {pre.."uncraftable"} -- give a recipe a crafting category but leave it uncraftable
+								recipe.categories = {pre.."uncraftable"} -- give a recipe a crafting category to satisfy the engine but leave it otherwise uncraftable
 							end
 						end
 					end
@@ -114,6 +120,17 @@ if settings.startup["test-reversal-mode"].value == "complex" then
 	end
 	--log(serpent.block(spoilMap))
 
+	-- find correct prototype for spoilItem
+	for spoilItem in pairs(spoilMap) do
+		for type_name in pairs(defines.prototypes.item) do
+			log(type_name .. " " .. spoilItem)
+			if data.raw[type_name] ~= nil and data.raw[type_name][spoilItem] ~= nil then
+				spoilMap[spoilItem].type = type_name
+			end
+		end
+	end
+
+	-- Create spoilage inversion recipes
 	for spoilItem,mapping in pairs(spoilMap) do
 		local a_total = 0
 		local results = {}
@@ -130,10 +147,12 @@ if settings.startup["test-reversal-mode"].value == "complex" then
 		end
 		local recipe = data.raw.recipe[spoilItem .. "-recycling"] or {}
 		local energy = recipe.energy_required or 0.1
+		log("add custom spoilage inversion recipe for " .. spoilItem)
+		log(serpent.block(data.raw["item"][spoilItem]))
 		data:extend({
 			pf.recipeFactory(
 				spoilItem .. "-reversal",
-				recipeTempIcon,
+				autoIcon(data.raw[mapping.type][spoilItem],"reversal"),
 				pf.itemIngredientsFactory({
 					{spoilItem,1}
 				}),

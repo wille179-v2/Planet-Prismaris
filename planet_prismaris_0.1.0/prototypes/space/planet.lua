@@ -3,7 +3,7 @@ local planet_catalogue_fulgora = require("__space-age__.prototypes.planet.proces
 local mapGen = require("prototypes.space.map-gen")
 
 local iconsPath = prismarisConstants.iconsPath
-local spaceGraphics = prismarisConstants.graphicsPath .. "/space/"
+local spaceGraphics = prismarisConstants.graphicsPath .. "space/"
 
 local botPriority = 100
 
@@ -18,8 +18,8 @@ local prismaris = {
 	name = "prismaris",
 	type = "planet",
 	order = "d[prismaris]",
-	icon = iconsPath .. "space/prismaris_icon_temp.png",
-	starmap_icon = iconsPath .. "space/prismaris_starmap_icon_temp.png",
+	icon = iconsPath .. "space/prismaris-icon.png",
+	starmap_icon = iconsPath .. "space/prismaris-starmap-icon.png",
 	starmap_icon_size = 512,
 	subgroup = "planets",
 	pollutant_type = nil,
@@ -207,8 +207,23 @@ data:extend({
 		name = "gleba-prismaris",
 		from = "gleba",
 		to = "prismaris",
-		icon = iconsPath .. "recipe-temp.png", -- TODO: placeholder
-		icon_size = 64,
+		icons = {
+			{
+				icon = "__space-age__/graphics/icons/planet-route.png"
+			},
+			{
+				icon = "__space-age__/graphics/icons/gleba.png",
+				icon_size = 64,
+				scale = 0.333,
+				shift = {-6,-6}
+			},
+			{
+				icon = iconsPath .. "space/prismaris-icon.png",
+				icon_size = 64,
+				scale = 0.333,
+				shift = {6,6}
+			}
+		},
 		asteroid_spawn_definitions = table.deepcopy(data.raw["space-connection"]["nauvis-gleba"].asteroid_spawn_definitions),
 		length = 20000,
 		subgroup = "planet-connections",
@@ -219,8 +234,23 @@ data:extend({
 		name = "vulcanus-prismaris",
 		from = "vulcanus",
 		to = "prismaris",
-		icon = iconsPath .. "recipe-temp.png", -- TODO: placeholder
-		icon_size = 64,
+		icons = {
+			{
+				icon = "__space-age__/graphics/icons/planet-route.png"
+			},
+			{
+				icon = "__space-age__/graphics/icons/vulcanus.png",
+				icon_size = 64,
+				scale = 0.333,
+				shift = {-6,-6}
+			},
+			{
+				icon = iconsPath .. "space/prismaris-icon.png",
+				icon_size = 64,
+				scale = 0.333,
+				shift = {6,6}
+			}
+		},
 		asteroid_spawn_definitions = table.deepcopy(data.raw["space-connection"]["nauvis-vulcanus"].asteroid_spawn_definitions),
 		length = 15000,
 		subgroup = "planet-connections",

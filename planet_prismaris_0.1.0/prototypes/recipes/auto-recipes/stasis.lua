@@ -28,7 +28,7 @@ if refresh then
 					data:extend({
 						pf.recipeFactory(
 							stasisName,
-							recipeTempIcon, -- TODO: placeholder icon
+							autoIcon(item,"stasis"),
 							pf.itemIngredientsFactory({
 								{item.name,1,ignored_by_stats = 1}
 							}),
@@ -70,6 +70,13 @@ else
 					frozenItem.icon = nil
 					frozenItem.name = frozenItem.name .. "-frozen"
 					frozenItem.hidden = true
+					frozenItem.fuel_value = nil
+					frozenItem.fuel_categories = nil
+					frozenItem.place_result = nil
+					frozenItem.place_as_equipment_result = nil
+					frozenItem.plant_result = nil
+					frozenItem.place_as_tile = nil
+					frozenItem.pictures = nil
 					frozenItem.localised_name = {"item-name.frozen",pf.getLocalisedName(item.name)}
 					table.insert(itemList,{frozenItem,item})
 				end

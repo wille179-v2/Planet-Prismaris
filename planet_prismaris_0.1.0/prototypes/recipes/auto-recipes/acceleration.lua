@@ -28,7 +28,7 @@ for type_name in pairs(defines.prototypes.item) do -- get all subtypes of "item"
 				data:extend({
 					pf.recipeFactory(
 						accelerationName,
-						recipeTempIcon,
+						autoIcon(item,"acceleration"),
 						pf.itemIngredientsFactory({
 							{item.name,1,ignored_by_stats = 1}
 						}),
@@ -61,7 +61,7 @@ end
 data:extend{
 	pf.recipeFactory(
 		"pentapod-egg-acceleration",
-		recipeTempIcon,
+		autoIcon(data.raw["item"]["pentapod-egg"],"acceleration"),
 		pf.itemIngredientsFactory({
 			{"pentapod-egg",1,ignored_by_stats = 1}
 		}),
@@ -86,7 +86,7 @@ data:extend{
 	),
 	pf.recipeFactory(
 		"biter-egg-acceleration",
-		recipeTempIcon,
+		autoIcon(data.raw["item"]["biter-egg"],"acceleration"),
 		pf.itemIngredientsFactory({
 			{"biter-egg",1,ignored_by_stats = 1}
 		}),
@@ -111,7 +111,7 @@ data:extend{
 	),
 	pf.recipeFactory(
 		"captive-biter-spawner-acceleration",
-		recipeTempIcon,
+		autoIcon(data.raw["item"]["captive-biter-spawner"],"acceleration"),
 		pf.itemIngredientsFactory({
 			{"captive-biter-spawner",1,ignored_by_stats = 1}
 		}),
