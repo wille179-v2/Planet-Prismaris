@@ -72,6 +72,10 @@ else
 					frozenItem.hidden = true
 					frozenItem.fuel_value = nil
 					frozenItem.fuel_categories = nil
+					frozenItem.fuel_acceleration_multiplier = nil
+					frozenItem.fuel_top_speed_multiplier = nil
+					frozenItem.fuel_emissions_multiplier = nil
+					frozenItem.fuel_glow_color = nil
 					frozenItem.place_result = nil
 					frozenItem.place_as_equipment_result = nil
 					frozenItem.plant_result = nil
