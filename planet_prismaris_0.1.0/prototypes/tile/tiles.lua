@@ -193,9 +193,11 @@ tiles = {
 		type = "tile",
 		name = pre .. "entropic-sea",
 		subgroup = "prismaris-tiles",
-		order = "a-b",
-		collision_mask = tile_collision_masks.water(),
-		autoplace = { probability_expression = "max(lava_basalts_range, lava_mountains_range)" },
+		order = "a-b[shallow]",
+		collision_mask = tile_collision_masks.oil_ocean_shallow(),
+		autoplace = { 
+			probability_expression = "50 * fulgora_oil_mask * water_base(fulgora_coastline, 1000) * max(-(fulgora_scrap_medium + fulgora_dunes),(fulgora_scrap_medium + fulgora_dunes),0)" 
+		},
 		effect = "entropy-2",
 		fluid = pre .. "liquid-entropy",
 		effect_color = {200,200,200}, -- TODO Experiment with these colors a bit
@@ -234,9 +236,11 @@ tiles = {
 		name = pre .. "entropic-sea-deep",
 		subgroup = "prismaris-tiles",
 		factoriopedia_alternative = pre .. "entropic-sea",
-		order = "a-a",
-		collision_mask = tile_collision_masks.water(),
-		autoplace = { probability_expression = "max(lava_hot_basalts_range, lava_hot_mountains_range)" },
+		order = "a-b[deep]",
+		collision_mask = tile_collision_masks.oil_ocean_shallow(),
+		autoplace = { 
+			probability_expression = "100 * fulgora_oil_mask * water_base(fulgora_coastline - 50 - fulgora_coastline_drop / 2, 2000)" 
+		},
 		effect = "entropy",
 		fluid = pre .. "liquid-entropy",
 		effect_color = {200,200,200}, -- TODO Experiment with these colors a bit
@@ -278,7 +282,7 @@ tiles = {
 		-- order = ???,
 		subgroup = "prismaris-tiles",
 		collision_mask = tile_collision_masks.ground(),
-		autoplace = { probability_expression = "max(volcanic_soil_light_range,volcanic_soil_dark_range,volcanic_ash_soil_range)" },
+		autoplace = { probability_expression = "1 + fulgora_dunes" },
 		layer_group = "ground-natural",
 		layer = 21,
 		searchable = true,
