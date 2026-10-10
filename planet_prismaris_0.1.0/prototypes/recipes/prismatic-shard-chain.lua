@@ -118,13 +118,13 @@ data:extend({
 		keyMerge("d[resource-shard]-c[lithic]",{keys.standard,keys.productivity,keys.prismatic,keys.prismarisOnly})
 	),
 	pf.recipeFactory(
-		pre .. "ferric-shard-cracking",
-		prisIcons .. "ferric-shard-cracking.png",
+		pre .. "cracked-ferric-shard",
+		prisIcons .. "ferric-shard-cracked.png",
 		pf.itemIngredientsFactory({
 			{pre .. "ferric-shard",1}
 		}),
 		pf.itemResultsFactory({
-			{"iron-ore",prismarisConstants.shardCrackingYield},
+			{pre .. "cracked-ferric-shard",prismarisConstants.shardCrackingYield},
 			--{pre .. "activated-prismatic-shard-r",1,ip=.04},
 			{pre .. "activated-prismatic-shard-g",1,ip=.04},
 			{pre .. "activated-prismatic-shard-b",1,ip=.04},
@@ -134,16 +134,16 @@ data:extend({
 		}),
 		prismarisConstants.shardCrackingSpeed,
 		{"advanced-crafting",pre .. "thermal-cracking"},
-		keyMerge("d[resource-shard]-a[ferric]-b",{keys.standard,keys.productivity,keys.prismatic,keys.prismarisOnly,keys.mainProduct("iron-ore")})
+		keyMerge("d[resource-shard]-a[ferric]-b",{keys.standard,keys.productivity,keys.prismatic,keys.prismarisOnly,keys.preserveInMachine})
 	),
 	pf.recipeFactory(
-		pre .. "cupric-shard-cracking",
-		prisIcons .. "cupric-shard-cracking.png",
+		pre .. "cracked-cupric-shard",
+		prisIcons .. "cupric-shard-cracked.png",
 		pf.itemIngredientsFactory({
 			{pre .. "cupric-shard",1}
 		}),
 		pf.itemResultsFactory({
-			{"copper-ore",prismarisConstants.shardCrackingYield},
+			{pre .. "cracked-cupric-shard",prismarisConstants.shardCrackingYield},
 			{pre .. "activated-prismatic-shard-r",1,ip=.04},
 			--{pre .. "activated-prismatic-shard-g",1,ip=.04},
 			{pre .. "activated-prismatic-shard-b",1,ip=.04},
@@ -153,16 +153,16 @@ data:extend({
 		}),
 		prismarisConstants.shardCrackingSpeed,
 		{"advanced-crafting",pre .. "thermal-cracking"},
-		keyMerge("d[resource-shard]-b[cupric]-b",{keys.standard,keys.productivity,keys.prismatic,keys.prismarisOnly,keys.mainProduct("copper-ore")})
+		keyMerge("d[resource-shard]-b[cupric]-b",{keys.standard,keys.productivity,keys.prismatic,keys.prismarisOnly,keys.preserveInMachine})
 	),
 	pf.recipeFactory(
-		pre .. "lithic-shard-cracking",
-		prisIcons .. "lithic-shard-cracking.png",
+		pre .. "cracked-lithic-shard",
+		prisIcons .. "lithic-shard-cracked.png",
 		pf.itemIngredientsFactory({
 			{pre .. "lithic-shard",1}
 		}),
 		pf.itemResultsFactory({
-			{"stone",prismarisConstants.shardCrackingYield},
+			{pre .. "cracked-lithic-shard",prismarisConstants.shardCrackingYield},
 			{pre .. "activated-prismatic-shard-r",1,ip=.04},
 			{pre .. "activated-prismatic-shard-g",1,ip=.04},
 			--{pre .. "activated-prismatic-shard-b",1,ip=.04},
@@ -172,6 +172,6 @@ data:extend({
 		}),
 		prismarisConstants.shardCrackingSpeed,
 		{"advanced-crafting",pre .. "thermal-cracking"},
-		keyMerge("d[resource-shard]-c[lithic]-b",{keys.standard,keys.productivity,keys.prismatic,keys.prismarisOnly,keys.mainProduct("stone")})
+		keyMerge("d[resource-shard]-c[lithic]-b",{keys.standard,keys.productivity,keys.prismatic,keys.prismarisOnly,keys.preserveInMachine})
 	),
 })

@@ -67,9 +67,9 @@ data:extend({
 			pre .. "ferric-shard",
 			pre .. "cupric-shard",
 			pre .. "lithic-shard",
-			pre .. "ferric-shard-cracking",
-			pre .. "cupric-shard-cracking",
-			pre .. "lithic-shard-cracking"
+			pre .. "cracked-ferric-shard",
+			pre .. "cracked-cupric-shard",
+			pre .. "cracked-lithic-shard"
 		}
 	),
 	pf.technologyFactory( -- aethric-cultivation

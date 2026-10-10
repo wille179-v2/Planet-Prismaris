@@ -117,10 +117,15 @@ keys = {
 		allow_productivity = true
 	},
 	prismatic = {
-		subgroup = "prismaris-processes-prismatic"
+		subgroup = "prismaris-processes-prismatic",
+		allow_decomposition = false
 	},
 	aethric = {
-		subgroup = "prismaris-processes-aethric"
+		subgroup = "prismaris-processes-aethric",
+		allow_decomposition = false
+	},
+	preserveInMachine = {
+		preserve_products_in_machine_output = true
 	},
 	catalyst = {
 		subgroup = "prismaris-cogitor-catalyst"
@@ -144,6 +149,12 @@ keys = {
 		subgroup = "prismaris-science-pack",
 		lab_ignores_spoil_percent = settings.startup["prismaris-easy-labs-ignore-spoil-percent"].value
 		--allow_productivity = true
+	},
+	standardChronocycling = {
+		enabled = false,
+		auto_recycle = false,
+		allow_decomposition = false,
+		preserve_products_in_machine_output = true,
 	},
 	accelerationLossExempt = {
 		is_acceleration_loss_exempt = true --Custom flag for use later in auto-generated acceleration recipes

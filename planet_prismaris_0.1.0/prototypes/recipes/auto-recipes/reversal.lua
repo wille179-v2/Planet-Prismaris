@@ -12,7 +12,9 @@ if settings.startup["test-reversal-mode"].value == "simple" then
 			recipe.icons = autoIcon(data.raw["item"][mainItem],"reversal") -- Overwrite the icon
 			recipe.localised_name = {"recipe-name.reversal",pf.getLocalisedName(mainItem)}
 			recipe.crafting_machine_tint = keys.tint(color.concentratedVoid).crafting_machine_tint
+			recipe.preserve_products_in_machine_output = true
 		end
+		recipe.allow_decomposition = false
 	end
 end
 
@@ -85,6 +87,7 @@ if settings.startup["test-reversal-mode"].value == "complex" then
 			else
 				table.insert(recipe.categories,pre.."reverse-chronocycling") -- Make all other recycling also work in chronocyler by adding chronocycling category
 			end
+			recipe.allow_decomposition = false -- sanity check; it SHOULD already be false by default but just in case.
 		end
 	end
 
@@ -162,7 +165,7 @@ if settings.startup["test-reversal-mode"].value == "complex" then
 				keyMerge(
 					recipe.order,
 					{
-						keys.standard,
+						keys.standardChronocycling,
 						keys.tint(color.concentratedVoid),
 						{
 							hidden=true,

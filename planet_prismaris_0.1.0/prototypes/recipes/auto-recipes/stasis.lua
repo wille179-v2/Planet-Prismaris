@@ -17,7 +17,7 @@ end
 
 local refresh = (settings.startup["test-stasis-mode"].value == "refresh")
 
-if refresh then
+if refresh then -- Reset the timer.
 	for type_name in pairs(defines.prototypes.item) do -- get all subtypes of "item" prototype
 		if data.raw[type_name] then
 			for k, item in pairs(data.raw[type_name]) do -- get every valid prototype
@@ -40,7 +40,7 @@ if refresh then
 							keyMerge(
 								item.order,
 								{
-									keys.standard,
+									keys.standardChronocycling, -- Keeps the item fresh in the chronocycler until dispensed.
 									keys.tint(color.concentratedVoid),
 									{
 										subgroup = item.subgroup,
@@ -109,7 +109,7 @@ else
 				keyMerge(
 					(item[2].order or "").."-f",
 					{
-						keys.standard,
+						keys.standard, -- Do NOT keep fresh in chronocycler
 						keys.tint(color.concentratedVoid),
 						{
 							subgroup = item.subgroup,
@@ -134,7 +134,7 @@ else
 				keyMerge(
 					(item[2].order or "").."-f",
 					{
-						keys.standard,
+						keys.standard, -- Do NOT keep fresh in chronocycler
 						keys.tint(color.concentratedVoid),
 						{
 							subgroup = item.subgroup,

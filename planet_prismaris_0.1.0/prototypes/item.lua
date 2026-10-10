@@ -212,7 +212,7 @@ data:extend({
 		prisIcons .. "ferric-shard.png",
 		"prismaris-processes-prismatic",
 		{},
-		{order = "c[resource-shard]", weight = 2000}
+		{order = "c[resource-shard]-a[ferric]-a[whole]", weight = 2000}
 	),
 	pf.itemFactory(
 		pre .. "cupric-shard",
@@ -220,7 +220,7 @@ data:extend({
 		prisIcons .. "cupric-shard.png",
 		"prismaris-processes-prismatic",
 		{},
-		{order = "c[resource-shard]", weight = 2000}
+		{order = "c[resource-shard]-a[cupric]-a[whole]", weight = 2000}
 	),
 	pf.itemFactory(
 		pre .. "lithic-shard",
@@ -228,7 +228,46 @@ data:extend({
 		prisIcons .. "lithic-shard.png",
 		"prismaris-processes-prismatic",
 		{},
-		{order = "c[resource-shard]", weight = 2000}
+		{order = "c[resource-shard]-a[lithic]-a[whole]", weight = 2000}
+	),
+	pf.itemFactory(
+		pre .. "cracked-ferric-shard",
+		100,
+		prisIcons .. "ferric-shard-cracked.png",
+		"prismaris-processes-prismatic",
+		{
+			spoilage = pf.spoilageHelper(
+				"iron-ore",
+				fast
+			)
+		},
+		{order = "c[resource-shard]-a[ferric]-b[cracked]", weight = 2000}
+	),
+	pf.itemFactory(
+		pre .. "cracked-cupric-shard",
+		100,
+		prisIcons .. "cupric-shard-cracked.png",
+		"prismaris-processes-prismatic",
+		{
+			spoilage = pf.spoilageHelper(
+				"copper-ore",
+				fast
+			)
+		},
+		{order = "c[resource-shard]-a[cupric]-b[cracked]", weight = 2000}
+	),
+	pf.itemFactory(
+		pre .. "cracked-lithic-shard",
+		100,
+		prisIcons .. "lithic-shard-cracked.png",
+		"prismaris-processes-prismatic",
+		{
+			spoilage = pf.spoilageHelper(
+				"stone",
+				fast
+			)
+		},
+		{order = "c[resource-shard]-a[lithic]-b[cracked]", weight = 2000}
 	),
 })
 

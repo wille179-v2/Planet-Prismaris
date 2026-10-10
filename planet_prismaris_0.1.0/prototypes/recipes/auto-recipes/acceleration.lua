@@ -40,7 +40,7 @@ for type_name in pairs(defines.prototypes.item) do -- get all subtypes of "item"
 						keyMerge(
 							item.order,
 							{
-								keys.standard,
+								keys.standardChronocycling,
 								keys.tint(color.concentratedVoid),
 								{
 									subgroup = item.subgroup,
@@ -73,7 +73,7 @@ data:extend{
 		keyMerge(
 			"c[eggs]-b[pentapod-egg]",
 			{
-				keys.standard,
+				keys.standardChronocycling,
 				keys.tint(color.concentratedVoid),
 				{
 					subgroup = "agriculture-products",
@@ -98,7 +98,7 @@ data:extend{
 		keyMerge(
 			"c[eggs]-a[biter-egg]",
 			{
-				keys.standard,
+				keys.standardChronocycling,
 				keys.tint(color.concentratedVoid),
 				{
 					subgroup = "agriculture-products",
@@ -123,7 +123,7 @@ data:extend{
 		keyMerge(
 			data.raw["item"]["captive-biter-spawner"].order,
 			{
-				keys.standard,
+				keys.standardChronocycling,
 				keys.tint(color.concentratedVoid),
 				{
 					subgroup = "agriculture-products",
