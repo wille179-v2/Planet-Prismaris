@@ -8,11 +8,11 @@ Planet Prismaris is a Factorio mod where you visit the ever-cycling world of Pri
 
 Prismaris is *intended* to be done between the inner planets and aquilo, but strictly speaking it only requires Gleba first. It eligible for any planet start.
 
-Prismaris's terrain is based loosely on the generation of aquilo, with small islands of solid ground and vast seas of entropy.
+Prismaris's terrain is based largely on the generation of Vulcanus, with lakes of liquid entropy dotting a cliff-riddled landscape.
 
 ## Resources
 Prismaris comes with a few specific resources, each with a unique gimmick to processing them:
-- Prismatic Shards - Can be split into items with an a fast-shifting RGBW or CMYK cycle. Opposing pairs can be converted into iron ore, copper ore, or stone. White and Black variants are less useful and hog belt space, having the longest spoil times. Prismatic Shard patches are small and far apart, but are literally infinite.
+- Prismatic Shards - Can be split randomly into items with an a fast-shifting RGBW or CMYK cycle. Opposing pairs can be converted into iron ore, copper ore, or stone. White and Black variants are less useful and hog belt space, having the longest spoil times. Prismatic Shard patches are small and far apart, but are literally infinite.
 - Aethric Shards - Can be "shattered" into a set of (seemingly) identical variants, then further "destabilized" into forms that decay into solid petrochemical resources (coal, carbon, solid fuel), organic resources (jelly & yumako mash) and calcite. Aethric shards are like plants using an agricultural tower. They have a very fast growth time, but relatively low yield per harvest. One of the variants of the shattered aethric shard (which has the longest spoil time and the only unique icon of the set) acts as a seed for the crystals.
 - Entropic Sea - A fluid resource from Prismaris's ocean. Can be separated into entropic dust and water. Entropic dust rapidly flickers between a positive and negative form; only the positive form is useful, and every process that uses it produces the negative form as a byproduct. It's also very hard to get rid of entropic dust as you generally consume less than you produce and it can't be recycled away. Positive Entropic Dust also has a small fuel value... and a burn result of negative entropic dust, meaning you can't actually get rid of it by burning it. It can also be converted into entropic nutrients, but those spoil/burn back to negative entropic dust too. Productivity bonuses can quickly cause this to grow out of control. On Prismaris, excess can be tossed back into the lava-like ocean. On other planets, it can be voided by tossing it into lava or launched into space; entropic dust has a *very* high rocket capacity for this reason.
 - Void Essence - A pumped fluid. Useful in many processes, particularly as a catalyst. Like Fluoroketone, comes in multiple variants that must be cycled between, but tends to be ever-so-slightly "lossy" at first. Sufficient (and *easily* attainable) levels of productivity can make the process net positive, however.
@@ -22,8 +22,8 @@ Prismaris has a few distinct environmental features:
 - Lightning - Like Fulgora, Prismaris has lightning storms, though these go all day and night (stronger during the day). These lightning strikes are far less frequent than on Fulgora and each bolt has less energy, so the power they provide is significantly diminished but they still necessitate protection.
 - Thin Air - Like Aquilo, the air in Prismaris is thin, increasing the energy usage of robots significantly, though not as much as Aquilo.
 - Low solar and long nights - The solar power on Prismaris is fairly low, while the night time is incredibly long.
-- Tainted Water - The only source of water on the planet has a physical byproduct that must be dealt with
-- Broken Recycling - Fulgora's recycler won't accept any item native to Prismaris
+- Tainted Water - The only source of water on the planet has a physical byproduct that must be dealt with.
+- Broken Recycling - Fulgora's recycler won't accept any item native to Prismaris.
 
 
 ## Science Pack:
