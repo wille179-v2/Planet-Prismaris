@@ -1,19 +1,105 @@
 local effects = require("__core__.lualib.surface-render-parameter-effects")
 local planet_catalogue_fulgora = require("__space-age__.prototypes.planet.procession-catalogue-fulgora")
 local mapGen = require("prototypes.space.map-gen")
+local asteroid_util = require("__space-age__.prototypes.planet.asteroid-spawn-definitions")
 
 local iconsPath = prismarisConstants.iconsPath
 local spaceGraphics = prismarisConstants.graphicsPath .. "space/"
+local spaceIcons = iconsPath .. "space/"
 
+
+-- Bot logic for lightning
 local botPriority = 100
-
 if settings.startup["prismaris-lightning-targets-robots"].value == true then
 	botPriority = 1000
 end
-
 local lightningExemption = table.deepcopy(data.raw["planet"]["fulgora"].lightning_properties.exemption_rules)
 lightningExemption = table.insert(lightningExemption,{type = "prototype", string = pre .. "cultivated-aether-crystal"})
 
+-- Solar for connections
+local spaceSolar = 150
+-- if this setting exists, a B&A or SYSG mods are installed and we're using a shared stargate.
+if settings.startup["stargate-solar-power"] then
+	spaceSolar = settings.startup["stargate-solar-power"].value == "very-low-power" and 1 or (settings.startup["stargate-solar-power"].value) == "low-power" and 10 or spaceSolar
+end
+
+-- Asteroids
+local interStargateAsteroids = {
+	{
+		type = "asteroid-chunk",
+		asteroid = "oxide-asteroid-chunk",
+		spawn_points = {
+			{probability = 0.03, angle_when_stopped = 1, speed = asteroid_util.standard_speed*10, distance = 0.1},	   -- Start
+			{probability = 0.05, angle_when_stopped = 1, speed = asteroid_util.standard_speed*10, distance = 0.5},		   -- Peak
+			{probability = 0.03, angle_when_stopped = 1, speed = asteroid_util.standard_speed*10, distance = 0.9}		-- End
+		}
+	},
+	{
+		type = "asteroid-chunk",
+		asteroid = "carbonic-asteroid-chunk",
+		spawn_points = {
+			{probability = 0.02, angle_when_stopped = 1, speed = asteroid_util.standard_speed*10, distance = 0.1},	   -- Start
+			{probability = 0.03, angle_when_stopped = 1, speed = asteroid_util.standard_speed*10, distance = 0.5},		   -- Peak
+			{probability = 0.02, angle_when_stopped = 1, speed = asteroid_util.standard_speed*10, distance = 0.9}		-- End
+		}
+	},
+	{
+		type = "asteroid-chunk",
+		asteroid = "metallic-asteroid-chunk",
+		spawn_points = {
+			{probability = 0.02, angle_when_stopped = 1, speed = asteroid_util.standard_speed*10, distance = 0.1},	   -- Start
+			{probability = 0.04, angle_when_stopped = 1, speed = asteroid_util.standard_speed*10, distance = 0.5},		   -- Peak
+			{probability = 0.02, angle_when_stopped = 1, speed = asteroid_util.standard_speed*10, distance = 0.9}		-- End
+		}
+	}
+}
+local stargateAsteroids = {
+  {
+	asteroid = "small-metallic-asteroid",  
+	probability = 0.0001,
+	angle_when_stopped = 1,
+	speed = asteroid_util.standard_speed*0.2,
+  },
+  {
+	asteroid = "small-oxide-asteroid",  
+	probability = 0.0001,
+	angle_when_stopped = 1,
+	speed = asteroid_util.standard_speed*0.2,
+  },
+  {
+	asteroid = "small-carbonic-asteroid",  
+	probability = 0.0001,
+	angle_when_stopped = 1,
+	speed = asteroid_util.standard_speed*0.2,
+  }
+}
+
+--makes the icons for space connections
+function connectionIcon(topIcon, bottomIcon)
+	return {
+		{
+			icon = "__space-age__/graphics/icons/planet-route.png"
+		},
+		{
+			icon = topIcon,
+			icon_size = 64,
+			scale = 0.333,
+			shift = {-6,-6}
+		},
+		{
+			icon = bottomIcon,
+			icon_size = 64,
+			scale = 0.333,
+			shift = {6,6}
+		}
+	}
+end
+------------------------------
+-- Planet & Space Locations --
+------------------------------
+
+
+-- Prismaris itself
 local prismaris = {
 	name = "prismaris",
 	type = "planet",
@@ -97,15 +183,15 @@ local prismaris = {
 		}
 	},
 	 platform_procession_set =
-    {
-      arrival = {"planet-to-platform-b", "platform-to-platform-b"},
-      departure = {"platform-to-planet-a", "platform-to-platform-a"}
-    },
-    planet_procession_set =
-    {
-      arrival = {"platform-to-planet-b"},
-      departure = {"planet-to-platform-a"}
-    },
+	{
+	  arrival = {"planet-to-platform-b", "platform-to-platform-b"},
+	  departure = {"platform-to-planet-a", "platform-to-platform-a"}
+	},
+	planet_procession_set =
+	{
+	  arrival = {"platform-to-planet-b"},
+	  departure = {"planet-to-platform-a"}
+	},
 	procession_graphic_catalogue = planet_catalogue_fulgora,
 	--player_effects
 	--ticks_between_player_effects
@@ -183,24 +269,172 @@ local prismaris = {
 	gravity_pull = 10,
 	orbit = {
 		parent = {
-			name = "star",
+			name = "prismaris-star",
 			type = "space-location"
 		},
 		distance = 15,
-		orientation = .9,
+		orientation = .45,
 	},
 	is_satellite = false,
-	magnitude = 1.3,
+	magnitude = 1.35,
 	--parked_platforms_orientation
-	label_orientation = .75,
-	draw_orbit = false, -- set to false because it shares Nauvis's orbit
+	label_orientation = .25,
+	draw_orbit = true,
 	solar_power_in_space = 300,
-	asteroid_spawn_influence = table.deepcopy(data.raw["planet"]["gleba"].asteroid_spawn_influence)
-	
+	asteroid_spawn_influence = table.deepcopy(data.raw["planet"]["gleba"].asteroid_spawn_influence)	
 }
 
-PlanetsLib:extend({prismaris})
 
+
+
+-- The version of the gate that loads if no other shared gateway mod is enabled
+local calidusGatePrismaris = {
+	type = "space-location",
+	name = prismarisConstants.defaultWarpGate,
+	hidden = prismarisConstants.useModedGate, -- Hide this if using a compatible mod.
+	starmap_icon = spaceIcons .. "starmap-stargate-calidus-512.png",
+	starmap_icon_size = 512,
+	icon = spaceIcons .. "starmap-stargate-calidus-64.png",
+	icon_size = 64,
+	subgroup = "planets",
+	order = "a",
+	gravity_pull = -10,
+	orbit = {
+		parent = {
+			name = "gleba",
+			type = "planet"
+		},
+		orientation = 0.85,
+		distance = 4,
+	},
+	draw_orbit = false,
+	is_satellite = true,
+	asteroid_spawn_influence = 0,
+	label_orientation = 0.1,
+	solar_power_in_space = spaceSolar,
+	asteroid_spawn_definitions = stargateAsteroids,
+	redrawn_connections_exclude = true,
+}
+
+-- Always active gate
+local prismarisGate = {
+	type = "space-location",
+	name = "prismaris-stargate",
+	starmap_icon = spaceIcons .. "calidus-prismaris-stargate-starmap.png",
+	starmap_icon_size = 512,
+	icon = spaceIcons .. "calidus-prismaris-stargate-icon.png",
+	subgroup = "planets",
+	order = "a",
+	gravity_pull = -10,
+	orbit = {
+		parent = {
+			name = "prismaris-star",
+			type = "space-location"
+		},
+		orientation = 0.23,
+		distance = 15
+	},
+	asteroid_spawn_influence = 0,
+	solar_power_in_space = spaceSolar,
+	asteroid_spawn_definitions = stargateAsteroids,
+	draw_orbit = false,
+	label_orientation = .9,
+}
+
+-- The star that prismaris orbits
+local prismarisStar = {
+	type = "space-location",
+	name = "prismaris-star",
+	starmap_icon = spaceIcons .. "prismaris-star-starmap.png",
+	starmap_icon_size = 1024,
+	orbit = {
+		parent = {
+			name = "star",
+			type = "space-location"
+		},
+		orientation = .75,
+		distance = 100,
+	},
+	draw_orbit = false,
+	sprite_only = true,
+	magnitude = 9.3,
+	hidden_in_factoriopedia = true,
+	--asteroid_spawn_influence = 0,
+	--asteroid_spawn_definitions = asteroid_util.spawn_definitions(asteroid_util.nauvis_fulgora)
+}
+
+PlanetsLib:extend({prismaris, calidusGatePrismaris, prismarisGate, prismarisStar})
+
+
+local stargateConnection = {
+	type = "space-connection",
+	name = "cross-stargate-connection",
+	subgroup = "planet-connections",
+	icons = connectionIcon(
+		spaceIcons .. "calidus-prismaris-stargate-icon.png", 
+		spaceIcons .. "starmap-stargate-calidus-64.png"
+	),
+	from = prismarisConstants.activeWarpGate,
+	to = "prismaris-stargate",
+	order = "b",
+	length = 3000,
+	shape = "line",
+	asteroid_spawn_definitions = asteroid_util.spawn_definitions(asteroid_util.nauvis_fulgora),
+	localised_name = {
+		"",
+		"Wormhole from ",
+		"space-location-name." .. prismarisConstants.activeWarpGate,
+		" to ",
+		"space-location-name.prismaris-stargate"
+	}
+}
+
+local stargateToPrismarisConnection = {
+	type = "space-connection",
+	name = "stargate-prismaris",
+	from = "prismaris-stargate",
+	to = "prismaris",
+	subgroup = "planet-connections",
+	icons = connectionIcon(
+		spaceIcons .. "calidus-prismaris-stargate-icon.png",
+		spaceIcons .. "prismaris-icon.png"
+	),
+	order = "b",
+	length = 17000,
+	asteroid_spawn_definitions = asteroid_util.spawn_definitions(asteroid_util.nauvis_gleba)
+}
+
+local glebaToStargateConnection = {
+	type = "space-connection",
+	name = "gleba-stargate",
+	from = "gleba",
+	to = prismarisConstants.defaultWarpGate,
+	icons = connectionIcon(
+		"__space-age__/graphics/icons/gleba.png",
+		spaceIcons .. "starmap-stargate-calidus-64.png"
+	),
+	subgroup = "planet-connections",
+	order = "b",
+	length = 6000,
+	hidden = prismarisConstants.useModedGate, -- Hide this if using a compatible mod.
+		-- Doesn't work because factorio itself is bugged for hiding connections.
+
+	-- If I ever want to do custom asteroids, here's where I'd update their spawn definitions
+	asteroid_spawn_definitions = asteroid_util.spawn_definitions(asteroid_util.gleba_fulgora)
+}
+
+-- stargate to prismaris
+-- active stargate to gleba IF the mod connection is not availible
+
+
+data:extend{stargateConnection,stargateToPrismarisConnection}
+if not prismarisConstants.useModedGate then
+	data:extend{glebaToStargateConnection} --This is terrible. Fix this when/if the bugfix comes.
+end
+
+
+-- Old space connections
+--[[
 data:extend({
 	{
 		type = "space-connection",
@@ -257,4 +491,5 @@ data:extend({
 		order = "e-b"
 	},
 })
+]]
 

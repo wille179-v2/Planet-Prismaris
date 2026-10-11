@@ -47,8 +47,18 @@ prismarisConstants = {
 		{{0.05,0.75,0.75},"poison","e","c"}, --C
 		{{0.05,0.05,0.8},"laser","f","b"}, --B
 		{{0.75,0.05,0.75},"physical","g","m"}, --M
-	}
+	},
+	defaultWarpGate = "prismaris-calidus-stargate",
+	activeWarpGate = "prismaris-calidus-stargate",
+	useModedGate = false
 }
+-- check if the bellicos gate from the mods bellicos & aegis or share your stargates exists. Other shared stargates may be enabled here.
+if data.raw["space-location"]["calidus-bellicos-stargate-calidus"] then
+	prismarisConstants.activeWarpGate = "calidus-bellicos-stargate-calidus"
+	prismarisConstants.useModedGate = true
+end
+
+pre = prismarisConstants.prototypePrefix
 
 color = {
 	entropy = {
@@ -220,8 +230,6 @@ keys = {
 		end
 	end,
 }
-
-pre = prismarisConstants.prototypePrefix
 
 function keyMerge(orderString,tables)
 	--log(serpent.block(tables))

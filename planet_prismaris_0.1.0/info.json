@@ -11,7 +11,9 @@
     "quality",
     "PlanetsLib >= 1.26.7",
     "+ science-tab >= 1.13.0",
-    "? any-planet-start >= 1.2.4"
+    "? any-planet-start >= 1.2.4",
+    "(?) bellicos-and-aegis >= 0.4.2",
+    "(?) stargate-merger >= 0.1.4"
   ],
   "description": "Visit the ever-cycling world of Prismaris, a world of infinite but constantly-shifting resources."
 }

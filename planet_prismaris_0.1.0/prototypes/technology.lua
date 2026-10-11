@@ -30,6 +30,15 @@ data:extend({
 				type = "unlock-space-location",
 				space_location = "prismaris"
 			},
+			{
+				type = "unlock-space-location",
+				space_location = prismarisConstants.activeWarpGate
+			},
+			{
+				type = "unlock-space-location",
+				space_location = "prismaris-stargate"
+			}
+
 		}
 	),
 	pf.technologyFactory( -- prismatic-separation
