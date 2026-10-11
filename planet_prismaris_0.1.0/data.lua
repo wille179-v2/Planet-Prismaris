@@ -9,7 +9,7 @@ local modName = "__planet_prismaris__"
 
 -- constants for use anywhere in the mod. Editing here should update everything everywhere.
 prismarisConstants = {
-	["modName"] = modName,
+	-- Filestructure referance variables
 	prototypePrefix = "prismaris-",
 	graphicsPath = modName .. "/graphics/",
 	entityGraphicsPath = modName .. "/graphics/entity/",
@@ -52,14 +52,17 @@ prismarisConstants = {
 	activeWarpGate = "prismaris-calidus-stargate",
 	useModedGate = false
 }
--- check if the bellicos gate from the mods bellicos & aegis or share your stargates exists. Other shared stargates may be enabled here.
+-- Mod compatibility. 
+-- Check if the bellicos gate from the mods bellicos & aegis or share your stargates exists. Other shared stargates may be enabled here.
 if data.raw["space-location"]["calidus-bellicos-stargate-calidus"] then
 	prismarisConstants.activeWarpGate = "calidus-bellicos-stargate-calidus"
 	prismarisConstants.useModedGate = true
 end
 
+-- Shorthand for the prismaris prefix stored in constants
 pre = prismarisConstants.prototypePrefix
 
+-- Recipe colors for machines that can dynamically tint
 color = {
 	entropy = {
 		{.95,.95,.95},
@@ -231,6 +234,7 @@ keys = {
 	end,
 }
 
+-- Utility function for item and recipe creation, for use with the keys table
 function keyMerge(orderString,tables)
 	--log(serpent.block(tables))
 	tables = tables or {}
@@ -252,6 +256,10 @@ require("prototypes.space.planet-prismaris-map-gen")
 require("prototypes.resource")
 require("prototypes.tile.tiles")
 
+-- Environmental Entities
+require("prototypes.entities.plants")
+require("prototypes.entities.explosions")
+
 --Basic items
 require("prototypes.item")
 require("prototypes.fluid")
@@ -269,9 +277,8 @@ require("prototypes.entities.buildings")
 require("prototypes.entities.laser-turrets")
 require("prototypes.entities.tesla-turrets")
 require("prototypes.entities.void-beacon")
-require("prototypes.entities.plants")
-require("prototypes.entities.explosions")
-
+require("prototypes.entities.chronocyclers")
+require("prototypes.entities.cogitor")
 
 ----------------------------------------------------
 -- General data-stage game tweaks --

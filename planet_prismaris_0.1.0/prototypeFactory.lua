@@ -205,10 +205,10 @@ end
 	Takes in either a string path to a 64px icon file, or takes in an array of icons layers.
 	Each icon layer can be either a standard factorio icon definition or can be an ordered array: {iconPath, shift, scale, tint}
 ]]
-function pf.iconFactory(icons)
+function pf.iconFactory(icons, iconSize)
 	iconList = {}
 	if type(icons) == type("string") then -- if given only a string to the icon location
-		iconList = {{icon = icons}}
+		iconList = {{icon = icons, icon_size = iconSize}}
 	elseif type(icons) == type({}) then -- if given an array of layers
 		for i,layer in ipairs(icons) do
 			table.insert(iconList, {
@@ -389,8 +389,7 @@ end
 function pf.technologyFactory(name, icon, essential, unlockCondition, prerequisites, effectsList, otherKeys)
 	tech = {type = "technology"}
 	tech.name = name
-	tech.icon = icon
-	tech.icon_size = 256
+	tech.icons = pf.iconFactory(icon,256)
 	tech.essential = essential
 	tech.research_trigger = unlockCondition.research_trigger
 	tech.unit = unlockCondition.unit

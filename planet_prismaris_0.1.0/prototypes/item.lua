@@ -857,7 +857,7 @@ data:extend({
 		pre .. "unconfigured-chronocycler",
 		20,
 		recyclerIcons .. "recycler.png", -- TODO: placeholder
-		"smelting-machine",
+		pre.."chronocycler",
 		{},
 		keyMerge("f[chronocycler]-a[unconfigured]",{keys.rocketCapacity(20,.5)})
 	),
@@ -865,7 +865,7 @@ data:extend({
 		pre .. "reversal-chronocycler",
 		20,
 		recyclerIcons .. "recycler.png", -- TODO: placeholder
-		"smelting-machine",
+		pre.."chronocycler",
 		{
 			spoilage = pf.spoilageHelper(
 				pre .. "unconfigured-chronocycler",
@@ -882,7 +882,7 @@ data:extend({
 		pre .. "stasis-chronocycler",
 		20,
 		recyclerIcons .. "recycler.png", -- TODO: placeholder
-		"smelting-machine",
+		pre.."chronocycler",
 		{
 			spoilage = pf.spoilageHelper(
 				pre .. "unconfigured-chronocycler",
@@ -899,7 +899,7 @@ data:extend({
 		pre .. "acceleration-chronocycler",
 		20,
 		recyclerIcons .. "recycler.png", -- TODO: placeholder
-		"smelting-machine",
+		pre.."chronocycler",
 		{
 			spoilage = pf.spoilageHelper(
 				pre .. "unconfigured-chronocycler",
