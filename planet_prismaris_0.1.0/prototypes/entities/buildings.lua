@@ -221,6 +221,12 @@ lunarPanel.performance_at_day = 0
 lunarPanel.performance_at_night = 1
 lunarPanel.production = "120kW"
 lunarPanel.minable.result = pre .. "lunar-panel"
+lunarPanel.surface_conditions = { -- Not usable in space where it's always day.
+	{
+		property = "gravity",
+		min = 0.1
+	}
+}
 
 
 data:extend({
