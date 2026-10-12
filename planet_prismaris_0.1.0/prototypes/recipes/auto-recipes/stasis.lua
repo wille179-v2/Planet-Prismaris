@@ -57,7 +57,7 @@ if refresh then -- Reset the timer.
 			end
 		end
 	end
-else
+else -- Create frozen variant
 	itemList = {}
 	for type_name in pairs(defines.prototypes.item) do -- get all subtypes of "item" prototype
 		if data.raw[type_name] then

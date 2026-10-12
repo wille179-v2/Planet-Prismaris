@@ -11,6 +11,29 @@ local fast = prismarisConstants.fastSpoilTime
 
 local hideAethricShardVariants = true -- master dev control variable.
 
+-- makes a Key entry that enables items to glow on belts.
+function makeGlow(base,glowMask)
+	return {
+		pictures = {
+			{
+				layers = {
+					{
+						size = 64,
+						filename = base,
+						scale = 0.5
+					},
+					{
+						size = 64,
+						filename = glowMask,
+						scale = 0.5,
+						draw_as_light = true
+					}
+				}
+			}
+		}
+	}
+end
+
 --[[
 	For reference:
 	pf.itemFactory(name, stackSize, icons, subgroup, pfs, otherKeys)
@@ -630,7 +653,10 @@ data:extend({
 				60
 			)
 		},
-		keyMerge("a[flux-capacitor]-b[active]",{keys.accelerationLossExempt})
+		keyMerge("a[flux-capacitor]-b[active]",{
+			keys.accelerationLossExempt,
+			makeGlow(prisIcons .. "active-flux-capacitor.png",prisIcons .. "active-flux-capacitor-light-mask.png")
+		})
 	),
 	pf.itemFactory(
 		pre .. "discharged-flux-capacitor",
@@ -777,7 +803,12 @@ data:extend({
 				60 * 60
 			)
 		},
-		keyMerge("i-a",{keys.accelerationLossExempt,keys.science,keys.rocketCapacity(200,5)})
+		keyMerge("i-a",{
+			keys.accelerationLossExempt,
+			keys.science,
+			keys.rocketCapacity(200,5),
+			makeGlow(prisIcons .. "polyphasic-science-pack-r.png",prisIcons .. "polyphasic-science-pack-r-light.png")
+		})
 	),
 	pf.itemFactory(
 		pre .. "blue-polyphasic-science-pack",
@@ -790,7 +821,12 @@ data:extend({
 				60 * 60
 			)
 		},
-		keyMerge("i-b",{keys.accelerationLossExempt,keys.science,keys.rocketCapacity(200,5)})
+		keyMerge("i-b",{
+			keys.accelerationLossExempt,
+			keys.science,
+			keys.rocketCapacity(200,5),
+			makeGlow(prisIcons .. "polyphasic-science-pack-b.png",prisIcons .. "polyphasic-science-pack-b-light.png")
+		})
 	),
 	pf.itemFactory(
 		pre .. "green-polyphasic-science-pack",
@@ -803,7 +839,12 @@ data:extend({
 				60 * 60
 			)
 		},
-		keyMerge("i-c",{keys.accelerationLossExempt,keys.science,keys.rocketCapacity(200,5)})
+		keyMerge("i-c",{
+			keys.accelerationLossExempt,
+			keys.science,
+			keys.rocketCapacity(200,5),
+			makeGlow(prisIcons .. "polyphasic-science-pack-g.png",prisIcons .. "polyphasic-science-pack-g-light.png")
+		})
 	),
 })
 
@@ -951,7 +992,7 @@ for i,pair in ipairs(prismarisConstants.laserTintsAndTypes) do
 		pf.itemFactory(
 			pre .. pair[2] .. "-laser-turret",
 			50,
-			{{icon = baseIcons .. "laser-turret.png", tint = pair[1]}}, -- TODO: proper icons
+			{{icon = baseIcons .. "laser-turret.png"},{icon = prisIcons .. "prismatic-laser-turret-mask.png",tint = pair[1]}},
 			"prismaris-laser-turrets",
 			{
 				placement = pf.placementHelper(
@@ -972,7 +1013,7 @@ data:extend{
 	pf.itemFactory(
 		pre .. "unconfigured-laser-turret",
 		50,
-		{{icon = baseIcons .. "laser-turret.png", tint = {.6,.6,.6}}}, -- TODO: proper icons
+		{{icon = baseIcons .. "laser-turret.png"}, {icon = prisIcons .. "prismatic-laser-turret-mask.png"}},
 		"prismaris-laser-turrets",
 		{},
 		keyMerge("b[turret]-b[laser]-a[unconfigured]",{keys.rocketCapacity(50,.5)})

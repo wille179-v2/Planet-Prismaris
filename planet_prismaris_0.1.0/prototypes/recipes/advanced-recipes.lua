@@ -641,7 +641,7 @@ data:extend({
 data:extend{
 	pf.recipeFactory(
 		pre .. "unconfigured-laser-turret",
-		{{icon = baseIcons .. "laser-turret.png", tint = {.6,.6,.6}}}, -- TODO: proper icons
+		{{icon = baseIcons .. "laser-turret.png"}, {icon = prisIcons .. "prismatic-laser-turret-mask.png"}},
 		pf.ingredientsFactory(
 			{
 				{"laser-turret",1},
@@ -677,7 +677,7 @@ for i,pair in ipairs(prismarisConstants.laserTintsAndTypes) do
 	data:extend{
 		pf.recipeFactory(
 			turretName,
-			{{icon = baseIcons .. "laser-turret.png", tint = pair[1]}}, -- TODO: proper icons
+			{{icon = baseIcons .. "laser-turret.png"},{icon = prisIcons .. "prismatic-laser-turret-mask.png",tint = pair[1]}}, -- TODO: proper icons
 			pf.itemIngredientsFactory(
 				{
 					{pre.."unconfigured-laser-turret"},

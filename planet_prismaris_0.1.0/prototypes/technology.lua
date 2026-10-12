@@ -1,4 +1,5 @@
 local techPlaceholder = prismarisConstants.technologyIconsPath .. "technology_placeholder.png"
+local techPath = prismarisConstants.technologyIconsPath
 
 -- pf.technologyFactory(name, icons, essential, unlockCondition, prerequisites, effects)
 	-- pf.unlockUnitHelper(count,packs,seconds)
@@ -7,7 +8,7 @@ local techPlaceholder = prismarisConstants.technologyIconsPath .. "technology_pl
 data:extend({
 	pf.technologyFactory( -- planet-discovery-prismaris
 		"planet-discovery-prismaris",
-		techPlaceholder,
+		PlanetsLib.technology_icon_planet(prismarisConstants.iconsPath .. "space/prismaris-starmap-icon.png",512,1),
 		true,
 		pf.unlockUnitHelper(
 			1500,
@@ -43,7 +44,7 @@ data:extend({
 	),
 	pf.technologyFactory( -- prismatic-separation
 		"prismatic-separation",
-		techPlaceholder,
+		techPath .. "prismatic-separation.png",
 		true,
 		pf.unlockTriggerHelper(
 			"mine-entity",
@@ -60,7 +61,7 @@ data:extend({
 	),
 	pf.technologyFactory( -- prismatic-synthesis
 		"prismatic-synthesis",
-		techPlaceholder,
+		techPath .. "prismatic-synthesis.png",
 		true,
 		pf.unlockTriggerHelper(
 			"craft-item",
@@ -83,7 +84,7 @@ data:extend({
 	),
 	pf.technologyFactory( -- aethric-cultivation
 		"aethric-cultivation",
-		techPlaceholder,
+		techPath .. "aethric-cultivation.png",
 		true,
 		pf.unlockTriggerHelper(
 			"mine-entity",
@@ -99,7 +100,7 @@ data:extend({
 	),
 	pf.technologyFactory( -- aethric-destabilization
 		"aethric-destabilization",
-		techPlaceholder,
+		techPath .. "aethric-destabilization.png",
 		true,
 		pf.unlockTriggerHelper(
 			"craft-item",
@@ -122,7 +123,7 @@ data:extend({
 	),
 	pf.technologyFactory( -- entropic-sea-filtering
 		"entropic-sea-filtering",
-		techPlaceholder,
+		techPath .. "entropic-sea-filtering.png",
 		true,
 		pf.unlockTriggerHelper(
 			"craft-fluid",
@@ -139,7 +140,7 @@ data:extend({
 	),
 	pf.technologyFactory( -- void-essence-refining
 		"void-essence-refining",
-		techPlaceholder,
+		techPath .. "void-essence-refining.png",
 		true,
 		pf.unlockTriggerHelper(
 			"craft-fluid",
@@ -156,7 +157,7 @@ data:extend({
 	),
 	pf.technologyFactory( -- void-essence-stabilization
 		"void-essence-stabilization",
-		techPlaceholder,
+		techPath .. "void-essence-stabilization.png",
 		true,
 		pf.unlockTriggerHelper(
 			"craft-fluid",
@@ -173,7 +174,7 @@ data:extend({
 	),
 	pf.technologyFactory( -- flux-capacitor
 		"flux-capacitor",
-		techPlaceholder,
+		techPath .. "flux-capacitor.png",
 		true,
 		pf.unlockUnitHelper(
 			500,
@@ -199,7 +200,7 @@ data:extend({
 	),
 	pf.technologyFactory( -- green-polyphasic-science-pack
 		"green-polyphasic-science-pack",
-		techPlaceholder,
+		techPath .. "green-polyphasic-science-pack.png",
 		true,
 		pf.unlockTriggerHelper(
 			"craft-item",
@@ -215,7 +216,7 @@ data:extend({
 	),
 	pf.technologyFactory( -- red-polyphasic-science-pack
 		"red-polyphasic-science-pack",
-		techPlaceholder,
+		techPath .. "red-polyphasic-science-pack.png",
 		true,
 		pf.unlockUnitHelper(
 			500,
@@ -238,7 +239,7 @@ data:extend({
 	),
 	pf.technologyFactory( -- blue-polyphasic-science-pack
 		"blue-polyphasic-science-pack",
-		techPlaceholder,
+		techPath .. "blue-polyphasic-science-pack.png",
 		true,
 		pf.unlockUnitHelper(
 			500,
@@ -261,7 +262,11 @@ data:extend({
 	),
 	pf.technologyFactory( -- complete-polyphasic-science
 		"complete-polyphasic-science",
-		techPlaceholder,
+		{
+			{icon = techPath .. "blue-polyphasic-science-pack.png", shift = {-32,-10}, scale = 0.4, icon_size = 256},
+			{icon = techPath .. "red-polyphasic-science-pack.png", shift = {32,-10}, scale = 0.4, icon_size = 256},
+			{icon = techPath .. "green-polyphasic-science-pack.png", shift = {0,10}, scale = 0.4, icon_size = 256},
+		},
 		true,
 		pf.unlockUnitHelper(
 			500,
@@ -554,7 +559,7 @@ data:extend({
 	),
 	pf.technologyFactory( --prismatic-laser-turret
 		"prismatic-laser-turret",
-		techPlaceholder, -- TODO: placeholder
+		techPath .. "prismatic-laser-turret.png",
 		false,
 		pf.unlockUnitHelper(
 			1000,
