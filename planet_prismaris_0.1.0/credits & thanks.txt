@@ -1,0 +1,12 @@
+All coding by wille179. Graphics created or modified by wille179, with original sources credited below. 
+No generative AI was used anywhere in this project.
+
+Resources & Assets:
+* Syen-ce (icon & entity graphics from Planetaris: Hyarion; modified by wille179)
+* malcomriley (icon graphics from their unused-renders repository; modified by wille179)
+* Hurricane046 (building graphics; unmodified)
+* Hornwitser (science pack graphics from Quality Glassware; modified by wille179)
+* valent125 (stargate graphics from Aegis & Bellicos; modified by wille179. Also gave me the idea for Prismaris's stargate in the first place.)
+
+Special thanks to the people of the factorio discord for helping me out:
+* PennyJim, shemp_71881, Osmo
