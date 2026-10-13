@@ -139,6 +139,7 @@ electricHeater.heat_buffer.max_temperature = 1000
 electricHeater.heat_buffer.specific_heat = "1MJ"
 electricHeater.minable.results = nil
 electricHeater.minable.result = pre .. "electric-heater"
+electricHeater.surface_conditions = nil
 
 local crystalSeparationCategory = {
 	type = "recipe-category",
