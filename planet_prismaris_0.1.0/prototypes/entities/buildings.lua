@@ -131,11 +131,11 @@ electricHeater.heating_radius = 5
 electricHeater.energy_source = {
 	type = "electric",
 	usage_priority = "secondary-input",
-	
+	drain = "50kW"
 }
 electricHeater.consumption = "10MW"
 electricHeater.scale_energy_usage = true
-electricHeater.heat_buffer.max_temperature = 500
+electricHeater.heat_buffer.max_temperature = 1000
 electricHeater.heat_buffer.specific_heat = "1MJ"
 
 local crystalSeparationCategory = {
