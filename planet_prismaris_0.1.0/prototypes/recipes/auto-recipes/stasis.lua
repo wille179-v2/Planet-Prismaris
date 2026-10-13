@@ -65,7 +65,7 @@ else -- Create frozen variant
 				if hasSpoilage(item) then -- check if it has something it can spoil into
 					frozenItem = table.deepcopy(item)
 					frozenItem.spoil_ticks = 100 * item.spoil_ticks
-					frozenItem.icons = frozenItem.icons or {{icon = frozenItem.icon}}
+					frozenItem.icons = frozenItem.icons or {{icon = frozenItem.icon, icon_size = frozenItem.icon_size}}
 					frozenItem.icons[1].tint = {0.5,.5,.5}
 					frozenItem.icon = nil
 					frozenItem.name = frozenItem.name .. "-frozen"
