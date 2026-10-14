@@ -54,3 +54,6 @@ Prismaris offers several unique rewards.
 - Void Beacons - Beacons that allow productivity/quality modules and have both a high multiplier and high transmission range, but use concentrated void fluid as their fuel instead of electricity, outputting impure void essence as waste product.
 - Additional Lab Speed + 3 (non-infinite) levels of research productivity
 - 2 levels of worker (non-infinite) robot speed
+
+## AI Usage
+No generative AI is used anywhere in this mod, and has not been used at any stage in its development. All code, assets, and ideas are 100% human-made.

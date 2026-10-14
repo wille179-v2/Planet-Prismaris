@@ -1,5 +1,5 @@
 All coding by wille179. Graphics created or modified by wille179, with original sources credited below. 
-No generative AI was used anywhere in this project.
+No generative AI was used anywhere or at any stage in this project.
 
 Resources & Assets:
 * Syen-ce (icon & entity graphics from Planetaris: Hyarion; modified by wille179)
