@@ -451,7 +451,7 @@ data:extend({
 data:extend({
 	pf.recipeFactory(
 		pre .. "crystal-separator",
-		recipeTempIcon, --TODO: placeholder icon
+		prisIcons .. "crystal-separator.png", --TODO: placeholder icon
 		pf.itemIngredientsFactory({
 			{"electronic-circuit",2},
 			{"iron-gear-wheel",5},
@@ -463,7 +463,7 @@ data:extend({
 		}),
 		0.5,
 		{"crafting"},
-		keyMerge("e[crystal-separator]-a[basic]",{keys.standard,keys.smelting})
+		keyMerge("e[crystal-separator]-a[basic]",{keys.standard,keys.smelting,keys.prismarisOnly})
 	),
 	pf.recipeFactory(
 		pre .. "thermal-flux-furnace",
@@ -479,7 +479,7 @@ data:extend({
 		}),
 		8,
 		{"advanced-crafting"},
-		keyMerge("e[crystal-separator]-b[flux]",{keys.standard,keys.smelting, {main_product = pre .. "thermal-flux-furnace"}})
+		keyMerge("e[crystal-separator]-b[flux]",{keys.standard,keys.smelting,keys.prismarisOnly, {main_product = pre .. "thermal-flux-furnace"}})
 	),
 	pf.recipeFactory(
 		pre .. "electric-heater",

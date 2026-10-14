@@ -853,7 +853,7 @@ data:extend({
 	pf.itemFactory(
 		pre .. "crystal-separator",
 		50,
-		baseIcons .. "stone-furnace.png", -- TODO: Placeholder
+		prisIcons .. "crystal-separator.png",
 		"smelting-machine",
 		{
 			placement = pf.placementHelper(

@@ -49,36 +49,9 @@ fluidboxes =  {
 	},
 }
 
-
-
-local separatorInventorySize = 8
-
---Crystal Separator
--- Temporarily using a copy of the stone furnace
-local crystalSeparator = table.deepcopy(data.raw['furnace']['stone-furnace'])
-crystalSeparator.name = pre .. "crystal-separator"
-crystalSeparator.result_inventory_size = separatorInventorySize
-crystalSeparator.crafting_categories = {pre .. "crystal-separation"}
-crystalSeparator.energy_usage = "180kW"
-crystalSeparator.energy_source = {
-	type = "electric",
-	usage_priority = "secondary-input",
-	emissions_per_minute = {["pollution"] = 1}
-}
-crystalSeparator.minable.results = nil
-crystalSeparator.minable.result = pre .. "crystal-separator"
-crystalSeparator.minable.mining_time = 1
-crystalSeparator.crafting_speed = 2
-crystalSeparator.module_slots = 3
-crystalSeparator.allowed_module_categories = nil
-crystalSeparator.allowed_effects = {"speed","productivity","consumption","pollution","quality"}
-crystalSeparator.effect_receiver.uses_module_effects = true
-crystalSeparator.effect_receiver.uses_beacon_effects = true
-crystalSeparator.heating_energy = "100kW"
-
 local thermalSeparator = table.deepcopy(data.raw['furnace']['electric-furnace'])
 thermalSeparator.name = pre .. "thermal-flux-furnace"
-thermalSeparator.result_inventory_size = separatorInventorySize
+thermalSeparator.result_inventory_size = prismarisConstants.separatorInventorySize
 thermalSeparator.crafting_categories = {pre .. "crystal-separation", pre .. "thermal-cracking","smelting"}
 thermalSeparator.effect_receiver = {
 	base_effect = {
@@ -141,11 +114,6 @@ electricHeater.minable.results = nil
 electricHeater.minable.result = pre .. "electric-heater"
 electricHeater.surface_conditions = nil
 
-local crystalSeparationCategory = {
-	type = "recipe-category",
-	name = pre .. "crystal-separation"
-}
-
 local thermalCrackingCategory = {
 	type = "recipe-category",
 	name = pre .. "thermal-cracking"
@@ -164,7 +132,7 @@ lunarPanel.surface_conditions = { -- Not usable in space where it's always day.
 	}
 }
 
-data:extend({crystalSeparator,thermalSeparator,electricHeater,crystalSeparationCategory,thermalCrackingCategory,lunarPanel})
+data:extend({thermalSeparator,electricHeater,thermalCrackingCategory,lunarPanel})
 
 
 

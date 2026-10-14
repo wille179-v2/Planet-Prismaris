@@ -24,6 +24,7 @@ prismarisConstants = {
 	voidFluidRatio = 0.8,
 	shardCrackingSpeed = 3.2,
 	shardCrackingYield = 4,
+	separatorInventorySize = 8,
 	laserTintsAndTypes = {
 		-- First value is tint
 		-- Second value is damage type
@@ -274,6 +275,7 @@ require("prototypes.recipes.advanced-recipes")
 
 --Buildings
 require("prototypes.entities.buildings")
+require("prototypes.entities.crystal-separator")
 require("prototypes.entities.laser-turrets")
 require("prototypes.entities.tesla-turrets")
 require("prototypes.entities.void-beacon")
