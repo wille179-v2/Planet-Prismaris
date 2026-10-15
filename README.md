@@ -42,12 +42,12 @@ Prismaris offers several unique rewards.
 
 ### Technology Rewards:
 - Thermal Flux Furnace - An upgraded version of the crystal separator that can also smelt traditional resources. Has an innate 25% productivity bonus and a hefty 6 module slots, but is powered by heat rather than electricity.
-- Electric heater - For when you need heat in a large area and don't want to deal with fuel. It can't get hot enough to boil water in a heat exchanger.
+- Electric heater - For when you need heat in a large area and don't want to deal with fuel. While it can get hot enough to boil water in a heat exchanger, it always consumes more energy than it can produce.
 - Chronocycler - A unique "Multi-phase building," comes in four variants. Uses Void Essence as a liquid fuel. All work similar to Fulgora's recycler, but with a twist:
-	- Unconfigured Chronocycler - The base item. It cannot be placed as a building and instead serves as an intermediate part for all other chronocyclers. All other chronocyclers eventually spoil back into this form after one hour.
-	- Reversal Chronocycler - Works like a normal recycler, but has an innate quality and productivity bonus at the cost of being slightly slower. It is also capable of recycling Prismaris's unique items.
-	- Stasis Chronocycler - Intended for preservation of perishable items. Depending on your mod settings, this either resets the spoil percentage of a perishable item, or it transforms a perishable item into a version with a much longer spoil time that must be transformed back to be used.
-	- Acceleration Chronocycler - Takes in an item with a spoil time, and immediately produces its spoil result. There is a small chance an item is lost but also a small innate chance of increasing the item's quality.
+	- Unconfigured Chronocycler - The base item. It cannot be placed as a building and instead serves as an intermediate part for all other chronocyclers. All other chronocyclers eventually spoil back into this form after one hour if not placed down.
+	- Reversal Chronocycler - Works like a normal recycler, but has an innate quality and productivity bonus at the cost of being slightly slower. It is also capable of recycling Prismaris's unique items, which cannot be recycled otherwise.
+	- Stasis Chronocycler - Intended for the preservation of perishable items. Depending on your mod settings, this either resets the spoil percentage of a perishable item or it transforms that item into a version with a much longer spoil time that must be transformed back again to be used.
+	- Acceleration Chronocycler - Takes in an item with a spoil time and immediately produces its spoil result.
 - Lunar Panels - Inverted, more efficient solar panels that only work at night rather than during the day.
 - Cogitor - Uses a complex crystal catalyst to work. The catalyst very slowly recharges itself after being expended, and isn't consumed. Can transmute science packs in a lossy cycle, but has a very high innate quality bonus. Effectively, this lets you sacrifice a small amount of your science packs to gain a significant boost in their per-pack value.
 - Prismatic Laser & Tesla Turrets - Laser and Tesla turrets that do damage types other than "laser" or "electric." Uses the same "Unconfigured" / 1-hour spoil-reversion mechanic of the chronocycler, though it takes a specific prismatic shard to configure and that shard is lost if it reverts. Beam matches the color of the prismatic shard. Damage types include Fire, Acid, Electric (for lasers) / Laser (for tesla), Poison, Physical, and Explosion.
