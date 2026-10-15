@@ -96,7 +96,7 @@ for _,pair in ipairs(destabilizedVariantPairs) do
 				{pre .. "shattered-aethric-shard-" .. pair[2],1,ip=.04},
 			}),
 			2,
-			{"crafting","organic"},
+			{pre .. "crystal-separation","organic"},
 			keyMerge("d[destabilized]-" .. pair[1],{keys.standard,keys.productivity,keys.aethric,keys.prismarisOnly,{localised_name = {"recipe-name.prismaris-destabilized-aethric-shard"}}})
 		)
 	})

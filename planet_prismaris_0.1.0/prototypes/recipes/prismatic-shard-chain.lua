@@ -59,7 +59,7 @@ data:extend({
 			{pre .. "activated-prismatic-shard-w",1,ip=.90,always_fresh = true}
 		}),
 		1,
-		{"advanced-crafting"},
+		{pre .. "crystal-separation"},
 		keyMerge("c[shard-cycling]",{keys.standard,keys.prismatic,keys.prismarisOnly,{allow_quality = false}})
 	),
 	pf.recipeFactory(
@@ -72,7 +72,7 @@ data:extend({
 			{pre .. "activated-prismatic-shard-k",1,ip=.90,always_fresh = true}
 		}),
 		1,
-		{"advanced-crafting"},
+		{pre .. "crystal-separation"},
 		keyMerge("c[shard-cycling]",{keys.standard,keys.prismatic,keys.prismarisOnly,{allow_quality = false}})
 	),
 	pf.recipeFactory(

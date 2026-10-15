@@ -226,7 +226,7 @@ data:extend({
 				"chemical-science-pack",
 				"production-science-pack",
 				"space-science-pack",
-				pre .. "green-polyphasic-science-pack"
+				pre .. "red-polyphasic-science-pack"
 			},
 			30
 		),
@@ -249,7 +249,7 @@ data:extend({
 				"chemical-science-pack",
 				"production-science-pack",
 				"space-science-pack",
-				pre .. "green-polyphasic-science-pack"
+				pre .. "blue-polyphasic-science-pack"
 			},
 			30
 		),
@@ -329,6 +329,7 @@ data:extend({
 				"utility-science-pack",
 				"space-science-pack",
 				pre .. "green-polyphasic-science-pack",
+				pre .. "blue-polyphasic-science-pack",
 			},
 			60
 		),
@@ -354,6 +355,7 @@ data:extend({
 				"utility-science-pack",
 				"space-science-pack",
 				pre .. "green-polyphasic-science-pack",
+				pre .. "red-polyphasic-science-pack",
 			},
 			60
 		),
