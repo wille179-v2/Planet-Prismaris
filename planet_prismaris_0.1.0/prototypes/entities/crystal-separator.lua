@@ -3,7 +3,6 @@ local iconPath = prismarisConstants.iconsPath
 require ("circuit-connector-sprites")
 require ("__space-age__.prototypes.entity.circuit-network")
 
-log(serpent.block(circuit_connector_definitions))
 
 circuit_connector_definitions[pre .. "crystal-separator"] = circuit_connector_definitions.create_vector(
 	universal_connector_template,
@@ -14,7 +13,6 @@ circuit_connector_definitions[pre .. "crystal-separator"] = circuit_connector_de
 		{variation = 25, main_offset = util.by_pixel(-36,44), shadow_offset=util.by_pixel(0,0), show_shadow = false}
 	}
 )
-log(serpent.block(circuit_connector_definitions[pre .. "crystal-separator"]))
 
 local crystalSeparator = {
 	name = pre.."crystal-separator",
@@ -189,8 +187,6 @@ local crystalSeparator = {
 	},
 }
 
-log("crystal separator final")
-log(serpent.block(crystalSeparator))
 
 local crystalSeparationCategory = {
 	type = "recipe-category",
