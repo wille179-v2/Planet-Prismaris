@@ -126,7 +126,7 @@ if settings.startup["test-reversal-mode"].value == "complex" then
 	-- find correct prototype for spoilItem
 	for spoilItem in pairs(spoilMap) do
 		for type_name in pairs(defines.prototypes.item) do
-			log(type_name .. " " .. spoilItem)
+			--log(type_name .. " " .. spoilItem)
 			if data.raw[type_name] ~= nil and data.raw[type_name][spoilItem] ~= nil then
 				spoilMap[spoilItem].type = type_name
 			end
@@ -150,8 +150,8 @@ if settings.startup["test-reversal-mode"].value == "complex" then
 		end
 		local recipe = data.raw.recipe[spoilItem .. "-recycling"] or {}
 		local energy = recipe.energy_required or 0.1
-		log("add custom spoilage inversion recipe for " .. spoilItem)
-		log(serpent.block(data.raw["item"][spoilItem]))
+		--log("add custom spoilage inversion recipe for " .. spoilItem)
+		--log(serpent.block(data.raw["item"][spoilItem]))
 		data:extend({
 			pf.recipeFactory(
 				spoilItem .. "-reversal",
