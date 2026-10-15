@@ -172,6 +172,23 @@ data:extend({
 			pre .. "concentrated-void-essence"
 		}
 	),
+	pf.technologyFactory(
+		"chronopetrochemistry",
+		techPlaceholder, --TODO,
+		false,
+		pf.unlockTriggerHelper(
+			"craft-item",
+			pre .. "destabilized-aethric-shard-b",
+			10
+		),
+		{
+			"void-essence-stabilization",
+			"aethric-destabilization"
+		},
+		{
+			pre .. "chronopetrochemistry"
+		}
+	),
 	pf.technologyFactory( -- flux-capacitor
 		"flux-capacitor",
 		techPath .. "flux-capacitor.png",

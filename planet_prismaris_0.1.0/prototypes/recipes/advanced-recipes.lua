@@ -7,6 +7,32 @@ local distort = function(fluidAmount)
 	return fluidAmount * prismarisConstants.voidFluidRatio
 end
 
+-- Chronopetrochemistry
+data:extend({
+	pf.recipeFactory(
+		pre .. "chronopetrochemistry",
+		recipeTempIcon, -- TODO
+		pf.ingredientsFactory(
+			{
+				{"coal",5},
+				{"spoilage",10},
+				{"solid-fuel",5},
+			},
+			{
+				{pre .. "concentrated-void-essence",50}
+			}
+		),
+		pf.fluidResultsFactory(
+			{
+				{"crude-oil",100},
+				{pre .. "distorted-void-essence",distort(50)}
+			}
+		),
+		5,
+		{"oil-processing"},
+		keyMerge("a[oil-processing]-e[chronopetrochemistry]",{keys.standard,keys.productivity,keys.prismarisOnly,keys.subgroup("fluid-recipes"),keys.tint{0.489,0.626,0.549}})
+	)
+})
 
 -- Flux Capacitor Chain
 data:extend({
@@ -15,7 +41,7 @@ data:extend({
 		prisIcons .. "active-flux-capacitor.png",
 		pf.ingredientsFactory(
 			{
-				{pre .. "shattered-aethric-shard-f",1},
+				{"battery",2},
 				{pre .. "activated-prismatic-shard-w",1},
 				{pre .. "activated-prismatic-shard-k",1},
 				{"advanced-circuit",5}
