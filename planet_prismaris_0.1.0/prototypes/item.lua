@@ -9,7 +9,7 @@ local slow = prismarisConstants.slowSpoilTime
 local medium = prismarisConstants.mediumSpoilTime
 local fast = prismarisConstants.fastSpoilTime
 
-local hideAethricShardVariants = true -- master dev control variable.
+local hideAethricShardVariants = not settings.startup["prismaris-aether-mercy"].value --Hides shards based on player settings
 
 -- makes a Key entry that enables items to glow on belts.
 function makeGlow(base,glowMask)
@@ -319,7 +319,8 @@ data:extend({
 		{
 			order = "b[shattered-shard]",
 			hidden = hideAethricShardVariants,
-			weight = 1000
+			weight = 1000,
+			localised_name = {"item-name.prismaris-shattered-aethric-shard",hideAethricShardVariants and "" or {""," (",{"item-name.calcite"}," precursor)"}}
 		}
 	),
 	pf.itemFactory(
@@ -336,7 +337,8 @@ data:extend({
 		{
 			order = "b[shattered-shard]",
 			hidden = hideAethricShardVariants,
-			weight = 1000
+			weight = 1000,
+			localised_name = {"item-name.prismaris-shattered-aethric-shard",hideAethricShardVariants and "" or {""," (",{"item-name.coal"}," precursor)"}}
 		}
 	),
 	pf.itemFactory(
@@ -353,7 +355,8 @@ data:extend({
 		{
 			order = "b[shattered-shard]",
 			hidden = hideAethricShardVariants,
-			weight = 1000
+			weight = 1000,
+			localised_name = {"item-name.prismaris-shattered-aethric-shard",hideAethricShardVariants and "" or {""," (",{"item-name.carbon"}," precursor)"}}
 		}
 	),
 	pf.itemFactory(
@@ -370,7 +373,8 @@ data:extend({
 		{
 			order = "b[shattered-shard]",
 			hidden = hideAethricShardVariants,
-			weight = 1000
+			weight = 1000,
+			localised_name = {"item-name.prismaris-shattered-aethric-shard",hideAethricShardVariants and "" or {""," (",{"item-name.solid-fuel"}," precursor)"}}
 		}
 	),
 	pf.itemFactory(
@@ -384,7 +388,11 @@ data:extend({
 				fast
 			)
 		},
-		{order = "b[shattered-shard]", weight = 1000}
+		{
+			order = "b[shattered-shard]", 
+			weight = 1000,
+			localised_name = {"item-name.prismaris-shattered-aethric-shard",hideAethricShardVariants and "" or {""," (",{"item-name.jelly"}," precursor)"}}
+		}
 	),
 	pf.itemFactory(
 		pre .. "shattered-aethric-shard-f",
@@ -401,7 +409,13 @@ data:extend({
 				pre .. "cultivated-aether-crystal"
 			)
 		},
-		merge{{order = "b[shattered-shard]",localised_name = {"item-name.prismaris-shattered-aethric-shard-f"}, weight = 1000},keys.factoriopediaLocale(pre .. "shattered-aethric-shard-f")}
+		merge{
+			{
+				order = "b[shattered-shard]",
+				localised_name = {"item-name.prismaris-shattered-aethric-shard",hideAethricShardVariants and "" or {""," (",{"item-name.yumako-mash"}," precursor)"}}, 
+				weight = 1000
+			},
+			keys.factoriopediaLocale(pre .. "shattered-aethric-shard-f")}
 	),
 
 	pf.itemFactory(

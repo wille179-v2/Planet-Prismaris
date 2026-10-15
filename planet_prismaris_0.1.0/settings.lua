@@ -7,18 +7,12 @@ data:extend({
 		order = "a[science]-a[endgame]"
 	},
 	{
-		type = "bool-setting",
-		name = "prismaris-randomized-science-phase",
+		type = "string-setting",
+		name = "prismaris-science-phase",
 		setting_type = "startup",
-		default_value = true,
+		default_value = "randomized",
+		allowed_values = {"randomized","all","all-balanced","red-only","green-only","blue-only"},
 		order = "a[science]-b[randomized]"
-	},
-	{
-		type = "bool-setting",
-		name = "prismaris-easy-endgame-science-rescaling",
-		setting_type = "startup",
-		default_value = false,
-		order = "a[science]-c[scaling]"
 	},
 	{
 		type = "bool-setting",
@@ -29,10 +23,17 @@ data:extend({
 	},
 	{
 		type = "bool-setting",
-		name = "prismaris-lightning-targets-robots",
+		name = "prismaris-lightning-mercy",
 		setting_type = "startup",
-		default_value = true,
-		order ="l[lightning-bots]"
+		default_value = false,
+		order ="m[mercy]-l[lightning-bots]"
+	},
+	{
+		type = "bool-setting",
+		name = "prismaris-aether-mercy",
+		setting_type = "startup",
+		default_value = false,
+		order="m[mercy]-c[circuit]"
 	},
 	{
 		type="string-setting",

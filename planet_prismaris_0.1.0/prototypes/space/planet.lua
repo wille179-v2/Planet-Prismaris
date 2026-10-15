@@ -10,7 +10,7 @@ local spaceIcons = iconsPath .. "space/"
 
 -- Bot logic for lightning
 local botPriority = 100
-if settings.startup["prismaris-lightning-targets-robots"].value == true then
+if settings.startup["prismaris-lightning-mercy"].value == false then
 	botPriority = 1000
 end
 local lightningExemption = table.deepcopy(data.raw["planet"]["fulgora"].lightning_properties.exemption_rules)
