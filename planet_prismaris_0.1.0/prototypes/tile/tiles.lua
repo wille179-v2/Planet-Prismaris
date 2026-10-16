@@ -196,7 +196,7 @@ tiles = {
 		order = "a-b",
 		collision_mask = tile_collision_masks.water(),
 		autoplace = { probability_expression = "max(lava_basalts_range, lava_mountains_range)" },
-		effect = "entropy-2",
+		effect = "entropy",
 		fluid = pre .. "liquid-entropy",
 		effect_color = {200,200,200}, -- TODO Experiment with these colors a bit
 		effect_color_secondary = {40,40,40},
@@ -237,7 +237,7 @@ tiles = {
 		order = "a-a",
 		collision_mask = tile_collision_masks.water(),
 		autoplace = { probability_expression = "max(lava_hot_basalts_range, lava_hot_mountains_range)" },
-		effect = "entropy",
+		effect = "entropy-deep",
 		fluid = pre .. "liquid-entropy",
 		effect_color = {200,200,200}, -- TODO Experiment with these colors a bit
 		effect_color_secondary = {40,40,40},
@@ -324,13 +324,22 @@ data:extend(
 		water =
 		{
 			shader_variation = "lava",
-			textures =
+			noise_textures =
 			{
 				{
-					filename = terrainPath .. "/entropy-textures/entropy-noise-texture.png"
+					filename = terrainPath .. "/entropy-textures/entropy-noise-texture-1.png",
+					size = 512,
+					color_channels = 2
 				},
 				{
-					filename = terrainPath .. "/entropy-textures/entropy-deep.png"
+					filename = terrainPath .. "/entropy-textures/entropy-noise-texture-2.png",
+					size = 512,
+					color_channels = 1
+				}
+			},
+			image_textures = {
+				{
+					filename = terrainPath .. "entropy-textures/entropy.png"
 				}
 			},
 			texture_variations_columns = 1,
@@ -356,18 +365,27 @@ data:extend(
 	},
 	{
 		type = "tile-effect",
-		name = "entropy-2",
+		name = "entropy-deep",
 		shader = "water",
 		water =
 		{
 			shader_variation = "lava",
-			textures =
+			noise_textures =
 			{
 				{
-					filename = terrainPath .. "/entropy-textures/entropy-noise-texture.png"
+					filename = terrainPath .. "/entropy-textures/entropy-noise-texture-1.png",
+					size = 512,
+					color_channels = 2
 				},
 				{
-					filename = terrainPath .. "/entropy-textures/entropy.png"
+					filename = terrainPath .. "/entropy-textures/entropy-noise-texture-2.png",
+					size = 512,
+					color_channels = 1
+				}
+			},
+			image_textures = {
+				{
+					filename = terrainPath .. "entropy-textures/entropy-deep.png"
 				}
 			},
 			texture_variations_columns = 1,
@@ -376,12 +394,12 @@ data:extend(
 			secondary_texture_variations_rows = 2,
 
 			animation_speed = 1.5,
-			animation_scale = { 0.75, 0.75 },
+			animation_scale = { 0.7, 0.7 },
 			tick_scale = 1,
 
-			specular_lightness = { 30, 30, 30 },
-			foam_color = { 30, 30, 30 },
-			foam_color_multiplier = 1,
+			specular_lightness = { 25, 25, 25},
+			foam_color = { 40, 40, 40},
+			foam_color_multiplier = 1.3,
 
 			dark_threshold = { 0.755, 0.755 },
 			reflection_threshold = { 1, 1 },

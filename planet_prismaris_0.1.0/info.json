@@ -6,7 +6,7 @@
   "factorio_version": "2.1",
   "dependencies": [
     "base >= 2.1",
-    "space-age >= 2.1.20",
+    "space-age >= 2.1.22",
     "recycler",
     "quality",
     "PlanetsLib >= 1.26.7",
