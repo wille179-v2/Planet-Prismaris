@@ -138,8 +138,9 @@ local crystalSeparator = {
 					draw_as_glow = false,
 					blend_mode = "normal",
 					width = 200,
-					height = 290
-				}
+					height = 290,
+				},
+				constant_speed = true,
 			},
 			{
 				animation = { -- Dynamic user colors on frame
@@ -153,7 +154,8 @@ local crystalSeparator = {
 					width = 200,
 					height = 290,
 					--apply_runtime_tint = true
-				}
+				},
+				constant_speed = true,
 			},
 			{
 				--apply_recipe_tint = "primary",
@@ -166,8 +168,9 @@ local crystalSeparator = {
 					draw_as_glow = false,
 					blend_mode = "normal",
 					width = 200,
-					height = 290
-				}
+					height = 290,
+				},
+				constant_speed = true,
 			},
 			{ -- Crystal glow
 				-- apply_recipe_tint = "primary",
@@ -180,8 +183,9 @@ local crystalSeparator = {
 					draw_as_glow = true,
 					blend_mode = "additive",
 					width = 200,
-					height = 290
-				}
+					height = 290,
+				},
+				constant_speed = true,
 			}
 		}
 	},
