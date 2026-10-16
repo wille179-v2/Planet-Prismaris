@@ -24,6 +24,7 @@ local water_transition_group_id = 1
 local lava_transition_group_id = 3
 local out_of_map_transition_group_id = 2
 local default_transition_group_id = 0
+local entropy_transition_group_id = 4 -- let's see if this works
 
 
 local entropy_stone_transitions = { -- Used in non-entropy tiles as transitions
@@ -411,37 +412,98 @@ data:extend(
 	}
 })
 
-table.insert(lava_tile_type_names, pre .. "entropic-sea")
-table.insert(lava_tile_type_names, pre .. "entropic-sea-deep")
+--table.insert(lava_tile_type_names, pre .. "entropic-sea")
+--table.insert(lava_tile_type_names, pre .. "entropic-sea-deep")
 
 -- add lava tiles to water tiles (for tiles that doesn't have defined transitions to lava)
 table.insert(water_tile_type_names, pre .. "entropic-sea")
 table.insert(water_tile_type_names, pre .. "entropic-sea-deep")
 
----------------------------------------------------------------------------------------------------------------------------
--- DO NOT TOUCH BELOW THIS LINE UNTIL EVERYTHING ELSE IS WORKING
----------------------------------------------------------------------------------------------------------------------------
 
-
--- Special Tiles (Entropic Ocean, Aethric Soil, etc.)
-local entropicSea = table.deepcopy(data.raw["tile"]["lava"])
-entropicSea.name = pre .. "entropic-sea"
-entropicSea.subgroup = "prismaris-tiles"
-entropicSea.fluid = pre .. "liquid-entropy"
-entropicSea.autoplace = nil
-entropicSea.collision_mask = tile_collision_masks.water()
-
-local aethricSoil = table.deepcopy(data.raw["tile"]["overgrowth-jellynut-soil"])
-aethricSoil.name = pre .. "aethric-soil"
-aethricSoil.subgroup = "prismaris-tiles"
-aethricSoil.autoplace = nil
-aethricSoil.placeable_by = {
-	item = pre .. "aethric-soil",
-	count = 1
-}
-aethricSoil.minable = {
-	mining_time = 0.5,
-	result = pre .. "aethric-soil"
+local translationMap = {
+	{"concrete-lava","concrete-entropy","concrete-entropy-lightmap"},
+	{"concrete-transitions-lava","concrete-transitions-entropy.png","concrete-transitions-lightmap"},
+	{"lava-stone","entropy-stone.png","entropy-stone-lightmap"},
+	{"foundation-lava","foundation-entropy","foundation-entropy-lightmap"},
+	{"foundation-transitions-lava","foundation-transitions-entropy","foundation-transitions-lightmap"},
+	{"lava-patch","entropy-patch",nil},
+	{"lava-stone","entropy-stone","entropy-stone-lightmap"},
+	{"lava-stone-transition","entropy-stone-transition",nil},
+	{"refined-concrete-lava","refined-concrete-entropy","refined-concrete-entropy-lightmap"},
+	{"refined-concrete-transitions-lava","refined-concrete-transitions-entropy","refined-concrete-transitions-lightmap"},
+	{"stone-path-lava","stone-path-entropy","stone-path-entropy-lightmap"},
+	{"stone-path-lava-transitions","stone-path-entropy-transitions","stone-path-entropy-transitions-lightmap"},
+	{"concrete-lava-shore-out-of-map","concrete-entropy-shore-out-of-map","concrete-entropy-shore-out-of-map-lightmap"},
+	{"foundation-lava-shore-out-of-map","foundation-entropy-shore-out-of-map","foundation-entropy-shore-out-of-map-lightmap"},
+	{"refined-concrete-lava-shore-out-of-map","refined-concrete-entropy-shore-out-of-map","refined-concrete-entropy-shore-out-of-map-lightmap"},
+	{"stone-path-lava-shore-out-of-map","stone-path-entropy-shore-out-of-map","stone-path-entropy-shore-out-of-map-lightmap"},
 }
 
---data:extend{aethricSoil}
+function getNewSpritesheet(oldSpritesheet, isLightmap)
+	--log("get new spritesheet for " .. oldSpritesheet)
+	for _,mapping in pairs(translationMap) do
+		--log("searching translation map: " .. serpent.block(mapping))
+		if string.find(oldSpritesheet,mapping[1],1,true) then
+			--log("found mapping: " .. mapping[1])
+			if isLightmap then
+				--log(mapping[3])
+				if mapping[3] then
+					return transitionsPath .. mapping[3] .. ".png"
+				else return end
+			else
+				--log(mapping[2])
+				return transitionsPath .. mapping[2] .. ".png"
+			end
+		end
+	end
+end
+
+-- inserts the transition for entropy and entropy deep into any tile that has a lava transition definition
+-- thanks to powerscooter on discord
+--[[
+for _, tile in pairs(data.raw["tile"]) do
+	log(tile.name)
+	if tile.transitions then
+		local new_transitions = {}
+		for _, transition in pairs(tile.transitions) do
+			table.insert(new_transitions, transition)
+			if transition.to_tiles then
+				for _, to_tile in pairs(transition.to_tiles) do
+					if to_tile == "lava" then
+						--log("found lava transition for " .. tile.name)
+						local entropy_transition = table.deepcopy(transition)
+						entropy_transition.to_tiles = {pre .. "entropic-sea",pre.."entropic-sea-deep"}
+						if entropy_transition.lightmap_layout then
+							entropy_transition.lightmap_layout.spritesheet = getNewSpritesheet(entropy_transition.lightmap_layout.spritesheet, true)
+						end
+						entropy_transition.spritesheet = getNewSpritesheet(entropy_transition.spritesheet)
+						table.insert(new_transitions, entropy_transition)
+					end
+				end
+			end
+		end
+		log("old transitions for " .. tile.name .. ": " .. serpent.block(tile.transitions))
+		log("new transitions for " .. tile.name .. ": " .. serpent.block(new_transitions))
+		tile.transitions = new_transitions
+	end
+	if tile.transitions_between_transitions then
+		--transition between transitions
+		local new_transitionsBetweenTransitions = {}
+		for _,transition in pairs(tile.transitions_between_transitions) do
+			table.insert(new_transitionsBetweenTransitions, transition)
+			if transition.transition_group1 == lava_transition_group_id or transition.transition_group2 == lava_transition_group_id then
+				local entropy_transition = table.deepcopy(transition)
+				entropy_transition.spritesheet = getNewSpritesheet(entropy_transition.spritesheet)
+				if transition.transition_group1 == 3 then
+					entropy_transition.transition_group1 = 4
+				end
+				if transition.transition_group2 == 3 then
+					entropy_transition.transition_group1 = 4
+				end
+				table.insert(new_transitionsBetweenTransitions,entropy_transition)
+			end
+		end
+		tile.transitions_between_transitions = new_transitionsBetweenTransitions
+	end
+end
+]]
