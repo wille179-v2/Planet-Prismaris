@@ -498,35 +498,25 @@ data:extend({
 	),
 })
 
---[[
--- Aethric Soil
-local aethricSoil = table.deepcopy(data.raw["item"]["overgrowth-jellynut-soil"])
-aethricSoil.name = pre .. "aethric-soil"
-aethricSoil.subgroup = "terrain"
-aethricSoil.order = "d[aethric-soil]"
--- TODO: CORRECT Placement result
 
-local tileList = {}
-for key,tile in pairs(data.raw["tile"]) do
-	if string.find(key, "grass") or string.find(key,"dirt") or string.find(key,"desert") or string.find(key,"sand") then
-		table.insert(tileList, key)
-	end
-end
+-- Solidified entropy
+local solidified_entropy = table.deepcopy(data.raw["item"]["ice-platform"])
+solidified_entropy.name = pre .. "solidified-entropy"
+solidified_entropy.subgroup = "terrain"
+solidified_entropy.order = "d[solidified-entropy]"
 
-
-aethricSoil.place_as_tile = {
-	result = pre .. "aethric-soil",
+solidified_entropy.place_as_tile = {
+	result = pre .. "solidified-entropy",
 	condition = {
 		layers = {} -- Collision layers that are excluded
 	},
 	condition_size = 1,
 	invert = false, -- Inverts collision layers into "required" layers instead of excluded... probably don't bother with this
-	tile_condition = tileList -- list of tiles that are allowed to place on
+	tile_condition = {pre .. "entropic-sea", pre .. "entropic-sea-deep"} -- list of tiles that are allowed to place on
 }
 
-data:extend({aethricSoil})
+data:extend({solidified_entropy})
 
-]]
 
 -- Entropic Dust Cycles
 data:extend({

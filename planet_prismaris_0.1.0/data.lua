@@ -119,6 +119,9 @@ color = {
 keys = {
 	standard = {
 		enabled = false,
+		--auto_recycle = false
+	},
+	noRecycle = {
 		auto_recycle = false
 	},
 	prismarisOnly = {
@@ -132,11 +135,13 @@ keys = {
 	},
 	prismatic = {
 		subgroup = "prismaris-processes-prismatic",
-		allow_decomposition = false
+		allow_decomposition = false,
+		auto_recycle = false
 	},
 	aethric = {
 		subgroup = "prismaris-processes-aethric",
-		allow_decomposition = false
+		allow_decomposition = false,
+		auto_recycle = false
 	},
 	preserveInMachine = {
 		preserve_products_in_machine_output = true
@@ -145,10 +150,12 @@ keys = {
 		subgroup = "prismaris-cogitor-catalyst"
 	},
 	entropic = {
-		subgroup = "prismaris-processes-entropic"
+		subgroup = "prismaris-processes-entropic",
+		auto_recycle = false
 	},
 	void = {
-		subgroup = "prismaris-processes-void"
+		subgroup = "prismaris-processes-void",
+		auto_recycle = false
 	},
 	technical = {
 		subgroup = "prismaris-processes-technical"
@@ -161,7 +168,8 @@ keys = {
 	},
 	science = {
 		subgroup = "prismaris-science-pack",
-		lab_ignores_spoil_percent = settings.startup["prismaris-easy-labs-ignore-spoil-percent"].value
+		lab_ignores_spoil_percent = settings.startup["prismaris-easy-labs-ignore-spoil-percent"].value,
+		--auto_recycle = false
 		--allow_productivity = true
 	},
 	standardChronocycling = {
@@ -295,3 +303,9 @@ PlanetsLib.relax_surface_conditions(data.raw.recipe["lightning-rod"], {property 
 table.insert(data.raw["utility-constants"].default.factoriopedia_recycling_recipe_categories, pre .. "acceleration-chronocycling")
 table.insert(data.raw["utility-constants"].default.factoriopedia_recycling_recipe_categories, pre .. "reverse-chronocycling")
 table.insert(data.raw["utility-constants"].default.factoriopedia_recycling_recipe_categories, pre .. "stasis-chronocycling")
+
+local whiteBorderFont = table.deepcopy(data.raw.font["default"])
+whiteBorderFont.border_color = {255,255,255}
+whiteBorderFont.border = true
+whiteBorderFont.name = "white-border"
+data:extend{whiteBorderFont}

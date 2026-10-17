@@ -53,5 +53,28 @@ data:extend({
 		2,
 		{"crafting","organic"},
 		keyMerge("c[entropic-nutrients]",{keys.standard,keys.entropic,keys.tint(color.entropy)})
+	),
+	pf.recipeFactory(
+		pre .. "solidified-entropy",
+		recipeTempIcon,
+		pf.ingredientsFactory(
+			{
+				{pre .. "raw-entropic-dust-positive",10},
+				{pre .. "raw-entropic-dust-negative",10}
+			},
+			{
+				{"water",300}
+			}
+		),
+		pf.itemResultsFactory(
+			{
+				{pre .. "solidified-entropy",10}
+			}
+		),
+		5,
+		{"crafting-with-fluid"},
+		keyMerge("a[artificial]-d[utility]-e[entropy]",{keys.standard,keys.subgroup("terrain"),keys.tint(color.entropy),keys.prismarisOnly,keys.productivity})
 	)
 })
+
+log(serpent.block(data.raw.recipe[pre.."solidified-entropy"]))

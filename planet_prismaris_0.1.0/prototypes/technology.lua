@@ -135,7 +135,8 @@ data:extend({
 		},
 		{
 			pre .. "entropic-filtering",
-			pre .. "entropic-refinement"
+			pre .. "entropic-refinement",
+			pre .. "solidified-entropy"
 		}
 	),
 	pf.technologyFactory( -- void-essence-refining

@@ -22,7 +22,7 @@ cultivatedAetherCrystal.autoplace = {
 	--TODO: Worldgen autoplace control
 	order = "a", -- Order influences the sequence of entity placement in worldgen, earlier sort = placed first
 	tile_restriction = { -- https://lua-api.factorio.com/latest/types/AutoplaceSpecification.html#tile_restriction
-		pre .. "aethric-soil",
+		--pre .. "aethric-soil",
 	},
 	probability_expression = 0 -- Currently disabled https://lua-api.factorio.com/latest/types/NoiseExpression.html
 }
