@@ -7,47 +7,7 @@ local item_tints = require("__base__.prototypes.item-tints")
 local item_effects = require("__space-age__.prototypes.item-effects")
 require ("util")
 
-fluidboxes =  {
-	input = { -- North: pre .. "concentrated-void-essence" input
-		volume = 200,
-		pipe_connections = {
-			{	
-				flow_direction = "input-output",
-				direction = defines.direction.east,
-				position = {0.5,-1.5}, -- center of 1 east, 2 north
-			},
-			{
-				flow_direction = "input-output",
-				direction = defines.direction.west,
-				position = {-0.5,-1.5}, -- center of 1 west, 2 north pre .. "distorted-void-essence"
-			}
-		},
-		filter = pre .. "concentrated-void-essence",
-		production_type = "input",
-		pipe_picture = table.deepcopy(data.raw["assembling-machine"]["electromagnetic-plant"].fluid_boxes[1].pipe_pictures),
-		pipe_covers = table.deepcopy(data.raw["assembling-machine"]["electromagnetic-plant"].fluid_boxes[1].pipe_covers),
 
-	},
-	output = { -- North: pre .. "concentrated-void-essence" input
-		volume = 200,
-		pipe_connections = {
-			{	
-				flow_direction = "input-output",
-				direction = defines.direction.east,
-				position = {0.5,1.5}, -- center of 1 east, 2 south
-			},
-			{
-				flow_direction = "input-output",
-				direction = defines.direction.west,
-				position = {-0.5,1.5}, -- center of 1 west, 2 south 
-			}
-		},
-		filter = pre .. "distorted-void-essence",
-		production_type = "output",
-		pipe_picture = table.deepcopy(data.raw["assembling-machine"]["assembling-machine-3"].fluid_boxes[1].pipe_pictures),
-		pipe_covers = table.deepcopy(data.raw["assembling-machine"]["assembling-machine-3"].fluid_boxes[1].pipe_covers),
-	},
-}
 
 local thermalSeparator = table.deepcopy(data.raw['furnace']['electric-furnace'])
 thermalSeparator.name = pre .. "thermal-flux-furnace"

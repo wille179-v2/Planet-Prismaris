@@ -529,7 +529,7 @@ data:extend({
 data:extend({
 	pf.recipeFactory(
 		pre .. "unconfigured-chronocycler",
-		recipeTempIcon, --TODO
+		prisIcons .. "chronocycler-base-icon.png",
 		pf.ingredientsFactory(
 			{
 				{"processing-unit",6},
@@ -556,7 +556,7 @@ data:extend({
 	),
 	pf.recipeFactory(
 		pre .. "reversal-chronocycler",
-		recipeTempIcon, -- TODO
+		prisIcons .. "chronocycler-rev-icon.png",
 		pf.itemIngredientsFactory({
 			{pre .. "unconfigured-chronocycler",1},
 			{pre .. "activated-prismatic-shard-b",1}
@@ -570,7 +570,7 @@ data:extend({
 	),
 	pf.recipeFactory(
 		pre .. "stasis-chronocycler",
-		recipeTempIcon, -- TODO
+		prisIcons .. "chronocycler-stasis-icon.png",
 		pf.itemIngredientsFactory({
 			{pre .. "unconfigured-chronocycler",1},
 			{pre .. "activated-prismatic-shard-r",1}
@@ -584,7 +584,7 @@ data:extend({
 	),
 	pf.recipeFactory(
 		pre .. "acceleration-chronocycler",
-		recipeTempIcon, -- TODO
+		prisIcons .. "chronocycler-accel-icon.png",
 		pf.itemIngredientsFactory({
 			{pre .. "unconfigured-chronocycler",1},
 			{pre .. "activated-prismatic-shard-g",1}

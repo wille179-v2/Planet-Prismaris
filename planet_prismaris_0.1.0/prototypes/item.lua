@@ -901,7 +901,7 @@ data:extend({
 	pf.itemFactory(
 		pre .. "unconfigured-chronocycler",
 		20,
-		recyclerIcons .. "recycler.png", -- TODO: placeholder
+		prisIcons .. "chronocycler-base-icon.png",
 		pre.."chronocycler",
 		{},
 		keyMerge("f[chronocycler]-a[unconfigured]",{keys.rocketCapacity(20,.5)})
@@ -909,7 +909,7 @@ data:extend({
 	pf.itemFactory(
 		pre .. "reversal-chronocycler",
 		20,
-		recyclerIcons .. "recycler.png", -- TODO: placeholder
+		prisIcons .. "chronocycler-rev-icon.png",
 		pre.."chronocycler",
 		{
 			spoilage = pf.spoilageHelper(
@@ -926,7 +926,7 @@ data:extend({
 	pf.itemFactory(
 		pre .. "stasis-chronocycler",
 		20,
-		recyclerIcons .. "recycler.png", -- TODO: placeholder
+		prisIcons .. "chronocycler-stasis-icon.png",
 		pre.."chronocycler",
 		{
 			spoilage = pf.spoilageHelper(
@@ -943,7 +943,7 @@ data:extend({
 	pf.itemFactory(
 		pre .. "acceleration-chronocycler",
 		20,
-		recyclerIcons .. "recycler.png", -- TODO: placeholder
+		prisIcons .. "chronocycler-accel-icon.png",
 		pre.."chronocycler",
 		{
 			spoilage = pf.spoilageHelper(
