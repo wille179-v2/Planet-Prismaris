@@ -12,7 +12,7 @@ data:extend({
 		category = "resource",
 		order = "p-ps",
 		can_be_disabled = true,
-		richness = false,
+		richness = true,
 		localised_name = {"", "[entity=prismaris-prismatic-shard] ",{"entity-name.prismaris-prismatic-shard"}}
 	},
 	{
@@ -21,7 +21,7 @@ data:extend({
 		category = "resource",
 		order = "p-v",
 		can_be_disabled = true,
-		richness = false,
+		richness = true,
 		localised_name = {"", "[entity=prismaris-void-essence-well] ",{"entity-name.prismaris-void-essence-well"}}
 	},
 	{

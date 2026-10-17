@@ -7,32 +7,24 @@ planet_map_gen.prismaris = function()
 	{
 		property_expression_names =
 		{
-			elevation = "vulcanus_elevation",
-			temperature = "vulcanus_temperature",
-			moisture = "vulcanus_moisture",
-			aux = "vulcanus_aux",
+			elevation = "aquilo_elevation",
+			temperature = "aquilo_temperature",
+			moisture = "moisture_basic",
+			aux = "aquilo_aux",
 			cliffiness = "cliffiness_basic",
 			cliff_elevation = "cliff_elevation_from_elevation",
-			["entity:prismaris-prismatic-shard:probability"] = "vulcanus_calcite_probability",
+			["entity:prismaris-prismatic-shard:probability"] = "aquilo_crude_oil_probabilityy",
 			["entity:prismaris-prismatic-shard:richness"] = "prismaris_prismatic_shard_richness",
-			["entity:prismaris-void-essence-well:probability"] = "vulcanus_sulfuric_acid_geyser_probability",
-			["entity:prismaris-void-essence-well:richness"] = "vulcanus_sulfuric_acid_geyser_richness",
-		},
-		cliff_settings =
-		{
-			name = "cliff-vulcanus",
-			control = "prismaris_cliff",
-			cliff_elevation_interval = 160,
-			cliff_elevation_0 = 80,
-			richness = 0.6,
+			--["entity:prismaris-void-essence-well:probability"] = "vulcanus_sulfuric_acid_geyser_probability",
+			--["entity:prismaris-void-essence-well:richness"] = "vulcanus_sulfuric_acid_geyser_richness",
 		},
 		autoplace_controls =
 		{
 			["prismaris_prismatic_shard"] = {},
 			["prismaris_void_essence"] = {},
-			["prismaris_plants"] = {},
-			["prismaris_entropy"] = {},
-			["prismaris_cliff"] = {},
+			--["prismaris_plants"] = {},
+			--["prismaris_entropy"] = {},
+			--["prismaris_cliff"] = {},
 			--["vulcanus_volcanism"] = {},
 			--["rocks"] = {}, -- can't add the rocks control otherwise nauvis rocks spawn
 		},
@@ -44,60 +36,32 @@ planet_map_gen.prismaris = function()
 				{
 					[pre .. "entropic-sea-deep"] = {},
 					[pre .. "entropic-sea"] = {},
-					[pre .. "aethric-soil"] = {},
-					--nauvis tiles
-					--["volcanic-soil-dark"] = {},
-					--["volcanic-soil-light"] = {},
-					--["volcanic-ash-soil"] = {},
-					--end of nauvis tiles
-					["volcanic-ash-flats"] = {},
-					["volcanic-ash-light"] = {},
-					["volcanic-ash-dark"] = {},
-					["volcanic-cracks"] = {},
-					["volcanic-cracks-warm"] = {},
-					["volcanic-folds"] = {},
-					["volcanic-folds-flat"] = {},
-					["volcanic-folds-warm"] = {},
-					["volcanic-pumice-stones"] = {},
-					["volcanic-cracks-hot"] = {},
-					["volcanic-jagged-ground"] = {},
-					["volcanic-smooth-stone"] = {},
-					["volcanic-smooth-stone-warm"] = {},
-					["volcanic-ash-cracks"] = {},
+					--["ammoniacal-ocean"] = {},
+					--["ammoniacal-ocean-2"] = {}
+					--["brash-ice"] = {},
+					-- TODO: unrestrict the crystals and make a variant of each of these tiles
+					["snow-flat"] = {},
+					["snow-crests"] = {},
+					["snow-lumpy"] = {},
+					["snow-patchy"] = {},
+					["ice-rough"] = {},
+					["ice-smooth"] = {},
+					
 				}
 			},
 			["decorative"] =
 			{
 				settings =
 				{
-					-- nauvis decoratives
-					["v-brown-carpet-grass"] = {},
-					["v-green-hairy-grass"] = {},
-					["v-brown-hairy-grass"] = {},
-					["v-red-pita"] = {},
-					-- end of nauvis
-					["vulcanus-rock-decal-large"] = {},
-					["vulcanus-crack-decal-large"] = {},
-					["vulcanus-crack-decal-huge-warm"] = {},
-					["vulcanus-dune-decal"] = {},
-					["vulcanus-sand-decal"] = {},
-					["calcite-stain"] = {},
-					["calcite-stain-small"] = {},
-					["sulfur-stain"] = {},
-					["sulfur-stain-small"] = {},
-					["sulfuric-acid-puddle"] = {},
-					["sulfuric-acid-puddle-small"] = {},
-					["crater-small"] = {},
-					["crater-large"] = {},
-					["pumice-relief-decal"] = {},
-					["small-volcanic-rock"] = {},
-					["medium-volcanic-rock"] = {},
-					["tiny-volcanic-rock"] = {},
-					["tiny-rock-cluster"] = {},
-					["small-sulfur-rock"] = {},
-					["tiny-sulfur-rock"] = {},
-					["sulfur-rock-cluster"] = {},
-					["waves-decal"] = {},
+					-- TODO: make a prismaris variant of each of these decoratives
+					["lithium-iceberg-medium"] = {},
+					["lithium-iceberg-small"] = {},
+					["lithium-iceberg-tiny"] = {},
+					["floating-iceberg-large"] = {},
+					["floating-iceberg-small"] = {},
+					["aqulio-ice-decal-blue"] = {},
+					["aqulio-snowy-decal"] = {},
+					["snow-drift-decal"] = {}
 				}
 			},
 			["entity"] =
@@ -107,20 +71,11 @@ planet_map_gen.prismaris = function()
 					["prismaris-prismatic-shard"] = {},
 					["prismaris-void-essence-well"] = {},
 					-- TODO: Replace volcanus rocks with prismaris rocks
-
-					-- Volcanus defaults
-					--["big-volcanic-rock-hot"] = {},
-					--["huge-volcanic-rock-hot"] = {},
-					--["huge-volcanic-rock"] = {},
-					--["big-volcanic-rock"] = {},
-					--["crater-cliff"] = {},
-					--["vulcanus-chimney"] = {},
-					--["vulcanus-chimney-faded"] = {},
-					--["vulcanus-chimney-cold"] = {},
-					--["vulcanus-chimney-short"] = {},
-					--["vulcanus-chimney-truncated"] = {},
-					--["ashland-lichen-tree"] = {},
-					--["ashland-lichen-tree-flaming"] = {},
+					--["crude-oil"] = {},
+					--["lithium-brine"] = {}, -- To be replaced with prismatic shard
+					--["fluorine-vent"] = {}, -- To be replaced with void essence well
+					["lithium-iceberg-huge"] = {}, -- To be replaced with prismaris variant
+					["lithium-iceberg-big"] = {} -- To be replaced with prismaris variant
 				}
 			}
 		}

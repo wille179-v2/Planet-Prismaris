@@ -109,7 +109,8 @@ local prismaris = {
 	starmap_icon_size = 512,
 	subgroup = "planets",
 	pollutant_type = nil,
-	--persistent_ambient_sounds
+	persistent_ambient_sounds = table.deepcopy(data.raw["planet"]["aquilo"].persistent_ambient_sounds),
+	--[[
 	surface_render_parameters = {
 		fog = effects.default_fog_effect_properties(),
 		day_night_cycle_color_lookup =
@@ -182,6 +183,7 @@ local prismaris = {
 			cloud_panning_rate = 0.075,
 		}
 	},
+	]]
 	 platform_procession_set =
 	{
 	  arrival = {"planet-to-platform-b", "platform-to-platform-b"},
@@ -192,7 +194,7 @@ local prismaris = {
 	  arrival = {"platform-to-planet-b"},
 	  departure = {"planet-to-platform-a"}
 	},
-	procession_graphic_catalogue = planet_catalogue_fulgora,
+	procession_graphic_catalogue = planet_catalogue_aquilo,
 	--player_effects
 	--ticks_between_player_effects
 	map_gen_settings = mapGen.prismaris(),
