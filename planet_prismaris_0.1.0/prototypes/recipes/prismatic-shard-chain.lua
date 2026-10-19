@@ -86,7 +86,7 @@ data:extend({
 			{pre .. "ferric-shard",2}
 		}),
 		2,
-		{"advanced-crafting"},
+		{"crafting"},
 		keyMerge("d[resource-shard]-a[ferric]",{keys.standard,keys.productivity,keys.prismatic,keys.prismarisOnly})
 	),
 	pf.recipeFactory(
@@ -100,7 +100,7 @@ data:extend({
 			{pre .. "cupric-shard",2}
 		}),
 		2,
-		{"advanced-crafting"},
+		{"crafting"},
 		keyMerge("d[resource-shard]-b[cupric]",{keys.standard,keys.productivity,keys.prismatic,keys.prismarisOnly})
 	),
 	pf.recipeFactory(
@@ -114,7 +114,7 @@ data:extend({
 			{pre .. "lithic-shard",2}
 		}),
 		2,
-		{"advanced-crafting"},
+		{"crafting"},
 		keyMerge("d[resource-shard]-c[lithic]",{keys.standard,keys.productivity,keys.prismatic,keys.prismarisOnly})
 	),
 	pf.recipeFactory(
@@ -133,7 +133,7 @@ data:extend({
 			{pre .. "activated-prismatic-shard-y",1,ip=.04},
 		}),
 		prismarisConstants.shardCrackingSpeed,
-		{"advanced-crafting",pre .. "thermal-cracking"},
+		{"crafting",pre .. "thermal-cracking"},
 		keyMerge("d[resource-shard]-a[ferric]-b",{keys.standard,keys.productivity,keys.prismatic,keys.prismarisOnly,keys.preserveInMachine})
 	),
 	pf.recipeFactory(
@@ -152,7 +152,7 @@ data:extend({
 			{pre .. "activated-prismatic-shard-y",1,ip=.04},
 		}),
 		prismarisConstants.shardCrackingSpeed,
-		{"advanced-crafting",pre .. "thermal-cracking"},
+		{"crafting",pre .. "thermal-cracking"},
 		keyMerge("d[resource-shard]-b[cupric]-b",{keys.standard,keys.productivity,keys.prismatic,keys.prismarisOnly,keys.preserveInMachine})
 	),
 	pf.recipeFactory(
@@ -171,7 +171,7 @@ data:extend({
 			--{pre .. "activated-prismatic-shard-y",1,ip=.04},
 		}),
 		prismarisConstants.shardCrackingSpeed,
-		{"advanced-crafting",pre .. "thermal-cracking"},
+		{"crafting",pre .. "thermal-cracking"},
 		keyMerge("d[resource-shard]-c[lithic]-b",{keys.standard,keys.productivity,keys.prismatic,keys.prismarisOnly,keys.preserveInMachine})
 	),
 })

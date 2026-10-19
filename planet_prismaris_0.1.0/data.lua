@@ -268,6 +268,7 @@ require("prototypes.tile.tiles")
 -- Environmental Entities
 require("prototypes.entities.plants")
 require("prototypes.entities.explosions")
+require("prototypes.entities.rocks") -- must stay after prototypes.entities.plants
 
 --Basic items
 require("prototypes.item")

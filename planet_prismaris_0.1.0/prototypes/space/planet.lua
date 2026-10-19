@@ -14,7 +14,10 @@ if settings.startup["prismaris-lightning-mercy"].value == false then
 	botPriority = 1000
 end
 local lightningExemption = table.deepcopy(data.raw["planet"]["fulgora"].lightning_properties.exemption_rules)
-lightningExemption = table.insert(lightningExemption,{type = "prototype", string = pre .. "cultivated-aether-crystal"})
+table.insert(lightningExemption,{type = "prototype", string = pre .. "cultivated-aether-crystal"})
+table.insert(lightningExemption,{type = "prototype", string = pre .. "crystal-huge"})
+table.insert(lightningExemption,{type = "prototype", string = pre .. "crystal-big"})
+table.insert(lightningExemption,{type = "prototype", string = pre .. "aether-crystal-natural"})
 
 -- Solar for connections
 local spaceSolar = 150
@@ -110,9 +113,9 @@ local prismaris = {
 	subgroup = "planets",
 	pollutant_type = nil,
 	persistent_ambient_sounds = table.deepcopy(data.raw["planet"]["aquilo"].persistent_ambient_sounds),
-	--[[
-	surface_render_parameters = {
+		surface_render_parameters = {
 		fog = effects.default_fog_effect_properties(),
+		--[[
 		day_night_cycle_color_lookup =
 		{
 			{0.0, "__space-age__/graphics/lut/fulgora-1-noon.png"},
@@ -137,6 +140,7 @@ local prismaris = {
 			zoom_factor = 3.8,
 			zoom_intensity = 0.75
 		}
+		]]
 	},
 	platform_surface_render_parameters = {
 		platform_backdrop = {
@@ -183,7 +187,6 @@ local prismaris = {
 			cloud_panning_rate = 0.075,
 		}
 	},
-	]]
 	 platform_procession_set =
 	{
 	  arrival = {"planet-to-platform-b", "platform-to-platform-b"},

@@ -36,16 +36,13 @@ planet_map_gen.prismaris = function()
 				{
 					[pre .. "entropic-sea-deep"] = {},
 					[pre .. "entropic-sea"] = {},
-					--["ammoniacal-ocean"] = {},
-					--["ammoniacal-ocean-2"] = {}
-					--["brash-ice"] = {},
-					-- TODO: unrestrict the crystals and make a variant of each of these tiles
-					["snow-flat"] = {},
-					["snow-crests"] = {},
-					["snow-lumpy"] = {},
-					["snow-patchy"] = {},
-					["ice-rough"] = {},
-					["ice-smooth"] = {},
+					-- TODO: These are temporary clones of aquilo tiles; replace these with proper tiles.
+					[pre .. "snow-flat"] = {},
+					[pre .. "snow-crests"] = {},
+					[pre .. "snow-lumpy"] = {},
+					[pre .. "snow-patchy"] = {},
+					[pre .. "ice-rough"] = {},
+					[pre .. "ice-smooth"] = {},
 					
 				}
 			},
@@ -74,8 +71,9 @@ planet_map_gen.prismaris = function()
 					--["crude-oil"] = {},
 					--["lithium-brine"] = {}, -- To be replaced with prismatic shard
 					--["fluorine-vent"] = {}, -- To be replaced with void essence well
-					["lithium-iceberg-huge"] = {}, -- To be replaced with prismaris variant
-					["lithium-iceberg-big"] = {} -- To be replaced with prismaris variant
+					[pre .. "crystal-huge"] = {}, -- To be replaced with better variant
+					[pre .. "crystal-big"] = {}, -- To be replaced with better variant
+					[pre .. "aether-crystal-natural"] = {},
 				}
 			}
 		}

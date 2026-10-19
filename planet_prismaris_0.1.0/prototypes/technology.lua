@@ -48,7 +48,7 @@ data:extend({
 		true,
 		pf.unlockTriggerHelper(
 			"mine-entity",
-			{pre .. "prismatic-shard"}
+			{pre .. "prismatic-shard",pre .. "crystal-huge",pre .. "crystal-big"}
 		),
 		{
 			"planet-discovery-prismaris"
@@ -88,7 +88,7 @@ data:extend({
 		true,
 		pf.unlockTriggerHelper(
 			"mine-entity",
-			{pre .. "cultivated-aether-crystal"}
+			{pre .. "aether-crystal-natural"}
 		),
 		{
 			"planet-discovery-prismaris",

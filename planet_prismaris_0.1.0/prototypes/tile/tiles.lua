@@ -122,48 +122,6 @@ entropic_sea_deep.effect = "entropy-deep"
 entropic_sea_deep.ambient_sounds = tile_sounds.ambient.lava
 entropic_sea_deep.transitions = {entropy_to_out_of_map_transitions}
 
---[[
-local aethric_soil = { -- Aethric Soil (leaving this for now while I make better tiles)
-	type = "tile",
-	name = pre .. "aethric-soil",
-	-- order = ???,
-	subgroup = "prismaris-tiles",
-	collision_mask = tile_collision_masks.ground(),
-	--autoplace = { probability_expression = "max(volcanic_soil_light_range,volcanic_soil_dark_range,volcanic_ash_soil_range)" },
-	layer_group = "ground-natural",
-	layer = 21,
-	searchable = true,
-	trigger_effect = tile_trigger_effects.landfill_trigger_effect(),
-	--sprite_usage_surface = "vulcanus",
-	--transitions = entropy_stone_transitions,
-	--transitions_between_transitions = entropy_stone_transitions_between_transitions,
-	variants = tile_variations_template_with_transitions_and_effect_map(
-		"__space-age__/graphics/terrain/natural-jellynut-soil.png",
-		"__space-age__/graphics/terrain/effect-maps/water-gleba-mask.png",
-		{
-			max_size = 4,
-			[1] = { weights = {0.085, 0.085, 0.085, 0.085, 0.087, 0.085, 0.065, 0.085, 0.045, 0.045, 0.045, 0.045, 0.005, 0.025, 0.045, 0.045 } },
-			[2] = { probability = 1, weights = {0.018, 0.020, 0.015, 0.025, 0.015, 0.020, 0.025, 0.015, 0.025, 0.025, 0.010, 0.025, 0.020, 0.025, 0.025, 0.010 }, },
-			[4] = { probability = 0.1, weights = {0.018, 0.020, 0.015, 0.025, 0.015, 0.020, 0.025, 0.015, 0.025, 0.025, 0.010, 0.025, 0.020, 0.025, 0.025, 0.010 }, },
-		}
-	),
-	walking_sound = tile_sounds.walking.semi_wet,
-	landing_steps_sound = tile_sounds.landing.semi_wet,
-	build_sound = base_tile_sounds.building.landfill,
-	map_color={185, 5, 166},
-	scorch_mark_color = {rq = 0.329, g = 0.242*2, b = 0.177, a = 1.000},
-	-- minable = {
-		-- mining_time = 0.5,
-		-- result = pre .. "aethric-soil"
-	-- },
-	-- placeable_by = {
-		-- item = pre .. "aethric-soil",
-		-- count = 1
-	-- }
-}
-]]
-
-
 
 local solidified_entropy = table.deepcopy(data.raw.tile['ice-platform'])
 solidified_entropy.name = pre .. "solidified-entropy"
@@ -277,6 +235,7 @@ data:extend(
 	}
 })
 
+-- Adds entropic sea transitions to all tiles that have ammoniacle-ocean tiles
 for _, tile in pairs(data.raw["tile"]) do
   if tile.transitions then
       local new_transitions = {}
@@ -295,4 +254,14 @@ for _, tile in pairs(data.raw["tile"]) do
       end
       tile.transitions = new_transitions
   end
+end
+
+-- Temporary code: clone aquilo Tiles and change their collision_mask to make items buildable without concrete.
+-- At some point I'll replace these with standalone tile implementations
+local aquiloTiles = {"snow-flat","snow-crests","snow-lumpy","snow-patchy","ice-rough","ice-smooth"}
+for _,aquiloTile in pairs(aquiloTiles) do
+	local prismarisTile = table.deepcopy(data.raw.tile[aquiloTile])
+	prismarisTile.collision_mask = table.deepcopy(data.raw.tile["landfill"].collision_mask)
+	prismarisTile.name = pre .. aquiloTile
+	data:extend{prismarisTile}
 end
