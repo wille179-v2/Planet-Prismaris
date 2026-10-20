@@ -552,7 +552,7 @@ data:extend({
 		),
 		4,
 		{"crafting-with-fluid","electromagnetics"},
-		keyMerge("f[chronocycler]-a[unconfigured]",{{enabled=false},keys.subgroup("prismaris-chronocycler"),keys.prismarisOnly})
+		keyMerge("f[chronocycler]-a[unconfigured]",{{enabled=false},keys.mainProduct(pre .. "unconfigured-chronocycler"),keys.subgroup("prismaris-chronocycler"),keys.prismarisOnly})
 	),
 	pf.recipeFactory(
 		pre .. "reversal-chronocycler",
