@@ -274,6 +274,7 @@ require("prototypes.entities.rocks") -- must stay after prototypes.entities.plan
 require("prototypes.item")
 require("prototypes.fluid")
 require("prototypes.technology")
+require("prototypes.tips-and-tricks")
 
 --Recipes
 require("prototypes.recipes.prismatic-shard-chain")
@@ -296,7 +297,7 @@ require("prototypes.entities.cogitor")
 ----------------------------------------------------
 
 --Uses planetsLib to enable crafting the lightning rod on prismaris. May be removed if a custom variant is added later.
-PlanetsLib.relax_surface_conditions(data.raw.recipe["lightning-collector"], {property = "magnetic-field", min = 93})
+--PlanetsLib.relax_surface_conditions(data.raw.recipe["lightning-collector"], {property = "magnetic-field", min = 93})
 PlanetsLib.relax_surface_conditions(data.raw.recipe["lightning-rod"], {property = "magnetic-field", min = 93})
 
 
