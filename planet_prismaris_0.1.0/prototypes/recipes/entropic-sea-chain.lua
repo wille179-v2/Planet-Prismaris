@@ -56,14 +56,13 @@ data:extend({
 	),
 	pf.recipeFactory(
 		pre .. "solidified-entropy",
-		recipeTempIcon,
+		recipeTempIcon, -- TODO: Temp icon
 		pf.ingredientsFactory(
 			{
-				{pre .. "raw-entropic-dust-positive",10},
-				{pre .. "raw-entropic-dust-negative",10}
+				{pre .. "raw-entropic-dust-positive",10}
 			},
 			{
-				{"water",300}
+				{"water",150}
 			}
 		),
 		pf.itemResultsFactory(
@@ -71,7 +70,7 @@ data:extend({
 				{pre .. "solidified-entropy",10}
 			}
 		),
-		5,
+		2.5,
 		{"crafting-with-fluid"},
 		keyMerge("a[artificial]-d[utility]-e[entropy]",{keys.standard,keys.subgroup("terrain"),keys.tint(color.entropy),keys.prismarisOnly,keys.productivity})
 	)
