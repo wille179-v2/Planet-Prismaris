@@ -52,7 +52,7 @@ local entropy_to_out_of_map_transitions = {
 	}
 }
 
-
+local eyestrainMode = settings.startup["prismaris-entropy-eye-strain-accessibility"].value
 
 local entropic_sea = table.deepcopy(data.raw.tile["ammoniacal-ocean"])
 entropic_sea.name = pre .. "entropic-sea"
@@ -60,7 +60,7 @@ entropic_sea.order = "a[prismaris-water]-a[entropic-sea]"
 entropic_sea.subgroup = "prismaris-tiles"
 entropic_sea.fluid = pre .. "liquid-entropy"
 entropic_sea.collision_mask = tile_collision_masks.water()
-entropic_sea.effect_color = {200,200,200}
+entropic_sea.effect_color = {180,180,180}
 entropic_sea.effect_color_secondary = {40,40,40}
 entropic_sea.particle_tints = {
 	primary = {200,200,200},
@@ -68,7 +68,7 @@ entropic_sea.particle_tints = {
 }
 entropic_sea.destroys_dropped_items = true
 entropic_sea.default_destroyed_dropped_item_trigger = destroyed_item_trigger
-entropic_sea.map_color = {130,130,130}
+entropic_sea.map_color = {180,180,180}
 entropic_sea.default_cover_tile = pre .. "solidified-entropy"
 entropic_sea.autoplace = {probability_expression = "ammoniacal_ocean"}
 entropic_sea.variants = tile_variations_template(
@@ -82,7 +82,7 @@ entropic_sea.variants = tile_variations_template(
 	}
 )
 entropic_sea.allowed_neightbors = {pre .. "entropic-sea-deep"}
-entropic_sea.effect = "entropy"
+entropic_sea.effect = eyestrainMode and "water" or "entropy"
 entropic_sea.ambient_sounds = tile_sounds.ambient.lava
 entropic_sea.transitions = {entropy_to_out_of_map_transitions}
 
@@ -95,15 +95,15 @@ entropic_sea_deep.order = "a[prismaris-water]-b[entropic-sea-deep]"
 entropic_sea_deep.subgroup = "prismaris-tiles"
 entropic_sea_deep.fluid = pre .. "liquid-entropy"
 entropic_sea_deep.collision_mask = tile_collision_masks.water()
-entropic_sea_deep.effect_color = {200,200,200}
-entropic_sea_deep.effect_color_secondary = {40,40,40}
+entropic_sea_deep.effect_color = {130,130,130}
+entropic_sea_deep.effect_color_secondary = {30,30,30}
 entropic_sea_deep.particle_tints = {
 	primary = {200,200,200},
 	secondary = {200,200,200}
 }
 entropic_sea_deep.destroys_dropped_items = true
 entropic_sea_deep.default_destroyed_dropped_item_trigger = destroyed_item_trigger
-entropic_sea_deep.map_color = {170,170,170}
+entropic_sea_deep.map_color = {130,130,130}
 entropic_sea_deep.default_cover_tile = pre .. "solidified-entropy"
 entropic_sea_deep.autoplace = {probability_expression = "ammoniacal_ocean_2"}
 entropic_sea_deep.variants = tile_variations_template(
@@ -118,7 +118,7 @@ entropic_sea_deep.variants = tile_variations_template(
 )
 entropic_sea_deep.factoriopedia_alternative = pre .. "entropic-sea"
 entropic_sea_deep.allowed_neightbors = {pre .. "entropic-sea"}
-entropic_sea_deep.effect = "entropy-deep"
+entropic_sea_deep.effect = eyestrainMode and "water" or "entropy-deep"
 entropic_sea_deep.ambient_sounds = tile_sounds.ambient.lava
 entropic_sea_deep.transitions = {entropy_to_out_of_map_transitions}
 
@@ -194,14 +194,15 @@ data:extend(
 			noise_textures =
 			{
 				{
-					filename = terrainPath .. "/entropy-textures/entropy-noise-texture-1.png",
+					filename = terrainPath .. "/entropy-textures/oilNoise.png",
 					size = 512,
-					color_channels = 2
+					color_channels = 3
 				},
 				{
-					filename = terrainPath .. "/entropy-textures/entropy-noise-texture-2.png",
-					size = 512,
-					color_channels = 1
+					filename = terrainPath .. "/entropy-textures/oilGradient.png",
+					width = 512,
+					height = 32,
+					color_channels = 3
 				}
 			},
 			image_textures = {
