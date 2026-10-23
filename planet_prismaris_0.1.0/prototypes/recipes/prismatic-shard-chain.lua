@@ -28,6 +28,9 @@ data:extend({
 })
 ]]
 
+local crackSpA = {min = 0, max = 0.04}
+local crackSpB = {min = 0.04, max = 0.08}
+
 data:extend({
 	pf.recipeFactory(
 		pre .. "prismatic-shard-separation",
@@ -126,11 +129,11 @@ data:extend({
 		pf.itemResultsFactory({
 			{pre .. "cracked-ferric-shard",prismarisConstants.shardCrackingYield},
 			--{pre .. "activated-prismatic-shard-r",1,ip=.04},
-			{pre .. "activated-prismatic-shard-g",1,ip=.04},
-			{pre .. "activated-prismatic-shard-b",1,ip=.04},
+			{pre .. "activated-prismatic-shard-g",1,sp = crackSpA},
+			{pre .. "activated-prismatic-shard-b",1,sp = crackSpB},
 			--{pre .. "activated-prismatic-shard-c",1,ip=.04},
-			{pre .. "activated-prismatic-shard-m",1,ip=.04},
-			{pre .. "activated-prismatic-shard-y",1,ip=.04},
+			{pre .. "activated-prismatic-shard-m",1,sp = crackSpA},
+			{pre .. "activated-prismatic-shard-y",1,sp = crackSpB},
 		}),
 		prismarisConstants.shardCrackingSpeed,
 		{"crafting",pre .. "thermal-cracking"},
@@ -144,12 +147,12 @@ data:extend({
 		}),
 		pf.itemResultsFactory({
 			{pre .. "cracked-cupric-shard",prismarisConstants.shardCrackingYield},
-			{pre .. "activated-prismatic-shard-r",1,ip=.04},
+			{pre .. "activated-prismatic-shard-r",1,sp = crackSpA},
 			--{pre .. "activated-prismatic-shard-g",1,ip=.04},
-			{pre .. "activated-prismatic-shard-b",1,ip=.04},
-			{pre .. "activated-prismatic-shard-c",1,ip=.04},
+			{pre .. "activated-prismatic-shard-b",1,sp = crackSpB},
+			{pre .. "activated-prismatic-shard-c",1,sp = crackSpA},
 			--{pre .. "activated-prismatic-shard-m",1,ip=.04},
-			{pre .. "activated-prismatic-shard-y",1,ip=.04},
+			{pre .. "activated-prismatic-shard-y",1,sp = crackSpB},
 		}),
 		prismarisConstants.shardCrackingSpeed,
 		{"crafting",pre .. "thermal-cracking"},
@@ -163,11 +166,11 @@ data:extend({
 		}),
 		pf.itemResultsFactory({
 			{pre .. "cracked-lithic-shard",prismarisConstants.shardCrackingYield},
-			{pre .. "activated-prismatic-shard-r",1,ip=.04},
-			{pre .. "activated-prismatic-shard-g",1,ip=.04},
+			{pre .. "activated-prismatic-shard-r",1,sp = crackSpA},
+			{pre .. "activated-prismatic-shard-g",1,sp = crackSpB},
 			--{pre .. "activated-prismatic-shard-b",1,ip=.04},
-			{pre .. "activated-prismatic-shard-c",1,ip=.04},
-			{pre .. "activated-prismatic-shard-m",1,ip=.04},
+			{pre .. "activated-prismatic-shard-c",1,sp = crackSpA},
+			{pre .. "activated-prismatic-shard-m",1,sp = crackSpB},
 			--{pre .. "activated-prismatic-shard-y",1,ip=.04},
 		}),
 		prismarisConstants.shardCrackingSpeed,
