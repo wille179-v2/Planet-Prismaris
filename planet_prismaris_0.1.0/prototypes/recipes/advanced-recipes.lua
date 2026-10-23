@@ -480,9 +480,10 @@ data:extend({
 		prisIcons .. "crystal-separator.png", --TODO: placeholder icon
 		pf.itemIngredientsFactory({
 			{"electronic-circuit",2},
-			{"iron-gear-wheel",5},
+			{"iron-gear-wheel",3},
 			{"iron-plate",5},
-			{"stone-brick",4}
+			{"stone-brick",4},
+			{pre .. "aethric-shard",1}
 		}),
 		pf.itemResultsFactory({
 			{pre .. "crystal-separator",1}
