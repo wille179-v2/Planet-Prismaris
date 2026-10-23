@@ -255,7 +255,7 @@ data:extend({
 	),
 	pf.itemFactory(
 		pre .. "cracked-ferric-shard",
-		100,
+		50,
 		prisIcons .. "ferric-shard-cracked.png",
 		"prismaris-processes-prismatic",
 		{
@@ -268,7 +268,7 @@ data:extend({
 	),
 	pf.itemFactory(
 		pre .. "cracked-cupric-shard",
-		100,
+		50,
 		prisIcons .. "cupric-shard-cracked.png",
 		"prismaris-processes-prismatic",
 		{
@@ -281,7 +281,7 @@ data:extend({
 	),
 	pf.itemFactory(
 		pre .. "cracked-lithic-shard",
-		100,
+		50,
 		prisIcons .. "lithic-shard-cracked.png",
 		"prismaris-processes-prismatic",
 		{
@@ -307,7 +307,7 @@ data:extend({
 	),
 	pf.itemFactory(
 		pre .. "shattered-aethric-shard-a",
-		100,
+		50,
 		prisIcons .. "shattered-aethric-shard-a-e.png",
 		"prismaris-processes-aethric",
 		{
@@ -325,7 +325,7 @@ data:extend({
 	),
 	pf.itemFactory(
 		pre .. "shattered-aethric-shard-b",
-		100,
+		50,
 		prisIcons .. "shattered-aethric-shard-a-e.png",
 		"prismaris-processes-aethric",
 		{
@@ -343,7 +343,7 @@ data:extend({
 	),
 	pf.itemFactory(
 		pre .. "shattered-aethric-shard-c",
-		100,
+		50,
 		prisIcons .. "shattered-aethric-shard-a-e.png",
 		"prismaris-processes-aethric",
 		{
@@ -361,7 +361,7 @@ data:extend({
 	),
 	pf.itemFactory(
 		pre .. "shattered-aethric-shard-d",
-		100,
+		50,
 		prisIcons .. "shattered-aethric-shard-a-e.png",
 		"prismaris-processes-aethric",
 		{
@@ -379,7 +379,7 @@ data:extend({
 	),
 	pf.itemFactory(
 		pre .. "shattered-aethric-shard-e",
-		100,
+		50,
 		prisIcons .. "shattered-aethric-shard-a-e.png",
 		"prismaris-processes-aethric",
 		{
@@ -396,7 +396,7 @@ data:extend({
 	),
 	pf.itemFactory(
 		pre .. "shattered-aethric-shard-f",
-		100,
+		50,
 		{{icon = prisIcons .. "shattered-aethric-shard-a-e.png", tint = {.8,1,1}}},
 		"prismaris-processes-aethric",
 		{
@@ -439,7 +439,7 @@ data:extend({
 		{
 			spoilage = pf.spoilageHelper(
 				"coal",
-				slow
+				medium
 			)
 		},
 		{order = "c[destabilized-shard]", weight = 1000}
@@ -452,7 +452,7 @@ data:extend({
 		{
 			spoilage = pf.spoilageHelper(
 				"carbon",
-				slow
+				medium
 			)
 		},
 		{order = "c[destabilized-shard]", weight = 1000}
@@ -465,33 +465,33 @@ data:extend({
 		{
 			spoilage = pf.spoilageHelper(
 				"solid-fuel",
-				slow
+				medium
 			)
 		},
 		{order = "c[destabilized-shard]", weight = 1000}
 	),
 	pf.itemFactory(
 		pre .. "destabilized-aethric-shard-e",
-		50,
+		100,
 		prisIcons .. "destabilized-aethric-shard.png",
 		"prismaris-processes-aethric",
 		{
 			spoilage = pf.spoilageHelper(
 				"jelly",
-				medium
+				fast
 			)
 		},
 		{order = "c[destabilized-shard]", weight = 1000}
 	),
 	pf.itemFactory(
 		pre .. "destabilized-aethric-shard-f",
-		50,
+		100,
 		prisIcons .. "destabilized-aethric-shard.png",
 		"prismaris-processes-aethric",
 		{
 			spoilage = pf.spoilageHelper(
 				"yumako-mash",
-				medium
+				fast
 			)
 		},
 		{order = "c[destabilized-shard]", weight = 1000}
