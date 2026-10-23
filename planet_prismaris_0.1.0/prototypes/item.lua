@@ -870,7 +870,7 @@ data:extend({
 	pf.itemFactory(
 		pre .. "thermal-flux-furnace",
 		50,
-		baseIcons .. "electric-furnace.png", -- TODO: placeholder
+		prisIcons .. "thermal-flux-furnace.png",
 		"smelting-machine",
 		{
 			placement = pf.placementHelper(

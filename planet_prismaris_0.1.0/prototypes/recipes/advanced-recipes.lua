@@ -493,11 +493,12 @@ data:extend({
 	),
 	pf.recipeFactory(
 		pre .. "thermal-flux-furnace",
-		recipeTempIcon,  --TODO: placeholder icon
+		prisIcons .. "thermal-flux-furnace.png",
 		pf.itemIngredientsFactory({
 			{"electric-furnace",1},
+			{"steel-plate",4},
 			{pre .. "active-flux-capacitor",1},
-			{"heat-pipe",4}
+			{"heat-pipe",12}
 		}),
 		pf.itemResultsFactory({
 			{pre .. "thermal-flux-furnace",1},
@@ -505,7 +506,7 @@ data:extend({
 		}),
 		8,
 		{"advanced-crafting"},
-		keyMerge("e[crystal-separator]-b[flux]",{keys.standard,keys.smelting,keys.prismarisOnly, {main_product = pre .. "thermal-flux-furnace"}})
+		keyMerge("e[crystal-separator]-b[flux]",{keys.standard,keys.smelting,keys.prismarisOnly,keys.mainProduct(pre .. "thermal-flux-furnace")})
 	),
 	pf.recipeFactory(
 		pre .. "electric-heater",
@@ -521,7 +522,7 @@ data:extend({
 		}),
 		8,
 		{"advanced-crafting"},
-		keyMerge("f[nuclear-energy]-e[electric-heater]",{keys.standard,keys.subgroup("energy"), {main_product = pre .. "electric-heater"}})
+		keyMerge("f[nuclear-energy]-e[electric-heater]",{keys.standard,keys.subgroup("energy"),keys.mainProduct(pre .. "electric-heater")})
 	)
 })
 

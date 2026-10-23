@@ -286,6 +286,7 @@ require("prototypes.recipes.advanced-recipes")
 --Buildings
 require("prototypes.entities.buildings")
 require("prototypes.entities.crystal-separator")
+require("prototypes.entities.thermal-flux-furnace")
 require("prototypes.entities.laser-turrets")
 require("prototypes.entities.tesla-turrets")
 require("prototypes.entities.void-beacon")
