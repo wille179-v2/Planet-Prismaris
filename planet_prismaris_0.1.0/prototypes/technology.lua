@@ -335,7 +335,7 @@ data:extend({
 	),
 	pf.technologyFactory( -- lunar-panels
 		"lunar-panels",
-		techPlaceholder,
+		techPath .. "lunar-energy.png",
 		false,
 		pf.unlockUnitHelper(
 			1000,

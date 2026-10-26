@@ -964,7 +964,7 @@ data:extend({
 	pf.itemFactory(
 		pre .. "lunar-panel",
 		50,
-		baseIcons .. "solar-panel.png", -- TODO: Placeholder
+		prisIcons .. "lunar-panel.png",
 		"energy",
 		{
 			placement = pf.placementHelper(

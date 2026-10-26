@@ -604,7 +604,7 @@ data:extend({
 data:extend({
 	pf.recipeFactory(
 		pre .. "lunar-panel",
-		recipeTempIcon, -- TODO
+		prisIcons .. "lunar-panel.png", -- TODO
 		pf.ingredientsFactory(
 			{
 				{"solar-panel",1},
@@ -624,7 +624,7 @@ data:extend({
 		),
 		5,
 		{"crafting-with-fluid","electromagnetics"},
-		keyMerge("d[solar-panel]-b[lunar-panel]",{keys.standard,keys.prismarisOnly,keys.subgroup("energy")})
+		keyMerge("d[solar-panel]-b[lunar-panel]",{keys.standard,keys.prismarisOnly,keys.subgroup("energy"),keys.mainProduct(pre .. "lunar-panel")})
 	)
 })
 
