@@ -9,9 +9,9 @@ local spaceIcons = iconsPath .. "space/"
 
 
 -- Bot logic for lightning
-local botPriority = 100
-if settings.startup["prismaris-lightning-mercy"].value == false then
-	botPriority = 1000
+local botPriority = 1000
+if settings.startup["prismaris-lightning-mercy"].value == true then
+	botPriority = 100
 end
 local lightningExemption = table.deepcopy(data.raw["planet"]["fulgora"].lightning_properties.exemption_rules)
 table.insert(lightningExemption,{type = "prototype", string = pre .. "cultivated-aether-crystal"})
@@ -205,7 +205,7 @@ local prismaris = {
 		["day-night-cycle"] = 27 * minute,
 		["magnetic-field"] = 93,
 		["solar-power"] = 75,
-		["robot-energy-usage"] = 2,
+		["robot-energy-usage"] = settings.startup["prismaris-lightning-mercy"].value and 4 or 2,
 		pressure = 1100,
 		gravity = 14,
 	},
