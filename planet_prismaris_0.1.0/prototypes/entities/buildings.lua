@@ -12,7 +12,7 @@ local remnants = require("__base__.prototypes.entity.remnants")
 local entityGraphics = prismarisConstants.entityGraphicsPath
 local iconGraphics = prismarisConstants.iconsPath
 
-local electricHeater = table.deepcopy(data.raw['reactor']['heating-tower'])
+--[[local electricHeater = table.deepcopy(data.raw['reactor']['heating-tower'])
 electricHeater.name = pre .. "electric-heater"
 electricHeater.heating_radius = 5
 electricHeater.energy_source = {
@@ -26,21 +26,126 @@ electricHeater.heat_buffer.max_temperature = 1000
 electricHeater.heat_buffer.specific_heat = "1MJ"
 electricHeater.minable.results = nil
 electricHeater.minable.result = pre .. "electric-heater"
-electricHeater.surface_conditions = nil
+electricHeater.surface_conditions = nil]]
 
---[[
-local lunarPanel = table.deepcopy(data.raw["solar-panel"]["solar-panel"])
-lunarPanel.name = pre .. "lunar-panel"
-lunarPanel.performance_at_day = 0
-lunarPanel.performance_at_night = 1
-lunarPanel.production = "120kW"
-lunarPanel.minable.result = pre .. "lunar-panel"
-lunarPanel.surface_conditions = { -- Not usable in space where it's always day.
-	{
-		property = "gravity",
-		min = 0.1
-	}
-}]]
+local electricHeater = {
+	type = "reactor",
+	name = pre .. "electric-heater",
+	circuit_connector = circuit_connector_definitions.create_single(universal_connector_template, {
+		variation = 30,
+		main_offset = util.by_pixel(-1, 33.5),
+		shadow_offset = util.by_pixel(-1, 33.5),
+		show_shadow = true
+	}),
+	circuit_wire_max_distance = 9,
+	collision_box = {{-2.25, -2.1}, {2.25, 2.1}},
+	selection_box = {{-2.5, -2.3}, {2.5, 2.3}},
+	max_health = 500,
+	damaged_trigger_effect = hit_effects.entity(),
+	energy_source = {
+		type = "electric",
+		usage_priority = "secondary-input",
+		drain = "50kW"
+	},
+	consumption = "10MW",
+	scale_energy_usage = true,
+	heat_buffer = {
+		max_temperature = 800,
+		specific_heat = "1MJ",
+		max_transfer = "10GW",
+		minimum_glow_temperature = 30,
+		connections = {
+			{
+				position = {0,-2},
+				direction = defines.direction.north
+			},
+			{
+				position = {2,0},
+				direction = defines.direction.east
+			},
+			{
+				position = {0,2},
+				direction = defines.direction.south
+			},
+			{
+				position = {-2,0},
+				direction = defines.direction.west
+			},
+		},
+		heat_picture = {
+			layers = {
+				util.sprite_load(entityGraphics .. "electric-heater/glow", {
+					scale = 0.42,
+					blend_mode = "additive",
+					tint = {0.55, 0.55, 0.55, 1},
+					draw_as_glow = true
+				}),
+				util.sprite_load(entityGraphics .. "electric-heater/flare",{
+					scale = 0.42,
+					blend_mode = "additive",
+					tint = {0.13,0.13,0.13,1},
+					draw_as_glow = true
+				})
+			}
+		}
+	},
+	connection_patches_connected = {
+		sheet = util.sprite_load(entityGraphics .. "electric-heater/heating-tower-pipes", {
+			scale = 0.5,
+			variation_count = 4
+		})
+	},
+	connection_patches_disconnected = {
+		sheet = util.sprite_load(entityGraphics .. "electric-heater/heating-tower-pipes-disconnected", {
+			scale = 0.5,
+			variation_count = 4
+		})
+	},
+	heat_connection_patches_connected = {
+		sheet = apply_heat_pipe_glow(
+			util.sprite_load(entityGraphics .. "electric-heater/heating-tower-pipes-heat", {
+				scale = 0.5,
+				variation_count = 4
+			})
+		)
+	},
+	heat_connection_patches_disconnected = {
+		sheet = apply_heat_pipe_glow(
+			util.sprite_load(entityGraphics .. "electric-heater/heating-tower-pipes-heat-disconnected", {
+				scale = 0.5,
+				variation_count = 4
+			})
+		)
+	},
+	heating_radius = 6,
+	neighbor_bonus = 0,
+	picture = {
+		layers = {
+			util.sprite_load(entityGraphics .. "electric-heater/tower",{
+				scale = 0.42,
+			}),
+			util.sprite_load(entityGraphics .. "electric-heater/shadow", {
+				scale = 0.42,
+				draw_as_shadow = true
+			})
+		}
+	},
+	icon = iconGraphics .. "electric-heater.png",
+	icon_size = 64,
+	open_sound = {filename = "__base__/sound/open-close/metal-large-open.ogg", volume = 0.8},
+	close_sound = {filename = "__base__/sound/open-close/metal-large-close.ogg", volume = 0.8},
+	working_sound = {
+		sound = {audible_distance_modifier = 0.9, filename = "__base__/sound/heat-pipe.ogg", volume = 0.85},
+		max_sounds_per_prototype = 3,
+		fade_in_ticks = 4,
+		fade_out_ticks = 20
+	},
+	default_temperature_signal = {type = "virtual", name = "signal-T"},
+	minable = {mining_time = 0.2, result = pre .. "electric-heater"},
+	fast_replaceable_group = "radiative-tower", -- for Cerys compatibility
+}
+
+
 
 local lunarPanel = {
 	type = "solar-panel",

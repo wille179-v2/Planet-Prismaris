@@ -4,9 +4,10 @@ No generative AI was used anywhere or at any stage in this project.
 Resources & Assets:
 * Syen-ce (icon & entity graphics from Planetaris: Hyarion; modified by wille179)
 * malcomriley (icon graphics from their unused-renders repository; modified by wille179)
-* Hurricane046 (building graphics; unmodified)
+* Hurricane046 (building and icon graphics; unmodified)
 * Hornwitser (science pack graphics from Quality Glassware; modified by wille179)
 * valent125 (stargate graphics from Aegis & Bellicos; modified by wille179. Also gave me the idea for Prismaris's stargate in the first place.)
+* thesixthroc & Tserup (icon an entity graphics from Cerys: Moon of Fulgora, unmodified)
 
 Special thanks to the people of the factorio discord for helping me out:
-* PennyJim, shemp_71881, Osmo
+* PennyJim, shemp_71881, Osmo, BlackATM

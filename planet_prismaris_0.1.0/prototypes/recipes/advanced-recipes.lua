@@ -511,7 +511,7 @@ data:extend({
 	),
 	pf.recipeFactory(
 		pre .. "electric-heater",
-		recipeTempIcon,  --TODO: placeholder icon
+		prisIcons .. "electric-heater.png",
 		pf.itemIngredientsFactory({
 			{"heating-tower"},
 			{pre .. "active-flux-capacitor",1},

@@ -883,7 +883,7 @@ data:extend({
 	pf.itemFactory(
 		pre .. "electric-heater",
 		20,
-		saIcons .. "heating-tower.png", -- TODO: placeholder
+		prisIcons .. "electric-heater.png",
 		"environmental-protection",
 		{
 			placement = pf.placementHelper(
