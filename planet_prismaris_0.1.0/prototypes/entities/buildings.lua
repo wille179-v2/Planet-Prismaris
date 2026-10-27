@@ -45,7 +45,7 @@ local electricHeater = {
 	energy_source = {
 		type = "electric",
 		usage_priority = "secondary-input",
-		drain = "50kW"
+		drain = "100kW"
 	},
 	consumption = "10MW",
 	scale_energy_usage = true,
@@ -117,7 +117,7 @@ local electricHeater = {
 			})
 		)
 	},
-	heating_radius = 6,
+	heating_radius = 5,
 	neighbor_bonus = 0,
 	picture = {
 		layers = {
