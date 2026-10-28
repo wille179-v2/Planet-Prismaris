@@ -109,6 +109,10 @@ data:extend{
 -- Any Planet Start and other mod compatibility related stuff goes here.
 -- See: https://mods.factorio.com/mod/any-planet-start
 
+if mods["any-planet-start"] then
+	APS.add_choice("prismaris")
+end
+
 data:extend{
 	{ -- Removes stasis mode entirely, for use when another mod adds its own method of stasis
 		type = "bool-setting",

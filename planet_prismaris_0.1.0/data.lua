@@ -293,6 +293,9 @@ require("prototypes.entities.void-beacon")
 require("prototypes.entities.chronocyclers")
 require("prototypes.entities.cogitor")
 
+--Mod compatibility
+require("mod-compatibility.compatibility")
+
 ----------------------------------------------------
 -- General data-stage game tweaks --
 ----------------------------------------------------

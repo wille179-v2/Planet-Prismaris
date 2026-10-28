@@ -1,4 +1,4 @@
--- A set of utilities from Any Planet Start
+-- A set of utilities stolen from Any Planet Start and modified for my own needs.
 -- include in a project by using local utils = require("utils")
 -- Call functions as utils.methodname()
 
@@ -79,6 +79,21 @@ function utils.add_recipes(name, recipes)
         technology.effects[len + i] = {
             type = "unlock-recipe",
             recipe = recipes[i],
+        }
+    end
+end
+
+--- Adds space locations to a technology's unlocks.
+---@param name string
+---@param locations string[]
+function utils.add_space_locations(name, locations)
+    local technology = technologies[name]
+    technology.effects = technology.effects or {}
+    local len = #technology.effects
+    for i = 1, #locations do
+        technology.effects[len + i] = {
+            type = "unlock-space-location",
+            space_location = locations[i],
         }
     end
 end

@@ -19,10 +19,16 @@ table.insert(lightningExemption,{type = "prototype", string = pre .. "crystal-hu
 table.insert(lightningExemption,{type = "prototype", string = pre .. "crystal-big"})
 table.insert(lightningExemption,{type = "prototype", string = pre .. "aether-crystal-natural"})
 
+-- Add an exemption to stone furnaces during Any Planet Start runs, to prevent exploding early-game resources.
+if mods["any-planet-start"] and settings.startup["aps-planet"].value == "prismaris" then
+	table.insert(lightningExemption,{type = "id", string = "stone-furnace"})
+end
+
 -- Solar for connections
 local spaceSolar = 150
 -- if this setting exists, a B&A or SYSG mods are installed and we're using a shared stargate.
-if settings.startup["stargate-solar-power"] then
+-- however, we don't want to do this if APS is installed and we're starting from Prismaris
+if settings.startup["stargate-solar-power"] and not (mods["any-planet-start"] and settings.startup["aps-planet"].value == "prismaris") then
 	spaceSolar = settings.startup["stargate-solar-power"].value == "very-low-power" and 1 or (settings.startup["stargate-solar-power"].value) == "low-power" and 10 or spaceSolar
 end
 

@@ -1,6 +1,8 @@
 local techPlaceholder = prismarisConstants.technologyIconsPath .. "technology_placeholder.png"
 local techPath = prismarisConstants.technologyIconsPath
 
+local hideWIPTech = true
+
 -- pf.technologyFactory(name, icons, essential, unlockCondition, prerequisites, effects)
 	-- pf.unlockUnitHelper(count,packs,seconds)
 	-- pf.unlockTriggerHelper(type, triggerItemID, count)
@@ -575,6 +577,9 @@ data:extend({
 		},
 		{
 			--TODO: Tesla recipes
+		},
+		{
+			hidden = hideWIPTech
 		}
 	),
 	pf.technologyFactory( --prismatic-laser-turret
@@ -650,6 +655,9 @@ data:extend({
 			pre .. "utility-to-production-transmutation",
 			pre .. "production-to-space-transmutation",
 			pre .. "space-to-utility-transmutation",
+		},
+		{
+			hidden = hideWIPTech
 		}
 	),
 	pf.technologyFactory( --cogitor-alien-science
@@ -682,6 +690,9 @@ data:extend({
 			pre .. "electromagnetic-to-agricultural-transmutation",
 			pre .. "agricultural-to-metallurgic-transmutation",
 			pre .. "metallurgic-to-electromagnetic-transmutation",
+		},
+		{
+			hidden = hideWIPTech
 		}
 	),
 	pf.technologyFactory( -- cogitor-promethium-science
@@ -712,6 +723,9 @@ data:extend({
 			pre .. "promethium-catalytic-crystal",
 			pre .. "cryogenic-to-promethium-transmutation",
 			pre .. "promethium-to-cryogenic-transmutation",
+		},
+		{
+			hidden = hideWIPTech
 		}
 	),
 	pf.technologyFactory(-- void-beacon
@@ -903,7 +917,8 @@ data:extend({
 			"1.5^L*1000"
 		),
 		{
-			"green-polyphasic-science-pack"
+			"green-polyphasic-science-pack",
+			"agricultural-science-pack"
 		},
 		{
 			{
