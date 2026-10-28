@@ -214,6 +214,12 @@ local lunarPanel = {
 		},
 		rotate = false,
 		orientation_to_variation = false,
+	},
+	surface_conditions = {
+		{
+			property = "gravity",
+			min = 0.01
+		}
 	}
 }
 local lunarPanelCorpse = {
