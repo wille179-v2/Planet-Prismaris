@@ -56,7 +56,7 @@ data:extend({
 	),
 	pf.recipeFactory(
 		pre .. "solidified-entropy",
-		recipeTempIcon, -- TODO: Temp icon
+		saIcons .. "ice-platform.png", -- TODO: Temp icon
 		pf.ingredientsFactory(
 			{
 				{pre .. "raw-entropic-dust-positive",10}
