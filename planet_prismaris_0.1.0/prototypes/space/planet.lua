@@ -83,6 +83,54 @@ local stargateAsteroids = {
   }
 }
 
+local prismarisAsteroidChunks = {
+	{
+		type = "asteroid-chunk",
+		asteroid = "metallic-asteroid-chunk",
+		probability = 0.0015,
+		speed = asteroid_util.standard_speed*.2,
+		angle_when_stopped = 1
+	},
+	{
+		type = "asteroid-chunk",
+		asteroid = "carbonic-asteroid-chunk",
+		probability = 0.0028,
+		speed = asteroid_util.standard_speed*.2,
+		angle_when_stopped = 1
+	},
+	{
+		type = "asteroid-chunk",
+		asteroid = "oxide-asteroid-chunk",
+		probability = 0.00067,
+		speed = asteroid_util.standard_speed*.2,
+		angle_when_stopped = 1
+	},
+}
+
+local prismarisMediumAsteroids = {
+	{
+		asteroid = "medium-metallic-asteroid",
+		angle_when_stopped = 0.6,
+		probability = 0.0013,
+		speed = asteroid_util.standard_speed*.2,
+	},
+	{
+		asteroid = "medium-carbonic-asteroid",
+		angle_when_stopped = 0.6,
+		probability = 0.0021,
+		speed = asteroid_util.standard_speed*.2,
+	},
+	{
+		asteroid = "medium-oxide-asteroid",
+		angle_when_stopped = 0.6,
+		probability = 0.0006,
+		speed = asteroid_util.standard_speed*.2,
+	},
+}
+
+-- Sets the asteroid spawn definitions for Prismaris with respect to APS's safe orbit setting.
+local prismarisAsteroids = (mods["any-planet-start"] and settings.startup["aps-planet"].value == "prismaris" and settings.startup["aps-safe-orbit"].value == true) and prismarisAsteroidChunks or merge{prismarisAsteroidChunks,prismarisMediumAsteroids}
+
 --makes the icons for space connections
 function connectionIcon(topIcon, bottomIcon)
 	return {
@@ -292,7 +340,8 @@ local prismaris = {
 	label_orientation = .25,
 	draw_orbit = true,
 	solar_power_in_space = 300,
-	asteroid_spawn_influence = table.deepcopy(data.raw["planet"]["gleba"].asteroid_spawn_influence)	
+	asteroid_spawn_influence = 1,	
+	asteroid_spawn_definitions = prismarisAsteroids,	
 }
 
 
