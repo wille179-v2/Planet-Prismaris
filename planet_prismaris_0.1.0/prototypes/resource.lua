@@ -157,7 +157,7 @@ data:extend{
 				}
 			}
 		},
-		map_color = {1.0, 0.6, 0.7},
+		map_color = {100, 230, 105},
 		map_grid = false,
 		created_effect = create_tiles("snow-lumpy")
 	},
@@ -218,7 +218,7 @@ data:extend{
 		{
 			layers =
 			{
-				util.sprite_load("__space-age__/graphics/entity/fluorine-vent/fluorine-vent",
+				util.sprite_load(voidGraphics .. "void-essence-well",
 				{
 					priority = "extra-high",
 					frame_count = 4,
@@ -232,12 +232,12 @@ data:extend{
 			{
 				count = 1,
 				render_layer = "smoke",
-				animation = util.sprite_load("__space-age__/graphics/entity/lithium-brine/smoke-1",
+				animation = util.sprite_load(voidGraphics .. "smoke-1",
 				{
 					priority = "extra-high",
 					frame_count = 64,
 					animation_speed = 0.35,
-					tint = {r=0.25, g=0.5, b=0.5,a= 1},
+					--tint = {r=0.25, g=0.5, b=0.5,a= 1},
 					scale = 0.75,
 					shift = {0,-0.23}
 				})
@@ -245,12 +245,12 @@ data:extend{
 			{
 				count = 1,
 				render_layer = "smoke",
-				animation = util.sprite_load("__space-age__/graphics/entity/lithium-brine/smoke-2",
+				animation = util.sprite_load(voidGraphics .. "smoke-2",
 				{
 					priority = "extra-high",
 					frame_count = 64,
 					animation_speed = 0.35,
-					tint = {r=0, g=0.9, b=1,a= 0.35},
+					tint = {r=1, g=1, b=1,a= 0.35},
 					scale = 0.75,
 					shift = {0,-0.23}
 				})
@@ -259,7 +259,7 @@ data:extend{
 				count = 1,
 				render_layer = "smoke",
 				animation = {
-					filename = "__space-age__/graphics/entity/fluorine-vent/fluorine-vent-gas-outer.png",
+					filename = voidGraphics .. "void-essence-well-gas-outer.png",
 					frame_count = 47,
 					line_length = 16,
 					width = 90,
@@ -267,14 +267,14 @@ data:extend{
 					animation_speed = 0.5,
 					shift = util.by_pixel(-2, 24 -152),
 					scale = 1.5,
-					tint = util.multiply_color({r=0.5, g=1, b=1}, 0.1)
+					tint = util.multiply_color({r=1, g=1, b=1}, 0.1)
 				}
 			},
 			{
 				count = 1,
 				render_layer = "smoke",
 				animation = {
-					filename = "__space-age__/graphics/entity/fluorine-vent/fluorine-vent-gas-inner.png",
+					filename = voidGraphics .. "void-essence-well-gas-inner.png",
 					frame_count = 47,
 					line_length = 16,
 					width = 40,
@@ -282,11 +282,11 @@ data:extend{
 					animation_speed = 0.5,
 					shift = util.by_pixel(0, 24 -78),
 					scale = 1.5,
-					tint = util.multiply_color({r=0, g=0.9, b=1}, 0.1)
+					tint = util.multiply_color({r=1, g=1, b=1}, 0.1)
 				}
 			}
 		},
-		map_color = {0.0, 0.8, 1.0},
+		map_color = color.rawVoid[1],
 		map_grid = false,
 		created_effect = create_tiles("snow-patchy")
 	}
