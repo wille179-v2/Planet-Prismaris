@@ -155,7 +155,6 @@ end
 -- Planet & Space Locations --
 ------------------------------
 
-
 -- Prismaris itself
 local prismaris = {
 	name = "prismaris",
@@ -356,8 +355,8 @@ local calidusGatePrismaris = {
 	starmap_icon_size = 512,
 	icon = spaceIcons .. "starmap-stargate-calidus-64.png",
 	icon_size = 64,
-	subgroup = "planets",
-	order = "a",
+	subgroup = prismarisConstants.useModedGate and "B-A-space-locations" or "planets",
+	order = prismarisConstants.useModedGate and "a" or "d[prismaris]-b[stargate]",
 	gravity_pull = -10,
 	orbit = {
 		parent = {
@@ -383,8 +382,8 @@ local prismarisGate = {
 	starmap_icon = spaceIcons .. "calidus-prismaris-stargate-starmap.png",
 	starmap_icon_size = 512,
 	icon = spaceIcons .. "calidus-prismaris-stargate-icon.png",
-	subgroup = "planets",
-	order = "a",
+	subgroup = prismarisConstants.useModedGate and "B-A-space-locations" or "planets",
+	order = prismarisConstants.useModedGate and "a" or "d[prismaris]-b[stargate]",
 	gravity_pull = -10,
 	orbit = {
 		parent = {
