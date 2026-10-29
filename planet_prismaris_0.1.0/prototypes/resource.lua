@@ -31,6 +31,7 @@ resource_autoplace.initialize_patch_set(pre.."void-essence-well", false, "prisma
 
 local voidGraphics = prismarisConstants.entityGraphicsPath .. "void-essence-well/"
 local prismaticGraphics = prismarisConstants.entityGraphicsPath .. "prismatic-shard/"
+local iconsPath = prismarisConstants.iconsPath
 
 local function create_tiles()
 	return {
@@ -59,7 +60,7 @@ data:extend{
 	{
 		type = "resource",
 		name = pre .. "prismatic-shard",
-		icon = "__space-age__/graphics/icons/lithium-brine.png", --Todo: Temporary
+		icon = iconsPath .. "prismatic-shard-node.png",
 		flags = {"placeable-neutral"},
 		category = "basic-solid",
 		order = "c",
@@ -164,7 +165,7 @@ data:extend{
 	{
 		type = "resource",
 		name = pre .. "void-essence-well",
-		icon = "__space-age__/graphics/icons/fluorine-vent.png",
+		icon = iconsPath .. "void-essence-well.png",
 		flags = {"placeable-neutral"},
 		category = "basic-fluid",
 		subgroup = "mineable-fluids",
