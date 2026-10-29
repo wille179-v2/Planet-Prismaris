@@ -29,6 +29,9 @@ local base_tile_sounds = require("__base__.prototypes.tile.tile-sounds")
 resource_autoplace.initialize_patch_set(pre.."prismatic-shard", false, "prismaris")
 resource_autoplace.initialize_patch_set(pre.."void-essence-well", false, "prismaris")
 
+local voidGraphics = prismarisConstants.entityGraphicsPath .. "void-essence-well/"
+local prismaticGraphics = prismarisConstants.entityGraphicsPath .. "prismatic-shard/"
+
 local function create_tiles()
 	return {
 		type = "direct",
@@ -89,7 +92,7 @@ data:extend{
 		stage_counts = {0},
 		stages = {
 			layers = {
-				util.sprite_load("__space-age__/graphics/entity/lithium-brine/lithium-brine",
+				util.sprite_load(prismaticGraphics .. "prismatic-shard",
 				{
 					priority = "extra-high",
 					frame_count = 4,
@@ -102,24 +105,24 @@ data:extend{
 			{
 				count = 1,
 				render_layer = "smoke",
-				animation = util.sprite_load("__space-age__/graphics/entity/lithium-brine/smoke-1", {
+				animation = util.sprite_load(prismaticGraphics .. "smoke-1", {
 					priority = "extra-high",
 					frame_count = 64,
 					animation_speed = 0.35,
-					tint = util.multiply_color({r=0.9, g=1, b=0.9}, 1),
-					scale = 0.5
+					tint = util.multiply_color({r=1, g=1, b=1}, 1),
+					scale = 0.5,
 					--shift = util.by_pixel( 0.5, -54.0)
 				})
 			},
 			{
 				count = 1,
 				render_layer = "smoke",
-				animation = util.sprite_load("__space-age__/graphics/entity/lithium-brine/smoke-2", {
+				animation = util.sprite_load(prismaticGraphics .. "smoke-2", {
 					priority = "extra-high",
 					frame_count = 64,
 					animation_speed = 0.35,
-					tint = util.multiply_color({r=0.4, g=0.6, b=0.4}, 0.5),
-					scale = 0.5
+					tint = util.multiply_color({r=1, g=1, b=1}, 0.5),
+					scale = 0.5,
 					--shift = util.by_pixel( 0.5, -54.0)
 				})
 			},
@@ -127,7 +130,7 @@ data:extend{
 				count = 1,
 				render_layer = "smoke",
 				animation = {
-					filename = "__space-age__/graphics/entity/fluorine-vent/fluorine-vent-gas-outer.png",
+					filename = prismaticGraphics .. "prismatic-vent-gas-outer.png",
 					frame_count = 47,
 					line_length = 16,
 					width = 90,
@@ -135,14 +138,14 @@ data:extend{
 					animation_speed = 0.5,
 					shift = util.by_pixel(-2, -40),
 					scale = 0.5,
-					tint = util.multiply_color({r=0.9, g=1, b=0.9}, 0.1),
+					tint = util.multiply_color({r=1, g=1, b=1}, 0.1),
 				}
 			},
 			{
 				count = 1,
 				render_layer = "smoke",
 				animation = {
-					filename = "__space-age__/graphics/entity/fluorine-vent/fluorine-vent-gas-inner.png",
+					filename = prismaticGraphics .. "prismatic-vent-gas-inner.png",
 					frame_count = 47,
 					line_length = 16,
 					width = 40,
@@ -150,11 +153,11 @@ data:extend{
 					animation_speed = 0.5,
 					shift = util.by_pixel(0, -14),
 					scale = 0.5,
-					tint = util.multiply_color({r=0.4, g=0.6, b=0.4}, 0.1),
+					tint = util.multiply_color({r=1, g=1, b=1}, 0.1),
 				}
 			}
 		},
-		map_color = {0.7, 1.0, 0.6},
+		map_color = {1.0, 0.6, 0.7},
 		map_grid = false,
 		created_effect = create_tiles("snow-lumpy")
 	},
