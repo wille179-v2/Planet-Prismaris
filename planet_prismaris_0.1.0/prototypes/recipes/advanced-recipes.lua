@@ -11,7 +11,7 @@ end
 data:extend({
 	pf.recipeFactory(
 		pre .. "chronopetrochemistry",
-		recipeTempIcon, -- TODO
+		prisIcons .. "chronopetrochemistry.png",
 		pf.ingredientsFactory(
 			{
 				{"coal",5},

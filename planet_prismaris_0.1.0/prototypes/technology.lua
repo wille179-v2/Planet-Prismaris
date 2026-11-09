@@ -177,7 +177,7 @@ data:extend({
 	),
 	pf.technologyFactory(
 		"chronopetrochemistry",
-		techPlaceholder, --TODO,
+		techPath .. "chronopetrochemistry.png",
 		false,
 		pf.unlockTriggerHelper(
 			"craft-item",
