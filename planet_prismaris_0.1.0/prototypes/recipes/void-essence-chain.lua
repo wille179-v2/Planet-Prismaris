@@ -47,7 +47,7 @@ data:extend({
 		),
 		pf.resultsFactory(
 			{
-				{pre .. "raw-entropic-dust-negative",1,ip=.1,ignored_by_productivity=1}
+				{pre .. "raw-entropic-dust-negative",1,ip=prismarisConstants.voidFluidRatio}
 			},
 			{
 				{pre .. "stabilized-void-essence", stabilizeConcentrateRatio * bulkVolume * prismarisConstants.voidFluidRatio}
@@ -76,7 +76,7 @@ data:extend({
 		),
 		pf.resultsFactory(
 			{
-				{pre .. "raw-entropic-dust-negative",1,ip=.25,ignored_by_productivity=1}
+				{pre .. "raw-entropic-dust-negative",1,ip=prismarisConstants.voidFluidRatio}
 			},
 			{
 				{pre .. "concentrated-void-essence", (1/stabilizeConcentrateRatio) * bulkVolume * prismarisConstants.voidFluidRatio},
