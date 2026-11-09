@@ -1,3 +1,5 @@
+local hideWIPSettings = true
+
 --------------------------------------
 -- Section A: Accessibility Options --
 --------------------------------------
@@ -48,7 +50,8 @@ data:extend{
 		setting_type = "startup",
 		default_value = "default-mode",
 		allowed_values = {"default-mode","collapse-mode","preserve-mode"},
-		order = "b[difficulty]-d[entropic-dust]"
+		order = "b[difficulty]-d[entropic-dust]",
+		hidden = hideWIPSettings,
 	},
 	{ -- Chose whether aether crystals are edible items that restore a small amount of health, are not edible at all, or count as a weak source of non-spoiling nutrients for the biochamber.
 		type = "string-setting",
@@ -56,7 +59,8 @@ data:extend{
 		setting_type = "startup",
 		default_value = "candy",
 		allowed_values = {"inedible","candy","candy-and-nutrients"},
-		order = "b[difficulty]-e[candy]"
+		order = "b[difficulty]-e[candy]",
+		hidden = hideWIPSettings,
 	},
 }
 
@@ -71,7 +75,8 @@ data:extend{
 		setting_type = "startup",
 		default_value = "default",
 		allowed_values = {"turbo","default","slow","glacial"},
-		order = "c[tweaks]-f[spoil-speed]"
+		order = "c[tweaks]-f[spoil-speed]",
+		hidden = hideWIPSettings,
 	},
 }
 
@@ -86,7 +91,8 @@ data:extend{
 		name = "prismaris-add-polysci-to-endgame",
 		setting_type = "startup",
 		default_value = true,
-		order = "d[endgame]-a[add-science]"
+		order = "d[endgame]-a[add-science]",
+		hidden = hideWIPSettings,
 	},
 	{ -- Determines how polysci is added to the endgame:
 			-- Randomized: Every endgame technology gets one randomly chosen polysci pack
@@ -98,7 +104,8 @@ data:extend{
 		setting_type = "startup",
 		default_value = "randomized",
 		allowed_values = {"randomized","all","all-balanced","rainbow"},
-		order = "d[endgame]-b[science-phase]"
+		order = "d[endgame]-b[science-phase]",
+		hidden = hideWIPSettings,
 	},
 }
 
@@ -119,7 +126,8 @@ data:extend{
 		name = "prismaris-stasis-removal",
 		setting_type = "startup",
 		default_value = false,
-		order = "e[compatibility]-a[remove-stasis]"
+		order = "e[compatibility]-a[remove-stasis]",
+		hidden = hideWIPSettings,
 	}
 }
 
