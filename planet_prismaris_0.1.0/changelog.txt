@@ -1,5 +1,25 @@
 ---------------------------------------------------------------------------------------------------
 Version: 0.1.0
-Date: 08-16-2026
+Date: 11-09-2026
+  Major Features:
+    - First Public release for beta testing!
+    - Planet Prismaris is a new world of ever-shifting resources. Prismaris can now be accessed after researching the Agricultural Science Pack on Gleba. Alternatively, you may start on Prismaris using the Any Planet Start mod.
+    - Prismaris currently adds 31 new technologies to research, including three infinite productivity technologies for commonly used intermediates and a couple of upgrades to your robots and labs. More technologies are planned in a future patch, centered around amplifying your science pack production on every world.
+    - The core challenge of prismaris is cyclical recipes, items that rapidly and cyclically transform into one another, byproducts that can potentially self-replicate, and an environment that his hostile to your bots. Or in other words, sushi belts are basically mandatory and the mess refuses to be sorted.
+    - The rewards for completing Prismaris are useful on nearly every other planet in the solar system.
   Features:
-    - Development begins.
+    - Seven new buildings: The Crystal Separator, the Electric Heating Tower, the Thermal Flux Furnace, the Chronocycler, the Lunar Panel, and the Prismatic Laser Turret
+    - More buildings are planned for an upcoming update, which should come soon.
+    - The Chronocycler and the Prismatic Laser Turret us a new "configuration" system. Build one base item, then modify it in your inventory into one of several variants with unique but related capabilities.
+    - Prismaris has no enemies. However, hostile lightning hunts down robots that are used on prismaris if they are not sufficiently protected. A setting can disable this, but it doubles the energy usage of robots if enabled.
+    - Prismaris adds new kind of nutrient, which can be made easily on any planet after visiting Prismaris, allowing greater use of the biochamber anywhere in the solar system.
+  Compatibility:
+    - Prismaris makes the minimum necessary changes to the core game. It is safe to add to and remove from existing saves.
+    - Prismaris uses a "stargate" system for travelling space platforms. When paired with Aegis & Bellicos (which inspired that system), it merges their stargates to keep the space map uncluttered.
+    - Prismaris's glassworking should be compatible with most mods that add glass and glassworking, particularly Crushing Industry.
+  Ease of use:
+    - Multiple settings to control the difficulty of prismaris are availible, and more will be added soon.
+    - Prismaris's Entropic sea may cause eye strain in some people. There is a setting to replace it with a less intense visual effect.
+  Graphics:
+    - Many graphics are currently placeholders, particularly regarding Prismaris's terrain and appearance in space. These will be updated in the future, but should not have any gameplay changes when they are.
+    - Prismaris upgrades the graphics of the Foundry and the Electromagnetic plant. Both buildings can now dynamically adjust the color of their smoke / lightning based on the recipe they are producing (like the chemical plant / cryogenic plant do).
