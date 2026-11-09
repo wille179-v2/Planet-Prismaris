@@ -2,7 +2,7 @@ local acGraphicsPath = prismarisConstants.entityGraphicsPath .. "aether-crystal/
 local prisIcons = prismarisConstants.iconsPath
 local cultivatedAetherCrystal = table.deepcopy(data.raw["plant"]["tree-plant"])
 cultivatedAetherCrystal.name = pre .. "cultivated-aether-crystal"
-cultivatedAetherCrystal.growth_ticks = 18000 -- the same as gleba plants
+cultivatedAetherCrystal.growth_ticks = 9000 -- the half the time of gleba plants
 cultivatedAetherCrystal.icons = {{icon = prisIcons .. "shattered-aethric-shard-a-e.png", tint = {.8,1,1}}}
 cultivatedAetherCrystal.minable = {
 	mining_time = 0.5,
@@ -11,8 +11,8 @@ cultivatedAetherCrystal.minable = {
 		{
 			type = "item",
 			name = pre .. "aethric-shard",
-			amount_min = 25, -- Will go to "amount = 50" if this doesn't work
-			amount_max = 75
+			amount_min = 10, -- Average yield of 20.
+			amount_max = 30
 		}
 	}
 }
