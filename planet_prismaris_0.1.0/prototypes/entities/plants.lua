@@ -104,6 +104,6 @@ cultivatedAetherCrystal.variations = nil
 cultivatedAetherCrystal.growth_variations = nil
 cultivatedAetherCrystal.growth_mounds = nil
 cultivatedAetherCrystal.collision_box = {{-1, -1}, {1, 1}}
-cultivatedAetherCrystal.selection_box = {{-1, -1}, {1, 1}}
+cultivatedAetherCrystal.selection_box = {{-1, -2}, {1, 1.5}}
 
 data:extend({cultivatedAetherCrystal})
