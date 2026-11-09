@@ -1,11 +1,11 @@
 data:extend({
-	{
+	--[[{
 		type = "autoplace-control",
 		name = "prismaris_cliff",
 		category = "cliff",
 		order = "p-c",
 		can_be_disabled = true
-	},
+	},]]
 	{
 		type = "autoplace-control",
 		name = "prismaris_prismatic_shard",
@@ -24,7 +24,7 @@ data:extend({
 		richness = true,
 		localised_name = {"", "[entity=prismaris-void-essence-well] ",{"entity-name.prismaris-void-essence-well"}}
 	},
-	{
+	--[[{
 		type = "autoplace-control",
 		name = "prismaris_plants",
 		category = "terrain",
@@ -37,5 +37,5 @@ data:extend({
 		category = "terrain",
 		order = "p-e",
 		can_be_disabled = false,
-	},
+	},]]
 })

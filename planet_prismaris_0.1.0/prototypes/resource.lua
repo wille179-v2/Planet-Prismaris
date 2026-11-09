@@ -1,28 +1,3 @@
---[[
-local prismaticShardPatch = table.deepcopy(data.raw["resource"]["iron-ore"])
-prismaticShardPatch.name = pre .. "prismatic-shard"
-prismaticShardPatch.infinite = true
-prismaticShardPatch.minimum = 60000
-prismaticShardPatch.normal = 60000
-prismaticShardPatch.infinite_depletion_amount = 0
-prismaticShardPatch.minable.result = pre .. "prismatic-shard"
-prismaticShardPatch.stages.sheet.filename = prismarisConstants.entityGraphicsPath .. "prismatic-shard/prismatic-shard.png"
-
-local voidEssenceWell = table.deepcopy(data.raw["resource"]["sulfuric-acid-geyser"])
-voidEssenceWell.name = pre .. "void-essence-well"
-voidEssenceWell.minable.results = {
-	{
-		type = "fluid",
-		name = pre .. "raw-void-essence",
-		amount = 20
-	}
-}
-voidEssenceWell.normal = 300000
-voidEssenceWell.minimum = 300000
-voidEssenceWell.order = "e"
-
-]]
-
 local resource_autoplace = require("resource-autoplace")
 local base_tile_sounds = require("__base__.prototypes.tile.tile-sounds")
 
@@ -43,12 +18,12 @@ local function create_tiles()
 			{
 				{
 					type = "create-entity",
-					entity_name = "aquilo-tiles-inner-explosion",
+					entity_name = pre .. "tiles-inner-explosion",
 					offsets = {{0.5, 0.5}}
 				},
 				{
 					type = "create-entity",
-					entity_name = "aquilo-tiles-outer-explosion",
+					entity_name = pre .. "tiles-outer-explosion",
 					offsets = {{0.5, 0.5}}
 				}
 			}
@@ -160,7 +135,7 @@ data:extend{
 		},
 		map_color = {100, 230, 105},
 		map_grid = false,
-		created_effect = create_tiles("snow-lumpy")
+		created_effect = create_tiles(pre .. "snow-lumpy")
 	},
 	{
 		type = "resource",
@@ -208,10 +183,10 @@ data:extend{
 		collision_box = {{-1.4, -1.4}, {1.4, 1.4}},
 		selection_box = {{-0.5, -0.5}, {0.5, 0.5}},
 		autoplace = {
-			--control = "fluorine-vent",
+			--control = "prismaris_void_essence",
 			order="a[resources]-a[void-essence]",
 			--default_enabled = false,
-			probability_expression = "aquilo_lithium_brine_probability",
+			probability_expression = "prismaris_void_essence_probability",
 			richness_expression = "prismaris_void_essence_richness"
 		},
 		stage_counts = {0},
@@ -289,6 +264,6 @@ data:extend{
 		},
 		map_color = color.rawVoid[1],
 		map_grid = false,
-		created_effect = create_tiles("snow-patchy")
+		created_effect = create_tiles(pre .. "snow-patchy")
 	}
 }

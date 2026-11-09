@@ -7,26 +7,19 @@ planet_map_gen.prismaris = function()
 	{
 		property_expression_names =
 		{
-			elevation = "aquilo_elevation",
+			elevation = "prismaris_elevation",
 			temperature = "aquilo_temperature",
 			moisture = "moisture_basic",
 			aux = "aquilo_aux",
 			cliffiness = "cliffiness_basic",
 			cliff_elevation = "cliff_elevation_from_elevation",
-			["entity:prismaris-prismatic-shard:probability"] = "aquilo_crude_oil_probabilityy",
+			["entity:prismaris-prismatic-shard:probability"] = "prismaris_prismatic_shard_probability",
 			["entity:prismaris-prismatic-shard:richness"] = "prismaris_prismatic_shard_richness",
-			--["entity:prismaris-void-essence-well:probability"] = "vulcanus_sulfuric_acid_geyser_probability",
-			--["entity:prismaris-void-essence-well:richness"] = "vulcanus_sulfuric_acid_geyser_richness",
 		},
 		autoplace_controls =
 		{
 			["prismaris_prismatic_shard"] = {},
 			["prismaris_void_essence"] = {},
-			--["prismaris_plants"] = {},
-			--["prismaris_entropy"] = {},
-			--["prismaris_cliff"] = {},
-			--["vulcanus_volcanism"] = {},
-			--["rocks"] = {}, -- can't add the rocks control otherwise nauvis rocks spawn
 		},
 		autoplace_settings =
 		{

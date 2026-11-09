@@ -39,3 +39,15 @@ table.insert(atomicRocket.action.action_delivery.target_effects, {
 	entity_name = "nuke-effects-prismaris",
 	type = "create-entity"
 })
+
+local prismarisTileInnerExplosion = table.deepcopy(data.raw["explosion"]["aquilo-tiles-inner-explosion"])
+prismarisTileInnerExplosion.created_effect.action_delivery.target_effects[1].tile_name = pre .. "snow-lumpy"
+prismarisTileInnerExplosion.name = pre .. "tiles-inner-explosion"
+
+
+local prismarisTileOuterExplosion = table.deepcopy(data.raw["explosion"]["aquilo-tiles-outer-explosion"])
+prismarisTileOuterExplosion.created_effect.action_delivery.target_effects[1].tile_name = pre .. "snow-patchy"
+prismarisTileOuterExplosion.created_effect.action_delivery.target_effects[2].tile_name = pre .. "ice-rough"
+prismarisTileOuterExplosion.name = pre .. "tiles-outer-explosion"
+
+data:extend{prismarisTileInnerExplosion,prismarisTileOuterExplosion}
