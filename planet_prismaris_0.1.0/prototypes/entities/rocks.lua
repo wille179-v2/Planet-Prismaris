@@ -3,6 +3,7 @@ local prisIcons = prismarisConstants.iconsPath
 
 local bigCrystal = table.deepcopy(data.raw["simple-entity"]["lithium-iceberg-big"])
 bigCrystal.name = pre .. "crystal-big"
+bigCrystal.minable.mining_time = 1
 bigCrystal.minable.results = {
 	-- platform
 	{type = "item", name = pre .. "solidified-entropy", amount_min = 0, amount_max = 4},
@@ -15,6 +16,7 @@ bigCrystal.minable.results = {
 
 local hugeCrystal = table.deepcopy(data.raw["simple-entity"]["lithium-iceberg-huge"])
 hugeCrystal.name = pre .. "crystal-huge"
+hugeCrystal.minable.mining_time = 1
 hugeCrystal.minable.results = {
 	-- platform
 	{type = "item", name = pre .. "solidified-entropy", amount_min = 2, amount_max = 12},
