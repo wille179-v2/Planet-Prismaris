@@ -148,7 +148,7 @@ data:extend({
 		pf.unlockTriggerHelper(
 			"craft-fluid",
 			pre .. "raw-void-essence",
-			1
+			10
 		),
 		{
 			"planet-discovery-prismaris",
@@ -165,7 +165,7 @@ data:extend({
 		pf.unlockTriggerHelper(
 			"craft-fluid",
 			pre .. "concentrated-void-essence",
-			10
+			500
 		),
 		{
 			"void-essence-refining"
@@ -192,6 +192,26 @@ data:extend({
 			pre .. "chronopetrochemistry"
 		}
 	),
+	pf.technologyFactory( -- metaphysical glassworking
+		"metaphysical-glassworking",
+		techPath .. "glassworking.png",
+		true,
+		pf.unlockTriggerHelper(
+			"craft-item",
+			pre .. "cracked-lithic-shard",
+			20
+		),
+		{
+			"prismatic-synthesis",
+			"void-essence-refining"
+		},
+		{
+			pre .. "sand-from-cracked-lithic-shard",
+			"sand",
+			"glass",
+			pre .. "metaphysical-prism"
+		}
+	),
 	pf.technologyFactory( -- flux-capacitor
 		"flux-capacitor",
 		techPath .. "flux-capacitor.png",
@@ -211,7 +231,7 @@ data:extend({
 		{
 			"void-essence-stabilization",
 			"aethric-destabilization",
-			"prismatic-synthesis"
+			"metaphysical-glassworking"
 		},
 		{
 			pre .. "flux-capacitor",
@@ -645,6 +665,7 @@ data:extend({
 			"carbon-fiber"
 		},
 		{
+			pre .. "shiny-bottle",
 			pre .. "cogitor",
 			pre .. "basic-catalytic-crystal",
 			pre .. "advanced-catalytic-crystal",

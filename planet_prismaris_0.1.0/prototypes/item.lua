@@ -294,6 +294,57 @@ data:extend({
 	),
 })
 
+-- Glassworking from Prismatic Shards
+
+data:extend{
+	pf.itemFactory(
+		"glass", -- no prefix for compatibility
+		100,
+		prisIcons .. "glass-1.png",
+		"raw-material",
+		{},
+		keyMerge("a[smelting]-d[glass]-a[basic]",{
+			{weight = 1000}, 
+			keys.altItemGraphics{
+				prisIcons .. "glass-1.png",
+				prisIcons .. "glass-2.png",
+				prisIcons .. "glass-3.png"
+			}
+		})
+	),
+	pf.itemFactory(
+		"sand", -- no prefix for compatibility
+		200,
+		prisIcons .. "sand-1.png",
+		"raw-resource",
+		{},
+		keyMerge("d[stone]-c[crushed]",{{weight = 1000}, keys.altItemGraphics{
+			prisIcons .. "sand-1.png",
+			prisIcons .. "sand-2.png",
+			prisIcons .. "sand-3.png",
+		}})
+	),
+	pf.itemFactory(
+		pre .. "shiny-bottle",
+		50,
+		prisIcons .. "shiny-bottle.png",
+		"intermediate-product",
+		{},
+		keyMerge("c[advanced-intermidates]-s[shiny-bottle]",{{weight = 1000}})
+	),
+	pf.itemFactory(
+		pre .. "metaphysical-prism",
+		50,
+		prisIcons .. "prism.png",
+		"intermediate-product",
+		{},
+		keyMerge("c[advanced-intermidates]-m[metaphysical-prism]",{
+			makeGlow(prisIcons .. "prism.png", prisIcons .. "prism-light.png"),
+			{weight = 1000},
+		})
+	)
+}
+
 --Aethric Shard Cycles
 data:extend({
 	-- Aethric Shards

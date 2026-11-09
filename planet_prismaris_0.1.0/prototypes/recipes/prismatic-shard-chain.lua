@@ -178,3 +178,67 @@ data:extend({
 		keyMerge("d[resource-shard]-c[lithic]-b",{keys.standard,keys.productivity,keys.prismatic,keys.prismarisOnly,keys.preserveInMachine})
 	),
 })
+
+-- Glassworking from prismatic shard chain
+data:extend{
+	pf.recipeFactory(
+		pre .. "sand-from-cracked-lithic-shard",
+		{
+			{icon = prisIcons .. "sand-1.png"},
+			{icon = prisIcons .. "lithic-shard-cracked.png", shift = {8,8}, scale = 0.25}
+		},
+		pf.ingredientsFactory(
+			{
+				{pre .. "cracked-lithic-shard",1}
+			},
+			{
+				{"water",10}
+			}
+		),
+		pf.itemResultsFactory{
+			{"sand",3}
+		},
+		1,
+		{"crafting-with-fluid"},
+		keyMerge("d[stone]-c[crushed]-a[cracked]", {keys.subgroup("raw-resource"),keys.prismarisOnly,keys.standard,keys.noRecycle,keys.productivity})
+	),
+	pf.recipeFactory(
+		"sand",
+		prisIcons .. "sand-1.png",
+		pf.itemIngredientsFactory{
+			{"stone",1}
+		},
+		pf.itemResultsFactory{
+			{"sand",1}
+		},
+		1,
+		{"crafting-with-fluid"},
+		keyMerge("d[stone]-c[crushed]-b[stone]", {keys.subgroup("raw-resource"),keys.prismarisOnly,keys.standard,keys.noRecycle,keys.productivity})
+	),
+	pf.recipeFactory(
+		"glass", -- no prefix for compatibility
+		prisIcons .. "glass-1.png",
+		pf.itemIngredientsFactory{
+			{"sand",5}
+		},
+		pf.itemResultsFactory{
+			{"glass",2}
+		},
+		3.2,
+		{"smelting"},
+		keyMerge("a[smelting]-d[glass]-a[basic]",{keys.subgroup("raw-material"),keys.productivity,keys.noRecycle})
+	),
+	pf.recipeFactory(
+		pre .. "shiny-bottle",
+		prisIcons .. "shiny-bottle.png",
+		pf.itemIngredientsFactory{
+			{"glass",1}
+		},
+		pf.itemResultsFactory{
+			{pre .. "shiny-bottle",1}
+		},
+		6.4,
+		{"smelting"},
+		keyMerge("c[advanced-intermidates]-s[shiny-bottle]",{keys.subgroup("intermediate-product"),keys.productivity,keys.noRecycle,keys.standard})
+	)
+}

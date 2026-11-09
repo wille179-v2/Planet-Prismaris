@@ -37,26 +37,57 @@ data:extend({
 -- Flux Capacitor Chain
 data:extend({
 	pf.recipeFactory(
+		pre .. "metaphysical-prism",
+		prisIcons .. "prism.png",
+		pf.ingredientsFactory(
+			{
+				{pre .. "activated-prismatic-shard-w",1},
+				{pre .. "activated-prismatic-shard-k",1},
+				{"glass", 1},
+			},
+			{
+				{pre .. "concentrated-void-essence",50}
+			}
+		),
+		pf.resultsFactory(
+			{
+				{pre .. "metaphysical-prism",1}
+			},
+			{
+				{pre .. "distorted-void-essence",distort(50)}
+			}
+		),
+		7.5,
+		{"crafting-with-fluid"},
+		keyMerge("c[advanced-intermidates]-m[metaphysical-prism]",{
+			keys.subgroup("intermediate-product"),
+			keys.mainProduct(pre.."metaphysical-prism"),
+			keys.productivity,
+			keys.standard,
+			keys.prismarisOnly,
+			keys.tint(color.concentratedVoid)
+		})
+	),
+	pf.recipeFactory(
 		pre .. "flux-capacitor",
 		prisIcons .. "active-flux-capacitor.png",
 		pf.ingredientsFactory(
 			{
 				{"battery",2},
-				{pre .. "activated-prismatic-shard-w",1},
-				{pre .. "activated-prismatic-shard-k",1},
-				{"advanced-circuit",5}
-
+				{pre .. "metaphysical-prism",1},
+				{"advanced-circuit",5},
+				{"glass",1}
 			},
 			{
-				{pre .. "concentrated-void-essence",100}
+				{pre .. "concentrated-void-essence",50}
 			}
 		),
 		pf.resultsFactory(
 			{
-				{pre .. "charging-flux-capacitor",1, always_fresh = true}
+				{pre .. "charging-flux-capacitor",1} -- No longer needs always_fresh = true because none of its ingredients spoil anymore
 			},
 			{
-				{pre .. "distorted-void-essence",distort(100)}
+				{pre .. "distorted-void-essence",distort(50)}
 			}
 		),
 		10,
@@ -502,28 +533,28 @@ data:extend({
 			{"heat-pipe",12}
 		}),
 		pf.itemResultsFactory({
-			{pre .. "thermal-flux-furnace",1},
-			{"advanced-circuit",1,ip = 0.5}
+			{pre .. "thermal-flux-furnace",1}
 		}),
 		8,
 		{"advanced-crafting"},
-		keyMerge("e[crystal-separator]-b[flux]",{keys.standard,keys.smelting,keys.prismarisOnly,keys.mainProduct(pre .. "thermal-flux-furnace")})
+		keyMerge("e[crystal-separator]-b[flux]",{keys.standard,keys.smelting,keys.prismarisOnly})
 	),
 	pf.recipeFactory(
 		pre .. "electric-heater",
 		prisIcons .. "electric-heater.png",
 		pf.itemIngredientsFactory({
-			{"heating-tower"},
-			{pre .. "active-flux-capacitor",1},
+			{"concrete",10},
+			{"heat-pipe",4},
+			{"copper-cable",5},
+			{"glass",6},
 			{"advanced-circuit",1}
 		}),
 		pf.itemResultsFactory({
-			{pre .. "electric-heater",1},
-			{"heat-pipe",1,ip = 0.5}
+			{pre .. "electric-heater",1}
 		}),
 		8,
 		{"advanced-crafting"},
-		keyMerge("f[nuclear-energy]-e[electric-heater]",{keys.standard,keys.subgroup("energy"),keys.mainProduct(pre .. "electric-heater")})
+		keyMerge("f[nuclear-energy]-e[electric-heater]",{keys.standard,keys.subgroup("energy")})
 	)
 })
 
@@ -608,7 +639,7 @@ data:extend({
 		pf.ingredientsFactory(
 			{
 				{"solar-panel",1},
-				{pre .. "active-flux-capacitor",1}
+				{pre .. "metaphysical-prism",1}
 			},
 			{
 				{pre .. "concentrated-void-essence",50}
@@ -636,7 +667,7 @@ data:extend({
 		pf.ingredientsFactory(
 			{
 				{"beacon",1},
-				{"processing-unit",20},
+				{"processing-unit",15},
 				{pre .. "active-flux-capacitor",2}
 			},
 			{
@@ -646,7 +677,6 @@ data:extend({
 		pf.resultsFactory(
 			{
 				{pre.."void-beacon",1},
-				{"electronic-circuit", min=5,max=10}
 			},
 			{
 				{pre .. "distorted-void-essence",distort(100)}
@@ -673,7 +703,7 @@ data:extend{
 		pf.ingredientsFactory(
 			{
 				{"laser-turret",1},
-				{"advanced-circuit",5},
+				{pre.."metaphysical-prism",1},
 				{pre .. "active-flux-capacitor",1}
 			},
 			{
@@ -682,8 +712,7 @@ data:extend{
 		),
 		pf.resultsFactory(
 			{
-				{pre .. "unconfigured-laser-turret",1},
-				{"electronic-circuit",amount_min = 4, amount_max = 6}
+				{pre .. "unconfigured-laser-turret",1}
 			},
 			{
 				{pre .. "distorted-void-essence", distort(20)}
