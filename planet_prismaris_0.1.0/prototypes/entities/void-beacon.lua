@@ -1,11 +1,11 @@
 local useNerfedBeaconProfile = true -- May be a setting later. If true, generates a beacon transmission profile that degrades faster and caps out at 4 beacons.
-local beaconLimit = 6
+local beaconLimit = 4 -- Lowered from 6 because I realized regular and void beacons stacked.
 
 local voidBeacon = table.deepcopy(data.raw["beacon"]["beacon"])
 voidBeacon.name = pre .. "void-beacon"
-voidBeacon.energy_usage = "720kW"
+voidBeacon.energy_usage = "1.44MW"
 voidBeacon.allowed_effects = {"consumption","speed","pollution","productivity","quality"}
-voidBeacon.supply_area_distance = 5
+voidBeacon.supply_area_distance = 6
 voidBeacon.distribution_effectivity = 2
 voidBeacon.distribution_effectivity_bonus_per_quality_level = 0.3
 -- TODO: When Nonstandard Beacons mod gets updated to 2.1, convert to fluid burning beacon

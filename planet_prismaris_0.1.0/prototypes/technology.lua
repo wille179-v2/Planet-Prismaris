@@ -751,7 +751,7 @@ data:extend({
 	),
 	pf.technologyFactory(-- void-beacon
 		"void-beacon",
-		techPlaceholder,
+		techPath .. "void-beacon.png",
 		false,
 		pf.unlockUnitHelper(
 			750,
