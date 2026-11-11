@@ -2,9 +2,13 @@
 Version: 0.1.1
 Date: 11-10-2026
   Graphics:
-    - The careless mod developer bumbled forwards until a kind soul warned him he had stumbled into the Infringement Territory, patrolled by the dreaded Copyright Demo-lawyer-shers of Planet Law-canus! Acting quickly, he dismantled the offending graphics and replaced them with assets he promted from his BrainGPT. Once again, Natrual Stupidity saves the day! (AKA: thesixthroc politely asked me not to use the heater graphics from Cerys: Moon of Fulgora and MS Paint comes to the rescue with some very temporary and very silly graphics.)
+    - The careless mod developer bumbled forwards until a kind soul warned him he had stumbled into the Infringement Territory, patrolled by the dreaded Copyright Demo-lawyer-shers of Planet Law-canus! Acting quickly, he dismantled the offending graphics and replaced them with assets he promted from his BrainGPT. Once again, Natrual Stupidity saves the day!
+      (thesixthroc politely asked me not to use the heater graphics from Cerys: Moon of Fulgora and MS Paint comes to the rescue with some very temporary and very silly graphics.)
   Compatibility:
-    - Added a temporary fix to prevent a crash when launching with Space Route Overlay, but the real issue is on that mod's side. I'll do what I can to get a permanent fix worked out in the other mod, but for now the game loads.
+    - Setting off into space, a brave engineer by the name of Loftaris upgraded their space map with fancy Space Route Overlays, only to discover to their horror that they could not explore Prismaris! They sent out a distress call, and the mod developer has answered!
+      (Added a temporary fix to prevent a crash when launching with Space Route Overlay, but the real issue is on that mod's side. I'll do what I can to get a permanent fix worked out in the other mod, but for now the game loads. Thanks Loftaris for reporting this error!)
+    - As they ventured further, Loftaris discovered the planet Rabbasca was now forbidden to them, for they once more found Prismaris caused a dreaded space anomaly!
+      (Fixed a crash with Rabbasca that only happened if Rabbasca loaded after Prismaris in the mod load order. Again, thanks Loftaris!)
 ---------------------------------------------------------------------------------------------------
 Version: 0.1.0
 Date: 11-09-2026

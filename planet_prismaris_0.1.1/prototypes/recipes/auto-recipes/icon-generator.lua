@@ -1,4 +1,4 @@
-function generate_recycling_recipe_icons_from_item(item, mode)
+local generateRecyclingRecipeIconsFromItem = function (item, mode)
   local icons = {}
   local topIcon = prismarisConstants.iconsPath .. "chronocycle-" .. mode .. "-top.png" --chronocycle-acceleration-top
   if item.icons == nil then
@@ -37,4 +37,4 @@ function generate_recycling_recipe_icons_from_item(item, mode)
   return icons
 end
 
-return generate_recycling_recipe_icons_from_item
+return generateRecyclingRecipeIconsFromItem
