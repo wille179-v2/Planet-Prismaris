@@ -120,6 +120,8 @@ if mods["any-planet-start"] then
 	APS.add_choice("prismaris")
 end
 
+
+
 data:extend{
 	{ -- Removes stasis mode entirely, for use when another mod adds its own method of stasis
 		type = "bool-setting",
@@ -131,6 +133,21 @@ data:extend{
 	}
 }
 
+-- Space route overlay adds this setting only if aegis and bellicos is installed. I copied it here just so it has something to reference and not crash.
+-- Remove this if/when space route overlay gets patched.
+if mods["space-route-overlay"] and data.raw["string-setting"]["SRO-special-graphics-stargates"] == nil then
+	data:extend{
+		{
+			type = "string-setting",
+			name = "SRO-special-graphics-stargates",
+			setting_type = "startup",
+			default_value = "SRO-stargate-triple-sine-wave",
+			order = "e[compatibility]-b[space-route-overlay]",
+			allowed_values = {"SRO-stargate-standard", "SRO-stargate-triple-sine-wave", "SRO-stargate-dual-sine-wave-and-line"},
+			hidden = true
+		}
+	}
+end
 
 
 --------------------------------------------
