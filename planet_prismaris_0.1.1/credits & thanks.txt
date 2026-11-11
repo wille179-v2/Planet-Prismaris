@@ -7,7 +7,7 @@ Resources & Assets:
 * Hurricane046 (building and icon graphics; unmodified)
 * Hornwitser (science pack graphics from Quality Glassware; modified by wille179)
 * valent125 (stargate graphics from Aegis & Bellicos; modified by wille179. Also gave me the idea for Prismaris's stargate in the first place.)
-* thesixthroc & Tserup (icon an entity graphics from Cerys: Moon of Fulgora, unmodified)
 
 Special thanks to the people of the factorio discord for helping me out:
 * PennyJim, shemp_71881, Osmo, BlackATM
+* thesixthroc & Tserup (Who I previously borrowed assets from but have since removed at their request - they were good sports and still deserve thanks.)
