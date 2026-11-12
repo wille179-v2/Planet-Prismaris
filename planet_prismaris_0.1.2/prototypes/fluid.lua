@@ -15,6 +15,7 @@ data:extend({
 		{
 			draw_as_glow = true,
 			auto_barrel = false,
+			order = "p[prismaris]-a[entropy]"
 		}
 	),
 	pf.fluidFactory(
@@ -26,6 +27,7 @@ data:extend({
 		{
 			draw_as_glow = true,
 			auto_barrel = false,
+			"p[prismaris]-b[void]-a[raw]"
 		}
 	),
 	pf.fluidFactory(
@@ -40,7 +42,8 @@ data:extend({
 			spent_fluid = {
 				name = pre .. "distorted-void-essence",
 				amount = prismarisConstants.voidFluidRatio
-			}
+			},
+			order = "p[prismaris]-b[void]-d[concentrated]"
 		}
 	),
 	pf.fluidFactory(
@@ -52,6 +55,7 @@ data:extend({
 		{
 			draw_as_glow = true,
 			auto_barrel = false,
+			order = "p[prismaris]-b[void]-b[distorted]"
 		}
 	),
 	pf.fluidFactory(
@@ -62,7 +66,8 @@ data:extend({
 		color.stabilizedVoid[2],
 		{
 			draw_as_glow = true,
-			auto_barrel = false
+			auto_barrel = false,
+			order = "p[prismaris]-b[void]-c[stabilized]"
 		}
 	),
 })
