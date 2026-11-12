@@ -777,7 +777,7 @@ data:extend({
 	),
 	pf.technologyFactory( -- prismaris-bonus-lab-speed
 		"prismaris-bonus-lab-speed",
-		"__base__/graphics/technology/research-speed.png",
+		util.technology_icon_constant_speed("__base__/graphics/technology/research-speed.png"),
 		false,
 		pf.unlockUnitHelper(
 			750,
