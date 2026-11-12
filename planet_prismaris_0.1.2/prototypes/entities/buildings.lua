@@ -31,6 +31,7 @@ electricHeater.surface_conditions = nil]]
 local electricHeater = {
 	type = "reactor",
 	name = pre .. "electric-heater",
+	subgroup = "environmental-protection",
 	circuit_connector = circuit_connector_definitions.create_single(universal_connector_template, {
 		variation = 30,
 		main_offset = util.by_pixel(-1, 33.5),

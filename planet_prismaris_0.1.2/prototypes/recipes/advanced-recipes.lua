@@ -554,7 +554,7 @@ data:extend({
 		}),
 		8,
 		{"advanced-crafting"},
-		keyMerge("f[nuclear-energy]-e[electric-heater]",{keys.standard,keys.subgroup("energy")})
+		keyMerge("f[nuclear-energy]-e[electric-heater]",{keys.standard,keys.subgroup("environmental-protection")})
 	)
 })
 
