@@ -435,7 +435,7 @@ local stargateConnection = {
 	),
 	from = prismarisConstants.activeWarpGate,
 	to = "prismaris-stargate",
-	order = "b",
+	order = prismarisConstants.useModedGate and "b" or "b-b[warp]",
 	length = 3000,
 	shape = "line",
 	asteroid_spawn_definitions = asteroid_util.spawn_definitions(asteroid_util.nauvis_fulgora),
@@ -458,7 +458,7 @@ local stargateToPrismarisConnection = {
 		spaceIcons .. "calidus-prismaris-stargate-icon.png",
 		spaceIcons .. "prismaris-icon.png"
 	),
-	order = "b",
+	order = prismarisConstants.useModedGate and "b" or "b-c[prismaris]",
 	length = 17000,
 	asteroid_spawn_definitions = asteroid_util.spawn_definitions(asteroid_util.nauvis_gleba)
 }
@@ -473,7 +473,7 @@ local glebaToStargateConnection = {
 		spaceIcons .. "starmap-stargate-calidus-64.png"
 	),
 	subgroup = "planet-connections",
-	order = "b",
+	order = prismarisConstants.useModedGate and "b" or "b-a[gleba]",
 	length = 6000,
 	hidden = prismarisConstants.useModedGate, -- Hide this if using a compatible mod.
 		-- Doesn't work because factorio itself is bugged for hiding connections.
@@ -490,65 +490,4 @@ data:extend{stargateConnection,stargateToPrismarisConnection}
 if not prismarisConstants.useModedGate then
 	data:extend{glebaToStargateConnection} --This is terrible. Fix this when/if the bugfix comes.
 end
-
-
--- Old space connections
---[[
-data:extend({
-	{
-		type = "space-connection",
-		name = "gleba-prismaris",
-		from = "gleba",
-		to = "prismaris",
-		icons = {
-			{
-				icon = "__space-age__/graphics/icons/planet-route.png"
-			},
-			{
-				icon = "__space-age__/graphics/icons/gleba.png",
-				icon_size = 64,
-				scale = 0.333,
-				shift = {-6,-6}
-			},
-			{
-				icon = iconsPath .. "space/prismaris-icon.png",
-				icon_size = 64,
-				scale = 0.333,
-				shift = {6,6}
-			}
-		},
-		asteroid_spawn_definitions = table.deepcopy(data.raw["space-connection"]["nauvis-gleba"].asteroid_spawn_definitions),
-		length = 20000,
-		subgroup = "planet-connections",
-		order = "e-a"
-	},
-	{
-		type = "space-connection",
-		name = "vulcanus-prismaris",
-		from = "vulcanus",
-		to = "prismaris",
-		icons = {
-			{
-				icon = "__space-age__/graphics/icons/planet-route.png"
-			},
-			{
-				icon = "__space-age__/graphics/icons/vulcanus.png",
-				icon_size = 64,
-				scale = 0.333,
-				shift = {-6,-6}
-			},
-			{
-				icon = iconsPath .. "space/prismaris-icon.png",
-				icon_size = 64,
-				scale = 0.333,
-				shift = {6,6}
-			}
-		},
-		asteroid_spawn_definitions = table.deepcopy(data.raw["space-connection"]["nauvis-vulcanus"].asteroid_spawn_definitions),
-		length = 15000,
-		subgroup = "planet-connections",
-		order = "e-b"
-	},
-})
-]]
 
