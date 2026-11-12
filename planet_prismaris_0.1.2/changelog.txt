@@ -1,8 +1,17 @@
 ---------------------------------------------------------------------------------------------------
 Version: 0.1.2
-Date: 11-10-2026
+Date: 11-12-2026
+  Graphics:
+    - Changed the hitbox size and visual alignment of the crystal separator to better reflect its actual dimensions. They're now 3x3 buildings instead of 4x4. You might need to dismantle and replace the buildings to correct their spacing in your factory.
+    - Bonus Lab speed technology now has the missing "speed" icon in the corner.
+    - Agricultural towers now glow blue when planting aether crystals.
   Compatibility:
     - Cleaned up some unnecessary compatibility code, since Space Route Overlay updated to 0.3.6 and fixed the crash Prismaris accidentally caused on its side.
+  Gui:
+    - Fixed electric heater item and recipe having different subgroups, and therefore being in different locations in the hand crafting menu and the assembler recipe select menu.
+    - Fixed incorrect ordering of Prismaris's fluids.
+    - Fixed incorrect ordering of space locations.
+    - Productivity modules and quality modules in the Void beacon no longer show in the Alt-mode overlay (to match speed/efficiency module behavior).
 ---------------------------------------------------------------------------------------------------
 Version: 0.1.1
 Date: 11-10-2026
