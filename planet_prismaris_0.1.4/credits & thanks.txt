@@ -11,3 +11,7 @@ Resources & Assets:
 Special thanks to the people of the factorio discord for helping me out:
 * PennyJim, shemp_71881, Osmo, BlackATM
 * thesixthroc & Tserup (Who I previously borrowed assets from but have since removed at their request - they were good sports and still deserve thanks.)
+
+And thanks to the people who helped me beta test, including these people who helped me squash bugs:
+* Loftaris
+* Keslarium
