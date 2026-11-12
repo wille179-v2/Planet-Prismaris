@@ -77,8 +77,8 @@ local crystalSeparator = {
 		result = pre.."crystal-separator",
 		count = 1
 	},
-	collision_box = {{-1.9,-1.9},{1.9,1.9}},
-	selection_box = {{-2,-2},{2,2}},
+	collision_box = {{-1.4,-1.4},{1.4,1.4}},
+	selection_box = {{-1.5,-1.5},{1.5,1.5}},
 	max_health = 350,
 	resistances = {
 		{
@@ -102,6 +102,7 @@ local crystalSeparator = {
 					width = 200,
 					height = 290,
 					priority = "high",
+					shift = util.by_pixel(0,-16)
 					--shift
 				},
 				{
@@ -114,7 +115,8 @@ local crystalSeparator = {
 					blend_mode = "normal",
 					width = 200,
 					height = 290,
-					apply_runtime_tint = true
+					apply_runtime_tint = true,
+					shift = util.by_pixel(0,-16)
 				},
 				{
 					filename = graphicsPath .. "crystal-separator-hr-shadow.png",
@@ -123,6 +125,7 @@ local crystalSeparator = {
 					height = 400,
 					width = 600,
 					priority = "high",
+					shift = util.by_pixel(0,-16)
 					--shift
 				}
 			}
@@ -139,6 +142,7 @@ local crystalSeparator = {
 					blend_mode = "normal",
 					width = 200,
 					height = 290,
+					shift = util.by_pixel(0,-16)
 				},
 				constant_speed = true,
 			},
@@ -153,6 +157,7 @@ local crystalSeparator = {
 					blend_mode = "normal",
 					width = 200,
 					height = 290,
+					shift = util.by_pixel(0,-16)
 					--apply_runtime_tint = true
 				},
 				constant_speed = true,
@@ -169,6 +174,7 @@ local crystalSeparator = {
 					blend_mode = "normal",
 					width = 200,
 					height = 290,
+					shift = util.by_pixel(0,-16)
 				},
 				constant_speed = true,
 			},
@@ -184,6 +190,7 @@ local crystalSeparator = {
 					blend_mode = "additive",
 					width = 200,
 					height = 290,
+					shift = util.by_pixel(0,-16)
 				},
 				constant_speed = true,
 			}
