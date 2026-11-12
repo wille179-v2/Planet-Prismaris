@@ -321,3 +321,10 @@ whiteBorderFont.border_color = {255,255,255}
 whiteBorderFont.border = true
 whiteBorderFont.name = "white-border"
 data:extend{whiteBorderFont}
+
+data.raw["module"]["productivity-module"].requires_beacon_alt_mode = false
+data.raw["module"]["productivity-module-2"].requires_beacon_alt_mode = false
+data.raw["module"]["productivity-module-3"].requires_beacon_alt_mode = false
+data.raw["module"]["quality-module"].requires_beacon_alt_mode = false
+data.raw["module"]["quality-module-2"].requires_beacon_alt_mode = false
+data.raw["module"]["quality-module-3"].requires_beacon_alt_mode = false
