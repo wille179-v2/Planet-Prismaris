@@ -65,6 +65,12 @@ pre = prismarisConstants.prototypePrefix
 
 -- Recipe colors for machines that can dynamically tint
 color = {
+	aetherCrystal = {
+		{95,160,151},
+		{10,152,117},
+		{95,160,151},
+		{10,152,117},
+	},
 	entropy = {
 		{.95,.95,.95},
 		{.05,.05,.05},

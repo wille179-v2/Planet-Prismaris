@@ -105,5 +105,6 @@ cultivatedAetherCrystal.growth_variations = nil
 cultivatedAetherCrystal.growth_mounds = nil
 cultivatedAetherCrystal.collision_box = {{-1, -1}, {1, 1}}
 cultivatedAetherCrystal.selection_box = {{-1, -2}, {1, 1.5}}
+cultivatedAetherCrystal.agricultural_tower_tint = keys.tint(color.aetherCrystal).crafting_machine_tint
 
 data:extend({cultivatedAetherCrystal})
