@@ -236,12 +236,19 @@ end
 		table fuel					fuel details, use pf.fuelHelper to generate
 		table spoilage				spoilage details, use pf.spoilageHelper to generate
 	table otherKeys				optional table of other properties for the item 
+
+	note: if icons is {"path/to/file.png", use_icon_not_icons = true}, then it will use the icon and icon_size property instead of the icons property.
 ]]
 function pf.itemFactory(name, stackSize, icons, subgroup, pfs, otherKeys)
 	item = {type = "item"}
 	item.name = name
 	item.stack_size = stackSize
-	item.icons = pf.iconFactory(icons)
+	if type(icons) == type({}) and icons.use_icon_not_icons == true then
+		item.icon = icons.icon or icons[1]
+		item.icon_size = icons.icon_size or icons[2]
+	else
+		item.icons = pf.iconFactory(icons)
+	end
 	item.subgroup = subgroup
 	pfs = pfs or {}
 

@@ -315,7 +315,7 @@ data:extend{
 	pf.itemFactory(
 		"sand", -- no prefix for compatibility
 		200,
-		prisIcons .. "sand-1.png",
+		{prisIcons .. "sand-1.png",use_icon_not_icons = true}, -- for compatibility with arig + barreling machines
 		"raw-resource",
 		{},
 		keyMerge("d[stone]-c[crushed]",{{weight = 1000}, keys.altItemGraphics{
