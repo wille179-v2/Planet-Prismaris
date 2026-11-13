@@ -15,3 +15,4 @@ Special thanks to the people of the factorio discord for helping me out:
 And thanks to the people who helped me beta test, including these people who helped me squash bugs:
 * Loftaris
 * Keslarium
+* Supershadow30

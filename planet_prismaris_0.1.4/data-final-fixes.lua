@@ -29,9 +29,18 @@ for _,lab in pairs(data.raw["lab"]) do -- examine labs
 		end
 	end
 	if i > -1 then -- Insert the packs at the next three available indexes.
-		table.insert(lab.inputs,i+1,pre .. "red-polyphasic-science-pack")
-		table.insert(lab.inputs,i+2,pre .. "blue-polyphasic-science-pack")
-		table.insert(lab.inputs,i+3,pre .. "green-polyphasic-science-pack")
+		-- sanity check: do the labs already have the science pack? some other mod may be adding them themselves
+		local hasRed = false
+		local hasBlue = false
+		local hasGreen = false
+		for _, input in pairs(lab.inputs) do
+			if input == pre .. "red-polyphasic-science-pack" then hasRed = true end
+			if input == pre .. "blue-polyphasic-science-pack" then hasBlue = true end
+			if input == pre .. "green-polyphasic-science-pack" then hasGreen = true end
+		end
+		if not hasRed then table.insert(lab.inputs,i+1,pre .. "red-polyphasic-science-pack") end
+		if not hasBlue then table.insert(lab.inputs,i+2,pre .. "blue-polyphasic-science-pack") end
+		if not hasGreen then table.insert(lab.inputs,i+3,pre .. "green-polyphasic-science-pack") end
 	end
 
 	-- Add 3 extra trash inventory slots to labs (to a minimum of 4 if it doesn't have them already for some reason). Don't touch labs skipped earlier.

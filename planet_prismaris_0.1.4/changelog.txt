@@ -3,6 +3,9 @@ Version: 0.1.4
 Date: 11-12-2026
   Info:
     - I forgot to thank Keslarium for finding the bug I fixed in the last patch. So thanks!
+  Compatibility:
+    - Some other mods were messing with adding science packs to labs in a way that conflicted with Prismaris. Prismaris now gracefully handles that and no longer causes a startup crash in those situations.
+    - Adjusted the configuration for Redrawn Space Connections, so the warp gate system is correctly handled. (Thanks Supershadow30!)
 ---------------------------------------------------------------------------------------------------
 Version: 0.1.3
 Date: 11-12-2026

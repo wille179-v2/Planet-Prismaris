@@ -340,7 +340,8 @@ local prismaris = {
 	draw_orbit = true,
 	solar_power_in_space = 300,
 	asteroid_spawn_influence = 1,	
-	asteroid_spawn_definitions = prismarisAsteroids,	
+	asteroid_spawn_definitions = prismarisAsteroids,
+	redrawn_connections_exclude = true
 }
 
 
@@ -372,7 +373,7 @@ local calidusGatePrismaris = {
 	label_orientation = 0.1,
 	solar_power_in_space = spaceSolar,
 	asteroid_spawn_definitions = stargateAsteroids,
-	redrawn_connections_exclude = true,
+	redrawn_connections_exclude = false, -- I actually want to include this one in Redrawn Space Connections
 }
 
 -- Always active gate
@@ -398,6 +399,7 @@ local prismarisGate = {
 	asteroid_spawn_definitions = stargateAsteroids,
 	draw_orbit = false,
 	label_orientation = .9,
+	redrawn_connections_exclude = true
 }
 
 -- The star that prismaris orbits
@@ -418,6 +420,7 @@ local prismarisStar = {
 	sprite_only = true,
 	magnitude = 9.3,
 	hidden_in_factoriopedia = true,
+	redrawn_connections_exclude = true,
 	--asteroid_spawn_influence = 0,
 	--asteroid_spawn_definitions = asteroid_util.spawn_definitions(asteroid_util.nauvis_fulgora)
 }
@@ -445,7 +448,8 @@ local stargateConnection = {
 		"space-location-name." .. prismarisConstants.activeWarpGate,
 		" to ",
 		"space-location-name.prismaris-stargate"
-	}
+	},
+	redrawn_connections_keep = true,
 }
 
 local stargateToPrismarisConnection = {
@@ -460,7 +464,8 @@ local stargateToPrismarisConnection = {
 	),
 	order = prismarisConstants.useModedGate and "b" or "b-c[prismaris]",
 	length = 17000,
-	asteroid_spawn_definitions = asteroid_util.spawn_definitions(asteroid_util.nauvis_gleba)
+	asteroid_spawn_definitions = asteroid_util.spawn_definitions(asteroid_util.nauvis_gleba),
+	redrawn_connections_keep = true
 }
 
 local glebaToStargateConnection = {
