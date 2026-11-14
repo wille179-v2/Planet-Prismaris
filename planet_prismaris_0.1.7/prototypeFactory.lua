@@ -50,10 +50,13 @@ end
 	table otherKeys				optional table of other properties for the recipe 
 ]]
 function pf.recipeFactory(name, icons, ingredients, results, energy_required, categories, otherKeys)
+	local iconLayers = pf.iconFactory(icons)
 	recipe = {
 		type = "recipe",
 		["name"] = name,
-		["icons"] = pf.iconFactory(icons),
+		["icons"] = iconLayers,
+		["icon"] = iconLayers[1].icon,
+		icon_size = iconLayers[1].icon_size,
 		["ingredients"] = ingredients,
 		["results"] = results,
 		["energy_required"] = energy_required,
@@ -236,19 +239,15 @@ end
 		table fuel					fuel details, use pf.fuelHelper to generate
 		table spoilage				spoilage details, use pf.spoilageHelper to generate
 	table otherKeys				optional table of other properties for the item 
-
-	note: if icons is {"path/to/file.png", use_icon_not_icons = true}, then it will use the icon and icon_size property instead of the icons property.
 ]]
 function pf.itemFactory(name, stackSize, icons, subgroup, pfs, otherKeys)
 	item = {type = "item"}
 	item.name = name
 	item.stack_size = stackSize
-	if type(icons) == type({}) and icons.use_icon_not_icons == true then
-		item.icon = icons.icon or icons[1]
-		item.icon_size = icons.icon_size or icons[2]
-	else
-		item.icons = pf.iconFactory(icons)
-	end
+	local iconLayers = pf.iconFactory(icons)
+	item.icon = iconLayers[1].icon
+	item.icon_size = iconLayers[1].icon_size or 64
+	item.icons = iconLayers
 	item.subgroup = subgroup
 	pfs = pfs or {}
 
@@ -369,8 +368,10 @@ end
 function pf.fluidFactory(name, icons, default_temperature, base_color, flow_color, otherKeys)
 	fluid = {type = "fluid"}
 	fluid.name = name
-	fluid.icons = pf.iconFactory(icons)
-	fluid.icon_size = 64
+	local iconLayers = pf.iconFactory(icons)
+	fluid.icons = iconLayers
+	fluid.icon = iconLayers[1].icon
+	fluid.icon_size = iconLayers[1].icon_size or 64
 	fluid.default_temperature = default_temperature or 15
 	fluid.base_color = base_color or {1,1,1}
 	fluid.flow_color = flow_color or {1,1,1}
@@ -396,7 +397,10 @@ end
 function pf.technologyFactory(name, icon, essential, unlockCondition, prerequisites, effectsList, otherKeys)
 	tech = {type = "technology"}
 	tech.name = name
-	tech.icons = pf.iconFactory(icon,256)
+	local iconLayers = pf.iconFactory(icon,256)
+	tech.icons = iconLayers
+	tech.icon = iconLayers[1].icon
+	tech.icon_size = iconLayers[1].icon_size
 	tech.essential = essential
 	tech.research_trigger = unlockCondition.research_trigger
 	tech.unit = unlockCondition.unit

@@ -1,7 +1,9 @@
 ---------------------------------------------------------------------------------------------------
 Version: 0.1.7
 Date: 11-14-2026
-
+  Bugfixes:
+    - The bug from 0.1.3 returned with a different mod combination and different affected item; performed a general "robustness" sweep of the code that should hopefully prevent the "icon" vs "icons" issue from popping up again. 
+      (Why factorio has two different ways of specifying an item's icon, idk but its annoying when other mods only check for one or the other.)
 ---------------------------------------------------------------------------------------------------
 Version: 0.1.6
 Date: 11-14-2026
