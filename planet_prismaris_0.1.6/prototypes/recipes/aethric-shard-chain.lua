@@ -5,27 +5,6 @@ local baseIcons = "__base__/graphics/icons/" -- for temporary use
 local recipeTempIcon = prismarisConstants.iconsPath .. "recipe-temp.png"
 local prisIcons = prismarisConstants.iconsPath
 
--- A recipe for debugging only
---[[
-data:extend({
-	pf.recipeFactory(
-		"debug-aethric-shard",
-		recipeTempIcon,
-		pf.itemIngredientsFactory({}),
-		pf.itemResultsFactory({
-			{pre .. "aethric-shard",100}
-		}),
-		1,
-		{"crafting","hand-crafting"},
-		{
-			subgroup = "other",
-			enabled = false,
-			order = "zzz",
-		}
-
-	)
-})
-]]
 
 data:extend({
 	pf.recipeFactory(
@@ -35,12 +14,12 @@ data:extend({
 			{pre .. "aethric-shard",1}
 		}),
 		pf.itemResultsFactory({
-			{pre .. "shattered-aethric-shard-a",1,ip=.1667},
-			{pre .. "shattered-aethric-shard-b",1,ip=.1667},
-			{pre .. "shattered-aethric-shard-c",1,ip=.1667},
-			{pre .. "shattered-aethric-shard-d",1,ip=.1667},
-			{pre .. "shattered-aethric-shard-e",1,ip=.1667},
-			{pre .. "shattered-aethric-shard-f",1,ip=.1667},
+			{pre .. "shattered-aethric-shard-a",1,sp={min = 0/6, max = 1/6}},
+			{pre .. "shattered-aethric-shard-b",1,sp={min = 1/6, max = 2/6}},
+			{pre .. "shattered-aethric-shard-c",1,sp={min = 2/6, max = 3/6}},
+			{pre .. "shattered-aethric-shard-d",1,sp={min = 3/6, max = 4/6}},
+			{pre .. "shattered-aethric-shard-e",1,sp={min = 4/6, max = 5/6}},
+			{pre .. "shattered-aethric-shard-f",1,sp={min = 5/6, max = 6/6}},
 		}),
 		4,
 		{pre .. "crystal-separation","hand-crafting"},

@@ -1,4 +1,18 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.1.6
+Date: 11-14-2026
+
+---------------------------------------------------------------------------------------------------
+Version: 0.1.5
+Date: 11-14-2026
+  Balancing:
+    - Aethric Shard Separation now uses shared probability instead of independent probability. You now always get exactly 1 shard of a random phase instead of a random quantity averaging to 1.
+    - Added a difficulty setting that causes fast-spoiling Prismaris items to be preserved in their machine upon craft completion, which can help smooth out production rates. This is most helpful when starting on Prismaris with Any Planet Start.
+  Bugfixes:
+    - Fixed a crash that could hapen if another mod implemented an item that could spoil, but had no spoil_ticks value set by the time Prismaris encounters it in the data-final-fixes stage. (IDK why you would make something that instantly spoils the same game tick its created but I suppose its allowed by the factorio engine... Thanks stef77 for finding this.)
+  Gui:
+    - Added description to Prismatic Shard and Aethric Shard separation recipes.
+---------------------------------------------------------------------------------------------------
 Version: 0.1.4
 Date: 11-12-2026
   Info:

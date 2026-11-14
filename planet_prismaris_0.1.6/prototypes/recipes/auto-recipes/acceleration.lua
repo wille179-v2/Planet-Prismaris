@@ -5,7 +5,7 @@
 local recipeTempIcon = prismarisConstants.iconsPath .. "recipe-temp.png"
 
 local hasSpoilage = function(item)
-	return (item ~= nil and item.spoil_result ~= nil and item.spoil_ticks > 0)
+	return (item ~= nil and item.spoil_result ~= nil and (item.spoil_ticks or 0) > 0)
 end
 
 function getIPChance(item)

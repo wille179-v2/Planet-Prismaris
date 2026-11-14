@@ -62,6 +62,14 @@ data:extend{
 		order = "b[difficulty]-e[candy]",
 		hidden = hideWIPSettings,
 	},
+	-- Choose if most basic prismaris items are preserved in the machine or start spoiling immediately.
+	{
+		type = "bool-setting",
+		name = "prismaris-preserve-outputs",
+		setting_type = "startup",
+		default_value = false,
+		order = "b[difficulty]-f[preserve]"
+	},
 }
 
 --------------------------------------------

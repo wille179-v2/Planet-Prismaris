@@ -6,27 +6,6 @@ local baseIcons = "__base__/graphics/icons/"
 local prisIcons = prismarisConstants.iconsPath
 local recipeTempIcon = prisIcons .. "recipe-temp.png"
 
--- A recipe for debugging only
---[[
-data:extend({
-	pf.recipeFactory(
-		"debug-prismatic-shard",
-		recipeTempIcon,
-		pf.itemIngredientsFactory({}),
-		pf.itemResultsFactory({
-			{pre .. "prismatic-shard",100}
-		}),
-		1,
-		{"crafting","hand-crafting"},
-		{
-			subgroup = "other",
-			enabled = false,
-			order = "zzz",
-		}
-
-	)
-})
-]]
 
 local crackSpA = {min = 0, max = 0.04}
 local crackSpB = {min = 0.04, max = 0.08}
