@@ -143,13 +143,13 @@ keys = {
 		subgroup = "prismaris-processes-prismatic",
 		allow_decomposition = false,
 		auto_recycle = false,
-		preserve_products_in_machine_output = true,
+		preserve_products_in_machine_output = settings.startup["prismaris-preserve-outputs"].value,
 	},
 	aethric = {
 		subgroup = "prismaris-processes-aethric",
 		allow_decomposition = false,
 		auto_recycle = false,
-		preserve_products_in_machine_output = true,
+		preserve_products_in_machine_output = settings.startup["prismaris-preserve-outputs"].value,
 	},
 	preserveInMachine = {
 		preserve_products_in_machine_output = true
@@ -160,7 +160,7 @@ keys = {
 	entropic = {
 		subgroup = "prismaris-processes-entropic",
 		auto_recycle = false,
-		preserve_products_in_machine_output = true,
+		preserve_products_in_machine_output = settings.startup["prismaris-preserve-outputs"].value,
 	},
 	void = {
 		subgroup = "prismaris-processes-void",
@@ -168,7 +168,7 @@ keys = {
 	},
 	technical = {
 		subgroup = "prismaris-processes-technical",
-		preserve_products_in_machine_output = true,
+		preserve_products_in_machine_output = settings.startup["prismaris-preserve-outputs"].value,
 	},
 	production = {
 		subgroup = "production-machine"

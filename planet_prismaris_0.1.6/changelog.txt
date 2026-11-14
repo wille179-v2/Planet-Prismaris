@@ -1,7 +1,8 @@
 ---------------------------------------------------------------------------------------------------
 Version: 0.1.6
 Date: 11-14-2026
-
+  Bugfixes:
+   - Forgot a line of code in the previous version. The new difficulty setting should now ACTUALLY do what it is supposed to do.
 ---------------------------------------------------------------------------------------------------
 Version: 0.1.5
 Date: 11-14-2026
