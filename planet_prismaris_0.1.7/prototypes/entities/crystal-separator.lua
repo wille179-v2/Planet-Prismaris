@@ -66,8 +66,7 @@ local crystalSeparator = {
 	},
 	impact_category = "glass",
 	placeable_by = {item = pre.."crystal-separator", count = 1},
-	tile_width = 4,
-	tile_height = 4,
+	
 	--map_color
 	--friendly_map_color
 	--enemy_map_color
