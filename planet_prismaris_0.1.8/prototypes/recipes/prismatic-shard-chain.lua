@@ -181,19 +181,7 @@ data:extend{
 		{"crafting-with-fluid"},
 		keyMerge("d[stone]-c[crushed]-a[cracked]", {keys.subgroup("raw-resource"),keys.prismarisOnly,keys.standard,keys.noRecycle,keys.productivity})
 	),
-	pf.recipeFactory(
-		"sand",
-		prisIcons .. "sand-1.png",
-		pf.itemIngredientsFactory{
-			{"stone",1}
-		},
-		pf.itemResultsFactory{
-			{"sand",1}
-		},
-		1,
-		{"crafting-with-fluid"},
-		keyMerge("d[stone]-c[crushed]-b[stone]", {keys.subgroup("raw-resource"),keys.prismarisOnly,keys.standard,keys.noRecycle,keys.productivity})
-	),
+	-- The "default" Sand recipe has been moved to data-updates.lua, and is only added if no other mod adds a sand recipe
 	pf.recipeFactory(
 		"glass", -- no prefix for compatibility
 		prisIcons .. "glass-1.png",
@@ -205,7 +193,7 @@ data:extend{
 		},
 		3.2,
 		{"smelting"},
-		keyMerge("a[smelting]-d[glass]-a[basic]",{keys.subgroup("raw-material"),keys.productivity,keys.noRecycle})
+		keyMerge("a[smelting]-d[glass]-a[basic]",{keys.subgroup("raw-material"),keys.productivity,keys.noRecycle,keys.standard})
 	),
 	pf.recipeFactory(
 		pre .. "shiny-bottle",

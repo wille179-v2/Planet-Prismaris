@@ -1,6 +1,8 @@
 -- Update foundry smoke and em plant lightning to reflect crafting machine color
 -- also set default color of foundry/em plant recipes to the original default color to preserve aesthetic of vanilla items
 
+
+
 local foundryWorkVisuals = data.raw['assembling-machine']['foundry'].graphics_set.working_visualisations
 
 foundryWorkVisuals[3].apply_recipe_tint = "primary" -- overwriting old crucible smoke
@@ -64,3 +66,30 @@ for recipeName,recipe in pairs(data.raw['recipe']) do
 
 	end
 end
+
+-- Other mods might add a sand recipe; this is the fallback "basic" sand recipe if no other mod adds one.
+-- Also doesn't add sand if Krastorio2-spaced-out is installed
+if data.raw["recipe"]["sand"] == nil and mods["Krastorio2-spaced-out"] == nil then 
+	data:extend{
+		pf.recipeFactory(
+			"sand",
+			prismarisConstants.iconsPath .. "sand-1.png",
+			pf.itemIngredientsFactory{
+				{"stone",1}
+			},
+			pf.itemResultsFactory{
+				{"sand",1}
+			},
+			1,
+			{"advanced-crafting"},
+			keyMerge("d[stone]-c[crushed]-b[stone]", {keys.subgroup("raw-resource"),keys.standard,keys.productivity})
+		)
+	}
+	utils.add_recipes("metaphysical-glassworking", {"sand"})
+else
+	if data.raw["recipe"]["sand"] then
+		utils.add_recipes("metaphysical-glassworking", {"sand"})
+	end
+end
+
+require("mod-compatibility.compatibility-updates")

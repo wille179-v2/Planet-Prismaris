@@ -7,10 +7,10 @@ require ("__space-age__.prototypes.entity.circuit-network")
 circuit_connector_definitions[pre .. "crystal-separator"] = circuit_connector_definitions.create_vector(
 	universal_connector_template,
 	{
-		{variation = 25, main_offset = util.by_pixel(-36,44), shadow_offset=util.by_pixel(0,0), show_shadow = false},
-		{variation = 25, main_offset = util.by_pixel(-36,44), shadow_offset=util.by_pixel(0,0), show_shadow = false},
-		{variation = 25, main_offset = util.by_pixel(-36,44), shadow_offset=util.by_pixel(0,0), show_shadow = false},
-		{variation = 25, main_offset = util.by_pixel(-36,44), shadow_offset=util.by_pixel(0,0), show_shadow = false}
+		{variation = 25, main_offset = util.by_pixel(-36,28), shadow_offset=util.by_pixel(0,0), show_shadow = false},
+		{variation = 25, main_offset = util.by_pixel(-36,28), shadow_offset=util.by_pixel(0,0), show_shadow = false},
+		{variation = 25, main_offset = util.by_pixel(-36,28), shadow_offset=util.by_pixel(0,0), show_shadow = false},
+		{variation = 25, main_offset = util.by_pixel(-36,28), shadow_offset=util.by_pixel(0,0), show_shadow = false}
 	}
 )
 

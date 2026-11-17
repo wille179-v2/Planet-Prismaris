@@ -16,6 +16,7 @@ prismarisConstants = {
 	iconsPath = modName .. "/graphics/icons/",
 	terrainPath = modName .. "/graphics/terrain/",
 	technologyIconsPath = modName .. "/graphics/technology/",
+	compatGraphics = modName .. "/graphics/mod-compat/",
 	soundPath = modName .. "/sound",
 	-- Control & cosmetic variables for mod balance; used in many places across the mod
 	slowSpoilTime = 90,
@@ -126,6 +127,7 @@ keys = {
 	standard = {
 		enabled = false,
 		--auto_recycle = false
+		prismaris = true, -- An internal flag for tracking my recipes
 	},
 	noRecycle = {
 		auto_recycle = false

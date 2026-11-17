@@ -1,4 +1,13 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.1.8
+Date: 11-17-2026
+  Bugfixes:
+    - Fixed location of circuit connector graphics on crystal separator.
+    - Fixed a few incorrect locale strings.
+  Compatibility:
+    - Krastorio2 Spaced Out: Compatibility patch. When Krastorio 2 Spaced Out is installed, Prismaris no longer uses its own Glass or Sand and uses Krastorio's glass instead. If you had a factory that was producing Prismaris's sand, it should now be producing KS2's sand instead... and might need to be manually cleaned up to contiune working. There is also now a recipe for converting entropic dust to and from matter, but it is locked to Prismaris.
+    - Additionally, Polyphasic Science Packs are replaced with Polyphasic Tech Cards while KS2-SO is installed.
+---------------------------------------------------------------------------------------------------
 Version: 0.1.7
 Date: 11-16-2026
   Bugfixes:

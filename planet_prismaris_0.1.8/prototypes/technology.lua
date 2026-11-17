@@ -207,7 +207,7 @@ data:extend({
 		},
 		{
 			pre .. "sand-from-cracked-lithic-shard",
-			"sand",
+			-- "sand",
 			"glass",
 			pre .. "metaphysical-prism"
 		}
